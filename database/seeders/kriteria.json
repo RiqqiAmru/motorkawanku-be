@@ -1,0 +1,244 @@
+{
+  "kegiatanInvestasi": [
+    {
+      "kriteria": [
+        "1a"
+      ],
+      "kegiatan": [
+        "Jalan Aspal Hotmix",
+        "Jalan Beton",
+        "Jalan Buras (Leburan Aspal)",
+        "Jalan Kayu/Titian/Jerambah Kayu",
+        "Jalan Lapen (Lapisan Penetrasi)",
+        "Jalan Makadam",
+        "Jalan Paving Block",
+        "Jalan Sirtu",
+        "Jalan Tanah",
+        "Jalan Telford",
+        "Pedestrian/Jalur Pejalan Kaki",
+        "Penataan Rumah Deret/Rumah Susun"
+      ],
+      "satuan": "Unit"
+    },
+    {
+      "kriteria": [
+        "1b"
+      ],
+      "kegiatan": [
+        "Penataan Rumah Deret/Rumah Susun"
+      ],
+      "satuan": "Ha"
+    },
+    {
+      "kriteria": [
+        "1c"
+      ],
+      "kegiatan": [
+        "Penataan Rumah Deret/Rumah Susun",
+        "Rehab/perbaikan Rumah Tidak Layak Huni (Aladin)"
+      ],
+      "satuan": "Unit"
+    },
+    {
+      "kriteria": [
+        "2a",
+        "2b"
+      ],
+      "kegiatan": [
+        "Jalan Aspal Hotmix",
+        "Jalan Beton",
+        "Jalan Buras (Leburan Aspal)",
+        "Jalan Kayu/Titian/Jerambah Kayu",
+        "Jalan Lapen (Lapisan Penetrasi)",
+        "Jalan Makadam",
+        "Jalan Paving Block",
+        "Jalan Sirtu",
+        "Jalan Tanah",
+        "Jalan Telford",
+        "Jembatan Besi",
+        "Jembatan Beton/Batu/Box Culvert",
+        "Jembatan Gantung",
+        "Jembatan Kayu",
+        "Jembatan Komposit",
+        "Jembatan Pelimpas",
+        "Pedestrian/Jalur Pejalan Kaki"
+      ],
+      "satuan": "Meter"
+    },
+    {
+      "kriteria": [
+        "3a",
+        "3b"
+      ],
+      "kegiatan": [
+        "Bak Pembagi",
+        "Hidran Umum ( HU )/Kran Umum (KU)",
+        "Instalasi Pengolahan Air Limbah (IPAL) Setempat/Terpusat",
+        "Instalasi Pengolahan Air Sederhana (IPAS)",
+        "Pelindung Mata Air ( PMA )",
+        "Penampung Air Hujan ( PAH )",
+        "Penangkap Air Permukaan ( PAP ) (Broncaptering/bakpengumpul)",
+        "Perpipaan",
+        "Sambungan Rumah",
+        "Septictank Komunal",
+        "Sumur Bor",
+        "Sumur Bor Dalam (SBD) / Sumur Arteris",
+        "Sumur Gali",
+        "Sumur Pompa Tangan ( SPT )"
+      ],
+      "satuan": "KK"
+    },
+    {
+      "kriteria": [
+        "4a"
+      ],
+      "kegiatan": [
+        "Drainase Lingkungan",
+        "Gorong-gorong",
+        "Kolam Resapan",
+        "Normalisasi Saluran",
+        "Pintu Air",
+        "Pompa Air & Rumah Pompa",
+        "Resapan Biopori",
+        "Saluran Pembuangan Limbah rumah tangga, industri, sarana komersial,sarana umum (Grey Water)",
+        "Sumur Resapan Air Hujan",
+        "Tanggul Pengendali Banjir"
+      ],
+      "satuan": "Ha"
+    },
+    {
+      "kriteria": [
+        "4b"
+      ],
+      "kegiatan": [
+        "Drainase Lingkungan",
+        "Gorong-gorong",
+        "Normalisasi Saluran",
+        "Saluran Pembuangan Limbah rumah tangga, industri, sarana komersial,sarana umum (Grey Water)",
+        "Sumur Resapan Air Hujan"
+      ],
+      "satuan": "Meter"
+    },
+    {
+      "kriteria": [
+        "4c"
+      ],
+      "kegiatan": [
+        "Drainase Lingkungan",
+        "Gorong-gorong",
+        "Normalisasi Saluran",
+        "Penutup Saluran/Parit (Plat beton,dll)",
+        "Saluran Pembuangan Limbah rumah tangga, industri, sarana komersial,sarana umum (Grey Water)"
+      ],
+      "satuan": "Meter"
+    },
+    {
+      "kriteria": [
+        "5a",
+        "5b"
+      ],
+      "kegiatan": [
+        "Closet Leher Angsa",
+        "Instalasi Pengolahan Air Limbah (IPAL) Setempat/Terpusat",
+        "Jamban (closet+bak air+septictank+resapan)",
+        "Jaringan Perpipaan Pembuangan Air Limbah (Black Water)",
+        "Jaringan Perpipaan Pembuangan Air Limbah (Black Water)",
+        "MCK Mandi + Cuci + Kakus",
+        "Septictank Komunal"
+      ],
+      "satuan": "KK"
+    },
+    {
+      "kriteria": [
+        "6a"
+      ],
+      "kegiatan": [
+        "Bak sampah 3R",
+        "Bangunan Pengolahan Sampah/TPS 3R",
+        "Gerobak/Motor Sampah",
+        "Komposter Sampah/TPS 3R (Peralatan Pengolahan)",
+        "Mobil Sampah",
+        "Tempat  Pengolahan  Sampah  Terpadu (TPST)",
+        "Tempat Pembuangan Sampah Sementara (TPS) 3R"
+      ],
+      "satuan": "KK"
+    },
+    {
+      "kriteria": [
+        "6b"
+      ],
+      "kegiatan": [
+        "Gerobak/Motor Sampah",
+        "Mobil Sampah"
+      ],
+      "satuan": "KK"
+    },
+    {
+      "kriteria": [
+        "7a"
+      ],
+      "kegiatan": [
+        "Jalan Aspal Hotmix",
+        "Jalan Beton",
+        "Jalan Buras (Leburan Aspal)",
+        "Jalan Kayu/Titian/Jerambah Kayu",
+        "Jalan Lapen (Lapisan Penetrasi)",
+        "Jalan Makadam",
+        "Jalan Paving Block",
+        "Jalan Sirtu",
+        "Jalan Tanah",
+        "Jalan Telford",
+        "Jaringan Perpipaan Proteksi Kebakaran",
+        "Jembatan Besi",
+        "Jembatan Beton/Batu/Box Culvert",
+        "Jembatan Kayu",
+        "Jembatan Pelimpas",
+        "Penyediaan Pasokan Air (Kolam penampungan air, Sumur Dalam/Hidran)"
+      ],
+      "satuan": "Unit"
+    },
+    {
+      "kriteria": [
+        "7b"
+      ],
+      "kegiatan": [
+        "Alat Pemadam Api Ringan (APAR)",
+        "Mobil Pemadam Kebakaran",
+        "Motor Pemadam Kebakaran"
+      ],
+      "satuan": "Unit"
+    }
+  ],
+  "aspek": {
+    "1. Kondisi Bangunan Gedung": [
+      "a. Ketidakteraturan Bangunan",
+      "b. Kepadatan Bangunan",
+      "c. Ketidaksesuaian Dengan Persy Teknis Bangunan"
+    ],
+    "2. Kondisi Jalan Lingkungan": [
+      "a. Cakupan Pelayanan Jalan Lingkungan",
+      "b. Kualitas Permukaan Jalan Lingkungan"
+    ],
+    "3. Kondisi Penyediaan Air Minum": [
+      "a. Ketersediaan Akses Aman Air Minum",
+      "b. Tidak Terpenuhinya Kebutuhan Air Minum"
+    ],
+    "4. Kondisi Drainase Lingkungan": [
+      "a. Ketidakmampuan Mengalirkan Limpasan Air Hujan",
+      "b. Ketidaktersediaan Drainase",
+      "c. Kualitas Konstruksi Drainase"
+    ],
+    "5. Kondisi Pengelolaan Air Limbah": [
+      "a. Sistem Pengelolaan Air Limbah Tidak Sesuai Standar Teknis",
+      "b. Prasarana Dan Sarana Pengelolaan Air Limbah Tidak Sesuai Dengan Persyaratan Teknis"
+    ],
+    "6. Kondisi Pengelolaan Persampahan": [
+      "a. Prasarana Dan Sarana Persampahan Tidak Sesuai Dengan Persyaratan Teknis",
+      "b. Sistem Pengelolaan Persampahan Yang Tidak Sesuai Standar Teknis"
+    ],
+    "7. Kondisi Proteksi Kebakaran": [
+      "a. Ketidaktersediaan Prasarana Proteksi Kebakaran",
+      "b. Ketidaktersediaan Sarana Proteksi Kebakaran"
+    ]
+  }
+}
