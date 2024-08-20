@@ -27,7 +27,7 @@ The project is licensed under the MIT License. You can find the full text of the
 ## on the way
 
 -   [x] delete the registration controller
--   [ ] make role admin and user (validation)
+-   [x] make role admin and user (validation)
 -   [ ] make user CRUD on admin role
 -   [ ] make CRUD data investasi in both role (with geolocation [optional])
 -   [ ] make CRUD geolocation data for admin role

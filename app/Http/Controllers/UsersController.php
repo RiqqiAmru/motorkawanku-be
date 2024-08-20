@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // fetch user model with session 
-
 
         $usersWithLastSession = User::with(['session' => function ($query) {
             $query->select('user_id', 'last_activity') // Memilih kolom yang diperlukan dari Session
