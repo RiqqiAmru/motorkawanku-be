@@ -4,7 +4,6 @@
             {{ __('User Management') }}
         </h2>
     </x-slot>
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
@@ -12,10 +11,10 @@
                     <div x-data="{
                         tableItems: {{ $users }}
                     }" class="max-w-screen-xl mx-auto px-4 md:px-8">
-
                         <div class="items-start justify-between md:flex">
                             <div class="max-w-lg">
-                                <h3 class="text-gray-800 dark:text-gray-100 text-xl font-bold sm:text-2xl">Users</h3>
+                                <h3 class="text-gray-800 dark:text-gray-100 text-xl font-bold sm:text-2xl">Users
+                                </h3>
                             </div>
                             <div class="mt-3 md:mt-0">
                                 <a href="javascript:void(0)"
@@ -47,8 +46,9 @@
                                             <td class="pr-6 py-4 whitespace-nowrap" x-text="item.last_activity  ">
                                             </td>
                                             <td class="text-right whitespace-nowrap">
-                                                <a href="javascript:void(0)"
-                                                    class="py-1.5 px-3 text-red-600 hover:text-gray-500 duration-150 hover:bg-gray-50 light:border rounded-lg dark:text-gray-200 dark:bg-red-600 ">Hapus</a>
+                                                <x-danger-button
+                                                    x-on:click.prevent="$dispatch('open-modal', {name:'confirm-user-deletion', id :'kocak'})">{{ __('hapus') }}
+                                                </x-danger-button>
                                             </td>
                                         </tr>
                                     </template>
@@ -60,4 +60,6 @@
             </div>
         </div>
     </div>
+    @include('users.partials.modal-delete-user')
+
 </x-app-layout>

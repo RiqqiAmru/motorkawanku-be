@@ -30,6 +30,6 @@ class InvestasiSeeder extends Seeder
                 'sumberAnggaran' => $sumberAnggaran,
                 'anggaran' => $anggaran
             ]);
-        }
+        }   
     }
 }

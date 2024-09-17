@@ -29,6 +29,13 @@ The project is licensed under the MIT License. You can find the full text of the
 -   [x] delete the registration controller
 -   [x] make role admin and user (validation)
 -   [ ] make user CRUD on admin role
+
+    > admin can see the list of user
+    > admin can make new user (role user/ admin) with random password, then send the password to the user email (or whatsapp)
+    > admin can update the user data -> change the role, name, email, generate new password, etc
+    > admin can delete the user ->deleted user not really deleted, but only change the status to inactive, and can be seen by the admin or activated again
+    > admin cannot delete another admin (can only delete itself)
+
 -   [ ] make CRUD data investasi in both role (with geolocation [optional])
 -   [ ] make CRUD geolocation data for admin role
 -   [ ] user can see the data within their area, and admin can see all data
@@ -39,3 +46,7 @@ The project is licensed under the MIT License. You can find the full text of the
 -   [ ] admin can make a report based on the data that is locked by the user in excel based format
 -   [ ] there are log system for every action that is done by the user and admin, and can be seen by the admin
 -   [ ] there are notification system for every action that is done by the user and admin, and can be seen by the user
+
+## DEV NOTE
+
+-   last_activity user can only be seen when the user checked the remember me checkbox (Tanya dosen)

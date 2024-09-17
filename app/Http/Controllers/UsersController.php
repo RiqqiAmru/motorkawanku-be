@@ -15,20 +15,14 @@ class UsersController extends Controller
     public function index()
     {
 
-        $usersWithLastSession = User::with(['session' => function ($query) {
-            $query->select('user_id', 'last_activity') // Memilih kolom yang diperlukan dari Session
-                ->latest() // Mengurutkan berdasarkan timestamp terakhir
-                ->first();  // Mengambil session terakhir
-        }])
-            ->get();
-        $usersWithLastSession->transform(function ($user) {
+        $userWithSession = User::with('session')->get()->where('is_active', '1'); // Mengambil semua User beserta relasi Session
+        $userWithSession->transform(function ($user) {
             $user->last_activity = $user->session ? date('d M Y , H:i', $user->session->last_activity) : 'user belum pernah login'; // Menambahkan kolom last_activity ke User
             unset($user->session);
             return $user;
         });
-
         return view('users.index', [
-            'users' =>  $usersWithLastSession
+            'users' =>  $userWithSession
         ]);
     }
 
@@ -37,7 +31,8 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        // save data to database
+
     }
 
     /**
@@ -75,8 +70,17 @@ class UsersController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(Request $request)
     {
-        //
+        $request->validateWithBag('userDeletion', [
+            'password' => ['required', 'current_password'],
+        ]);
+
+        $user = $request->user();
+
+        // set user to inactive
+        User::where('id', $user->id)->update([
+            'is_active' => 0
+        ]);
     }
 }
