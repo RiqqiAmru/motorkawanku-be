@@ -1,4 +1,4 @@
-@props(['name', 'show' => false, 'maxWidth' => '2xl'])
+@props(['name', 'show' => false, 'maxWidth' => '2xl', 'id' => 0, 'email' => null])
 
 @php
     $maxWidth = [
@@ -11,6 +11,8 @@
 @endphp
 
 <div x-data="{
+    email: null,
+    id: 0,
     show: @js($show),
     focusables() {
         // All focusable element types...
@@ -33,7 +35,7 @@
         document.body.classList.remove('overflow-y-hidden');
     }
 })"
-    x-on:open-modal.window="$event.detail.name == '{{ $name }}' ? show = true : null"
+    x-on:open-modal.window="$event.detail.name == '{{ $name }}' ? (show = true, id=$event.detail.id, email=$event.detail.email) : null"
     x-on:close-modal.window="$event.detail.name == '{{ $name }}' ? show = false : null"
     x-on:close.stop="show = false" x-on:keydown.escape.window="show = false"
     x-on:keydown.tab.prevent="$event.shiftKey || nextFocusable().focus()"
@@ -53,6 +55,7 @@
         x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200"
         x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
         x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
+
         {{ $slot }}
     </div>
 </div>

@@ -14,16 +14,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-
-        $this->call([
-            UserSeeder::class,
-            KotaSeeder::class,
-            KawasanSeeder::class,
-            RtrwSeeder::class,
-            KumuhKawasanSeeder::class,
-            KumuhRTSeeder::class,
-            InvestasiSeeder::class,
-            LatlangSeeder::class,
-        ]);
+        User::factory(10)->create();
+        // $this->call([
+        //     UserSeeder::class,
+        //     KotaSeeder::class,
+        //     KawasanSeeder::class,
+        //     RtrwSeeder::class,
+        //     KumuhKawasanSeeder::class,
+        //     KumuhRTSeeder::class,
+        //     InvestasiSeeder::class,
+        //     LatlangSeeder::class,
+        // ]);
     }
 }

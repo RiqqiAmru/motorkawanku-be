@@ -1,23 +1,22 @@
-<x-modal name="confirm-user-deletion" :show="$errors->userDeletion->isNotEmpty()" focusable>
-    <form method="post" action="{{ route('users.destroy') }}" class="p-6">
+<x-modal name="confirm-user-deletion" :show="$errors->userDeletion->isNotEmpty()" focusable x-data=''>
+    <form method="post" :action="'/users/' + id" class="p-6">
         @csrf
         @method('delete')
 
         <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-            {{ __('apakah kamu yakin menghapus akun ini?') }}
+            {{ __('apakah kamu yakin menghapus akun ') }}<span x-text='email'></span>
         </h2>
-        <p x-item="$event.detail.id"></p>
         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-            {{ __('Ketika akunmu di hapus, semua resource dan data akan dihapus secara permanen') }}
+            {{ __('Ketika akun di hapus, semua resource dan data akan dihapus secara permanen') }}
         </p>
-        <div class="mt-6">
+        {{-- <div class="mt-6">
             <x-input-label for="password" value="{{ __('Password') }}" class="sr-only" />
 
             <x-text-input id="password" name="password" type="password" class="mt-1 block w-3/4"
                 placeholder="{{ __('Password') }}" />
 
             <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
-        </div>
+        </div> --}}
 
         <div class="mt-6 flex justify-end">
             <x-secondary-button x-on:click="$dispatch('close')">

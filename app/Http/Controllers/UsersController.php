@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class UsersController extends Controller
 {
@@ -70,17 +71,20 @@ class UsersController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Request $request)
+    public function destroy(string $id, Request $request)
     {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
-        ]);
-
-        $user = $request->user();
-
-        // set user to inactive
-        User::where('id', $user->id)->update([
-            'is_active' => 0
-        ]);
+        $user = User::find($id);
+        if ($user == $request->user()) {
+            return Redirect::to('/users')->with('error', "Silahkan hapus user anda di menu profile");
+        }
+        if ($user) {
+            if ($user->role == 'admin') {
+                return Redirect::to('/users')->with('error', "Maaf anda tidak dapat mengapus akun admin orang lain");
+            }
+            $user->update(['is_active' => 0]);
+            return Redirect::to('/users')->with('success', "User {$user->name} berhasil dihapus");
+        } else {
+            return Redirect::to('/users')->with('error', "User tidak terdaftar");
+        }
     }
 }

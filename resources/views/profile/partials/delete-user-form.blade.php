@@ -10,7 +10,7 @@
     </header>
 
     <x-danger-button x-data=""
-        x-on:click.prevent="$dispatch('open-modal', {name:'confirm-user-deletion'})">{{ __('Delete Account') }}
+        x-on:click.prevent="$dispatch('open-modal', {name:'confirm-user-deletion',id:1})">{{ __('Delete Account') }}
     </x-danger-button>
 
     @include('profile.partials.modal-delete-user')

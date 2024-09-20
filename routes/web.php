@@ -22,7 +22,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/users', [UsersController::class, 'index'])->name('users.index');
     Route::post('/users', [UsersController::class, 'create'])->name('users.create');
-    Route::delete('/users', [UsersController::class, 'destroy'])->name('users.destroy');
+    Route::delete('/users/{id}', [UsersController::class, 'destroy'])->name('users.destroy');
 });
 
 require __DIR__ . '/auth.php';

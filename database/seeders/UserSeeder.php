@@ -23,6 +23,9 @@ class UserSeeder extends Seeder
             'email' => 'admin.dinperkim@gmail.com',
             'role' => 'admin'
         ]);
+        User::factory()->count(4)->create([
+            'role' => 'admin'
+        ]);
 
         foreach ($wilayah as $w) {
             User::factory()->create([

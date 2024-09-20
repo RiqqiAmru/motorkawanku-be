@@ -8,9 +8,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <div x-data="{
-                        tableItems: {{ $users }}
-                    }" class="max-w-screen-xl mx-auto px-4 md:px-8">
+                    <div class="max-w-screen-xl mx-auto px-4 md:px-8">
                         <div class="items-start justify-between md:flex">
                             <div class="max-w-lg">
                                 <h3 class="text-gray-800 dark:text-gray-100 text-xl font-bold sm:text-2xl">Users
@@ -34,24 +32,26 @@
                                     </tr>
                                 </thead>
                                 <tbody class="text-gray-600 dark:text-gray-200 divide-y">
-                                    <template x-for="(item, idx) in tableItems" :key="idx">
+                                    @foreach ($users as $u)
                                         <tr>
-                                            <td class="pr-6 py-4 whitespace-nowrap" x-text="item.name"></td>
-                                            <td class="pr-6 py-4 whitespace-nowrap" x-text="item.email"></td>
+                                            <td class="pr-6 py-4 whitespace-nowrap">{{ $u['name'] }}</td>
+                                            <td class="pr-6 py-4 whitespace-nowrap">{{ $u['email'] }}</td>
                                             <td class="pr-6 py-4 whitespace-nowrap">
                                                 <span
-                                                    :class="`px-3 py-2 rounded-full font-semibold text-xs ${item.status === 'Active' ? 'text-green-600 bg-green-50' : 'text-blue-600 bg-blue-50'}`"
-                                                    x-text="item.role"></span>
+                                                    class="px-3 py-2 rounded-full font-semibold text-xs {{ $u['role'] === 'admin' ? 'text-green-600 bg-green-50' : 'text-blue-600 bg-blue-50' }}">{{ $u['role'] }}</span>
                                             </td>
-                                            <td class="pr-6 py-4 whitespace-nowrap" x-text="item.last_activity  ">
+                                            <td class="pr-6 py-4 whitespace-nowrap">{{ $u['last_activity'] }}
                                             </td>
                                             <td class="text-right whitespace-nowrap">
-                                                <x-danger-button
-                                                    x-on:click.prevent="$dispatch('open-modal', {name:'confirm-user-deletion', id :'kocak'})">{{ __('hapus') }}
-                                                </x-danger-button>
+                                                @if ($u['role'] == 'user')
+                                                    <x-danger-button x-data=''
+                                                        x-on:click.prevent="$dispatch('open-modal', {name:'confirm-user-deletion', id :'{{ $u['id'] }}',email:'{{ $u['email'] }}'})">
+                                                        {{ __('hapus') }}
+                                                    </x-danger-button>
+                                                @endif
                                             </td>
                                         </tr>
-                                    </template>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -61,5 +61,6 @@
         </div>
     </div>
     @include('users.partials.modal-delete-user')
+    @include('components.alert')
 
 </x-app-layout>
