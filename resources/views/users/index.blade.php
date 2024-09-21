@@ -15,9 +15,8 @@
                                 </h3>
                             </div>
                             <div class="mt-3 md:mt-0">
-                                <a href="javascript:void(0)"
-                                    class="inline-block px-4 py-2 text-white duration-150 font-medium bg-indigo-600 rounded-lg hover:bg-indigo-500 active:bg-indigo-700 md:text-sm">Tambah
-                                    User</a>
+                                <x-primary-button x-data=''
+                                    x-on:click.prevent="$dispatch('open-modal',{name:'add-new-user'})">{{ __('Tambah User') }}</x-primary-button>
                             </div>
                         </div>
                         <div class="mt-12 relative h-max overflow-auto">
@@ -61,6 +60,7 @@
         </div>
     </div>
     @include('users.partials.modal-delete-user')
+    @include('users.partials.modal-add-user')
     @include('components.alert')
 
 </x-app-layout>

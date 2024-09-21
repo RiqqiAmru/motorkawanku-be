@@ -1,11 +1,11 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<!-- <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+</p> -->
 
 ## About Motor Kawanku
 
@@ -26,18 +26,31 @@ The project is licensed under the MIT License. You can find the full text of the
 
 ## on the way
 
+### app
+
 -   [x] delete the registration controller
 -   [x] make role admin and user (validation)
 -   [ ] make user CRUD on admin role
+-   [ ] make CRUD data investasi
+-   [ ] make CRUD data geolocation
 
-    > admin can see the list of user
-    > admin can make new user (role user/ admin) with random password, then send the password to the user email (or whatsapp)
-    > admin can update the user data -> change the role, name, email, generate new password, etc
-    > admin can delete the user ->deleted user not really deleted, but only change the status to inactive, and can be seen by the admin or activated again
-    > admin cannot delete another admin (can only delete itself)
+### guest
 
--   [ ] make CRUD data investasi in both role (with geolocation [optional])
--   [ ] make CRUD geolocation data for admin role
+-   [ ] view data kumuh awal, akhir, investasi and maps
+
+### secondary
+
+-   user management
+
+    -   [x] admin can see the list of user
+    -   [ ] admin can make new user (role user/ admin) with default password, then send the password to the user email (or whatsapp)
+    -   [ ] admin can update the user data -> change the role, name, email, generate new password, etc >
+    -   [x] admin can delete the user ->deleted user not really deleted, but only change the status to inactive, and can be seen by the admin or activated again
+    -   [x] admin cannot delete another admin (can only delete itself)
+    -   [ ] data tables and pagination
+    -   [ ] user with default password will get a alert to change their password, the alert cannot be hide itself
+
+-   [] add progress bar for alert information with self extinct
 -   [ ] user can see the data within their area, and admin can see all data
 -   [ ] user can lock the investasi data if the data is already inputted
 -   [ ] admin can see the data that is locked and not locked by the user
@@ -45,8 +58,5 @@ The project is licensed under the MIT License. You can find the full text of the
 -   [ ] user can see the feedback from the admin via notification (in browser only)
 -   [ ] admin can make a report based on the data that is locked by the user in excel based format
 -   [ ] there are log system for every action that is done by the user and admin, and can be seen by the admin
--   [ ] there are notification system for every action that is done by the user and admin, and can be seen by the user
 
 ## DEV NOTE
-
--   last_activity user can only be seen when the user checked the remember me checkbox (Tanya dosen)

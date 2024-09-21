@@ -10,7 +10,7 @@ use Tests\TestCase;
 class UserManagementTest extends TestCase
 {
     use RefreshDatabase;
-
+    public function sestUpBeforeEach():void {}
     public function test_user_page_load_successfully(): void
     {
         $user = User::factory()->create(['role' => 'admin']);

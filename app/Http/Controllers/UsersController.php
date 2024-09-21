@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 
 class UsersController extends Controller
@@ -41,7 +42,17 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validateWithBag('addNewUser', [
+            'nama' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users'
+        ]);
+        User::create([
+            'name' => $validated['nama'],
+            'email' => $validated['email'],
+            'role' => $request->input('role'),
+            'password' => Hash::make("password")
+        ]);
+        return Redirect::to('/users')->with('success', "Berhasil Menambahkan user baru {$validated['nama']}");
     }
 
     /**
