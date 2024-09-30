@@ -60,3 +60,5 @@ The project is licensed under the MIT License. You can find the full text of the
 -   [ ] there are log system for every action that is done by the user and admin, and can be seen by the admin
 
 ## DEV NOTE
+
+-   there are a register button in the welcome page (delete?) that [feat:admin]

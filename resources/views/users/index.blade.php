@@ -42,6 +42,10 @@
                                             <td class="pr-6 py-4 whitespace-nowrap">{{ $u['last_activity'] }}
                                             </td>
                                             <td class="text-right whitespace-nowrap">
+                                                <x-secondary-button x-data=''
+                                                    x-on:click.prevent="$dispatch('open-modal',{name:'edit-user',id:{{ $u }}})">
+                                                    edit
+                                                </x-secondary-button>
                                                 @if ($u['role'] == 'user')
                                                     <x-danger-button x-data=''
                                                         x-on:click.prevent="$dispatch('open-modal', {name:'confirm-user-deletion', id :'{{ $u['id'] }}',email:'{{ $u['email'] }}'})">
@@ -61,6 +65,7 @@
     </div>
     @include('users.partials.modal-delete-user')
     @include('users.partials.modal-add-user')
+    @include('users.partials.modal-edit-user')
     @include('components.alert')
 
 </x-app-layout>

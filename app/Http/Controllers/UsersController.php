@@ -7,6 +7,7 @@ use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller
 {
@@ -66,17 +67,39 @@ class UsersController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit(User $user, Request $request)
     {
-        //
+        //validate 
+        // if the data is same as the previous one 
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, User $user, string $id)
     {
-        //
+        // return nothing if the data is same as the previous one
+        $previousData = User::where(['id' => $id])->first();
+        if ($previousData?->name) {
+            if ($previousData->name == $request->nama && $previousData->email == $request->email && $previousData->role == $request->role) {
+                return Redirect::to('/users')->with('info', "Nothing Changed ");
+            }
+            // edit user data
+            User::where('id', $id)->update([
+                'name' => $request->nama,
+                'email' => $request->email,
+                'role' => $request->role
+            ]);
+            return Redirect::to('/users')->with('success', "Berhasil Mengubah data user {$request->nama}");
+        } else {
+            return Redirect::to('/users')->with('error', "User tidak terdaftar di database");
+        }
+
+        // $validated = $request->validateWithBag('addNewUser', [
+        //     'nama' => 'required|string|max:255',
+        //     'email' => 'required|string|email|max:255'
+        // ]);
     }
 
     /**
