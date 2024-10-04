@@ -21,17 +21,22 @@ class UserSeeder extends Seeder
         User::factory()->create([
             'name' => 'Admin Dinperkim',
             'email' => 'admin.dinperkim@gmail.com',
-            'role' => 'admin'
+            'role' => 'admin',
+            'kawasan_id' => null
         ]);
         User::factory()->count(4)->create([
-            'role' => 'admin'
+            'role' => 'admin',
+            'kawasan_id' => null
         ]);
-
+        User::factory()->count(4)->create();
+        $wilayahID = 1;
         foreach ($wilayah as $w) {
             User::factory()->create([
                 'name' => $w,
                 'email' => $w . '@dinperkim.com',
+                'kawasan_id' => $wilayahID,
             ]);
+            $wilayahID++;
         }
     }
 }
