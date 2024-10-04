@@ -30,7 +30,7 @@ The project is licensed under the MIT License. You can find the full text of the
 
 -   [x] delete the registration controller
 -   [x] make role admin and user (validation)
--   [ ] make user CRUD on admin role
+-   [x] make user CRUD on admin role
 -   [ ] make CRUD data investasi
 -   [ ] make CRUD data geolocation
 
@@ -43,12 +43,25 @@ The project is licensed under the MIT License. You can find the full text of the
 -   user management
 
     -   [x] admin can see the list of user
-    -   [ ] admin can make new user (role user/ admin) with default password, then send the password to the user email (or whatsapp)
-    -   [ ] admin can update the user data -> change the role, name, email, generate new password, etc >
+    -   [x] admin can make new user (role user/ admin) with default password,
+    -   [x] admin can update the user data -> change the role, name, email,
     -   [x] admin can delete the user ->deleted user not really deleted, but only change the status to inactive, and can be seen by the admin or activated again
     -   [x] admin cannot delete another admin (can only delete itself)
     -   [ ] data tables and pagination
     -   [ ] user with default password will get a alert to change their password, the alert cannot be hide itself
+
+-   data investasi
+
+    -   [ ] view breadcrumbs location, for user, its default location whether on username, for admin the breadcrumb itself can be changed for all locations
+    -   based on location, view the table for investasi in current year,
+    -   user or admin can make CRUD operations in investasi table
+    -   user can lock the investasi data if it felt proper,
+    -   investasi data that was already locked cannot be removed/changed by user,
+    -   only if admin is open the lock user allowed to access the the data again
+    -   admin can make CRUD operations, and approve the data that inputted by the user,
+    -   if approved, the data will be viewed in guest data kumuh
+    -   if not approved, admin will make a text input for reason the data is invalid
+    -   the investasi data that inputted by the admin automatically approved (not validated) and waiting to be locked
 
 -   [] add progress bar for alert information with self extinct
 -   [ ] user can see the data within their area, and admin can see all data
@@ -61,4 +74,5 @@ The project is licensed under the MIT License. You can find the full text of the
 
 ## DEV NOTE
 
--   there are a register button in the welcome page (delete?) that [feat:admin]
+-   [] there are a register button in the welcome page (delete?) that [feat:admin]
+-   [] users cannot change their name because its determined the kumuh location

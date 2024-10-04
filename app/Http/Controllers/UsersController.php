@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kawasan;
 use App\Models\User;
 use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
@@ -24,8 +25,12 @@ class UsersController extends Controller
             unset($user->session);
             return $user;
         });
+        $kawasan = Kawasan::all();
+        // only use id and kawasan field
+        $kawasan = $kawasan->pluck('kawasan', 'id');
         return view('users.index', [
-            'users' =>  $userWithSession
+            'users' =>  $userWithSession,
+            'kawasan' => $kawasan
         ]);
     }
 
@@ -47,11 +52,16 @@ class UsersController extends Controller
             'nama' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users'
         ]);
+        $kawasan = "";
+        if ($request->input('role') == 'user') {
+            $kawasan = $request->input('kawasan');
+        }
         User::create([
             'name' => $validated['nama'],
             'email' => $validated['email'],
             'role' => $request->input('role'),
-            'password' => Hash::make("password")
+            'password' => Hash::make("password"),
+            'kawasan_id' => $kawasan
         ]);
         return Redirect::to('/users')->with('success', "Berhasil Menambahkan user baru {$validated['nama']}");
     }
@@ -82,24 +92,28 @@ class UsersController extends Controller
         // return nothing if the data is same as the previous one
         $previousData = User::where(['id' => $id])->first();
         if ($previousData?->name) {
-            if ($previousData->name == $request->nama && $previousData->email == $request->email && $previousData->role == $request->role) {
+            if ($previousData->name == $request->nama && $previousData->email == $request->email && $previousData->role == $request->role && $previousData->kawasan_id == $request->kawasan) {
                 return Redirect::to('/users')->with('info', "Nothing Changed ");
+            }
+            $validated = $request->validateWithBag('editExistingUser', [
+                'nama' => 'required|string|max:255',
+                'email' => ['required', 'string', 'email', 'max:255', \Illuminate\Validation\Rule::unique('users')->ignore($id)]
+            ]);
+            $kawasan = "";
+            if ($request->input('role') == 'user') {
+                $kawasan = $request->input('kawasan');
             }
             // edit user data
             User::where('id', $id)->update([
-                'name' => $request->nama,
-                'email' => $request->email,
-                'role' => $request->role
+                'name' => $validated['nama'],
+                'email' => $validated['email'],
+                'role' => $request->role,
+                'kawasan_id' => $kawasan,
             ]);
             return Redirect::to('/users')->with('success', "Berhasil Mengubah data user {$request->nama}");
         } else {
             return Redirect::to('/users')->with('error', "User tidak terdaftar di database");
         }
-
-        // $validated = $request->validateWithBag('addNewUser', [
-        //     'nama' => 'required|string|max:255',
-        //     'email' => 'required|string|email|max:255'
-        // ]);
     }
 
     /**

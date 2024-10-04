@@ -37,7 +37,12 @@
                                             <td class="pr-6 py-4 whitespace-nowrap">{{ $u['email'] }}</td>
                                             <td class="pr-6 py-4 whitespace-nowrap">
                                                 <span
-                                                    class="px-3 py-2 rounded-full font-semibold text-xs {{ $u['role'] === 'admin' ? 'text-green-600 bg-green-50' : 'text-blue-600 bg-blue-50' }}">{{ $u['role'] }}</span>
+                                                    class="px-3 py-2 rounded-full font-semibold text-xs {{ $u['role'] === 'admin' ? 'text-green-600 bg-green-50' : 'text-blue-600 bg-blue-50' }}">{{ $u['role'] }}
+                                                    @if ($u['role'] === 'user' && $u['kawasan_id'] !== '')
+                                                        /
+                                                        {{ $kawasan[$u['kawasan_id']] }}
+                                                    @endif
+                                                </span>
                                             </td>
                                             <td class="pr-6 py-4 whitespace-nowrap">{{ $u['last_activity'] }}
                                             </td>
