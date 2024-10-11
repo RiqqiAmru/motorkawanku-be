@@ -70,12 +70,32 @@ class KumuhGuest extends Component
         $this->coordinate['secondary'] = Latlang::where('kelurahan', $this->header->wilayah)->first();
         $this->kumuhAwal = KumuhKawasan::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih])->first();
         $this->kumuhAkhir = KumuhKawasan::where(['tahun' => $this->tahun, 'kawasan' => $this->idKawasanTerpilih])->first();
+
+        ($this->kumuhAwal) ? $this->kumuhAwal->{'tingkatKumuh'} = $this->hitungTingkatKumuh($this->kumuhAwal->tingkatKekumuhan) : '';
+        ($this->kumuhAkhir) ? $this->kumuhAkhir->{'tingkatKumuh'} = $this->hitungTingkatKumuh($this->kumuhAkhir->tingkatKekumuhan) : '';
     }
 
     public function loadKumuhRT()
     {
         $this->kumuhAwal = KumuhRT::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih, 'rt' => $this->idRTTerpilih])->first();
         $this->kumuhAkhir = KumuhRT::where(['tahun' => $this->tahun, 'kawasan' => $this->idKawasanTerpilih, 'rt' => $this->idRTTerpilih])->first();
+
+        ($this->kumuhAwal) ? $this->kumuhAwal->{'tingkatKumuh'} = $this->hitungTingkatKumuh($this->kumuhAwal->tingkatKekumuhan) : '';
+        ($this->kumuhAkhir) ? $this->kumuhAkhir->{'tingkatKumuh'} = $this->hitungTingkatKumuh($this->kumuhAkhir->tingkatKekumuhan) : '';
+    }
+
+    public function hitungTingkatKumuh($tingkatKumuh)
+    {
+        switch ($tingkatKumuh) {
+            case "TK":
+                return ["TIDAK KUMUH", 'text-green-600 bg-green-50'];
+            case "KR":
+                return ["KUMUH RINGAN", 'text-yellow-600 bg-yellow-50'];
+            case "KS":
+                return ["KUMUH SEDANG", 'text-orange-600 bg-orange-50'];
+            case "KB":
+                return ["KUMUH BERAT", 'text-red-600 bg-red-50'];
+        }
     }
 
     public function render()

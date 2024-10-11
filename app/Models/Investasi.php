@@ -10,6 +10,12 @@ class Investasi extends Model
     use HasFactory;
     protected $table = 'investasi';
     protected $fillable = [
-        'tahun', 'idKawasan', 'idRTRW', 'idKriteria', 'volume', 'kegiatan'
+        'tahun',
+        'idKawasan',
+        'idRTRW',
+        'idKriteria',
+        'volume',
+        'kegiatan',
+        'locked'
     ];
 }
