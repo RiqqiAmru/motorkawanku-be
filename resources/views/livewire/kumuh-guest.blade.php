@@ -557,15 +557,15 @@
                                         Kekumuhan / Total Nilai
                                     </td>
                                     <td colspan="2"
-                                        class="whitespace-nowrap px-4 py-2 text-center  {{ $kumuhAwal ? $kumuhAwal->tingkatKumuh[1] : '' }}">
-                                        {{ $kumuhAwal?->tingkatKumuh[0] }}
+                                        class="whitespace-nowrap px-4 py-2 text-center  {{ $kumuhAwal ? $kumuhAwal->getWarnaAttribute()[1] : '' }}">
+                                        {{ $kumuhAwal ? $kumuhAwal->getWarnaAttribute()[0] : '' }}
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2  text-gray-900 dark:text-white">
                                         {{ $kumuhAwal ? $kumuhAwal->totalNilai : 0 }}
                                     </td>
                                     <td colspan="2"
-                                        class="border-l-2 whitespace-nowrap px-4 py-2 text-center {{ $kumuhAkhir ? $kumuhAkhir?->tingkatKumuh[1] : '' }}">
-                                        {{ $kumuhAkhir?->tingkatKumuh[0] }}
+                                        class="border-l-2 whitespace-nowrap px-4 py-2 text-center {{ $kumuhAkhir ? $kumuhAkhir?->getWarnaAttribute()[1] : '' }}">
+                                        {{ $kumuhAkhir ? $kumuhAkhir?->getWarnaAttribute()[0] : '' }}
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2  text-gray-900 dark:text-white">
                                         {{ $kumuhAkhir ? $kumuhAkhir->totalNilai : 0 }}
@@ -610,9 +610,70 @@
             </template>
 
             {{-- investasi --}}
+
             <template x-if="$wire.show=='investasi'">
                 <div id="tab-investasi">
-                    <h4>investasi</h4>
+                    <h4>{{ $investasi }}</h4>
+
+                    <!--
+  Heads up! 👋
+
+  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
+-->
+
+                    <div class="overflow-x-auto">
+                        <table
+                            class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm dark:divide-gray-700 dark:bg-gray-900">
+                            <thead class="ltr:text-left rtl:text-right">
+                                <tr>
+                                    <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">
+                                        INFRASTRUKTUR</th>
+                                    <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">
+                                        KRITERIA
+                                    </th>
+                                    <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">
+                                        KEGIATAN</th>
+                                    <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">
+                                        VOLUME
+                                    </th>
+                                    <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">
+                                        SUMBER
+                                    </th>
+                                    <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">
+                                        ANGGARAN
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                                <tr>
+                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">
+                                        1. Kondisi Bangunan Gedung
+                                    </td>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">a.
+                                        Ketidakteraturan Bangunan
+                                    </td>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">test</td>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">test</td>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">test</td>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">test</td>
+                                </tr>
+                                <tr>
+                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">
+                                        1. Kondisi Bangunan Gedung
+                                    </td>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">a.
+                                        Ketidakteraturan Bangunan
+                                    </td>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">test</td>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">test</td>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">test</td>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">test</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
             </template>
 
@@ -629,4 +690,16 @@
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     }).addTo(map);
+</script>
+
+<script>
+    document.addEventListener('livewire:init', () => {
+        Livewire.on('log', (event) => {
+            try {
+                console[event[0].level](event[0].obj);
+            } catch {
+                console.log(event[0]);
+            }
+        });
+    });
 </script>
