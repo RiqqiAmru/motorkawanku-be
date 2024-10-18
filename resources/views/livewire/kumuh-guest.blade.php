@@ -1,5 +1,5 @@
 <div class='py-6 px-6'>
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-3 lg:gap-8 ">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3 lg:gap-8 h-min">
         <div
             class="flex flex-col min-h-32   bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg px-2 py-2 gap-2">
             <div class="text-center">
@@ -143,7 +143,7 @@
                             <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                                 {{-- 1 --}}
                                 <tr>
-                                    <td class="whitespace-nowrap px-4 py-2  text-gray-900 dark:text-white">
+                                    <td class="whitespace-nowrap text-wrap px-4 py-2  text-gray-900 dark:text-white">
                                         a. Ketidakteraturan Bangunan
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
@@ -161,7 +161,7 @@
                                         {{ $kumuhAkhir?->{'1an'} ?: 0 }}</td>
                                 </tr>
                                 <tr>
-                                    <td class="whitespace-nowrap px-4 py-2  text-gray-900 dark:text-white">
+                                    <td class="whitespace-nowrap text-wrap px-4 py-2  text-gray-900 dark:text-white">
                                         b. Kepadatan Bangunan
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
@@ -179,7 +179,7 @@
                                         {{ $kumuhAkhir?->{'1bn'} ?: 0 }}</td>
                                 </tr>
                                 <tr>
-                                    <td class="whitespace-nowrap px-4 py-2  text-gray-900 dark:text-white">
+                                    <td class="whitespace-nowrap text-wrap px-4 py-2  text-gray-900 dark:text-white">
                                         c. Ketidaksesuaian dengan Persy Teknis Bangunan
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
@@ -198,7 +198,7 @@
                                 </tr>
                                 <tr class=" ">
                                     <td colspan="2"
-                                        class="whitespace-nowrap px-4 py-2 text-gray-700 font-semibold dark:text-gray-200 ">
+                                        class="whitespace-nowrap px-4 text-wrap  py-2 text-gray-700 font-semibold dark:text-gray-200 ">
                                         1.
                                         Kondisi Bangunan Gedung</td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 bg-orange-300 ">
@@ -211,7 +211,7 @@
                                 </tr>
                                 {{-- 2 --}}
                                 <tr class="bg-gray-50 dark:bg-gray-800/50">
-                                    <td class="whitespace-nowrap px-4 py-2  text-gray-900 dark:text-white">
+                                    <td class="whitespace-nowrap text-wrap  px-4 py-2  text-gray-900 dark:text-white">
                                         a. Cakupan Pelayanan Jalan Lingkungan
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
@@ -230,7 +230,7 @@
                                         {{ $kumuhAkhir?->{'2an'} ?: 0 }}</td>
                                 </tr>
                                 <tr class="bg-gray-50 dark:bg-gray-800/50">
-                                    <td class="whitespace-nowrap px-4 py-2  text-gray-900 dark:text-white">
+                                    <td class="whitespace-nowrap text-wrap  px-4 py-2  text-gray-900 dark:text-white">
                                         b. Kualitas Permukaan Jalan lingkungan
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
@@ -250,7 +250,7 @@
                                 </tr>
                                 <tr class="bg-gray-50 dark:bg-gray-800/50">
                                     <td colspan="2"
-                                        class="whitespace-nowrap px-4 py-2 text-gray-700 font-semibold dark:text-gray-200">
+                                        class="whitespace-nowrap  text-wrap px-4 py-2 text-gray-700 font-semibold dark:text-gray-200">
                                         2.
                                         Kondisi Jalan Lingkungan
                                     </td>
@@ -264,7 +264,7 @@
                                 </tr>
                                 {{-- 3 --}}
                                 <tr>
-                                    <td class="whitespace-nowrap px-4 py-2  text-gray-900 dark:text-white">
+                                    <td class="whitespace-nowrap  text-wrap px-4 py-2  text-gray-900 dark:text-white">
                                         a. Ketersediaan Akses Aman Air Minum
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
@@ -283,7 +283,7 @@
                                         {{ $kumuhAkhir?->{'3an'} ?: 0 }}</td>
                                 </tr>
                                 <tr>
-                                    <td class="whitespace-nowrap px-4 py-2  text-gray-900 dark:text-white">
+                                    <td class="whitespace-nowrap text-wrap  px-4 py-2  text-gray-900 dark:text-white">
                                         b. Tidak terpenuhinya Kebutuhan Air Minum
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
@@ -303,7 +303,7 @@
                                 </tr>
                                 <tr>
                                     <td colspan="2"
-                                        class="whitespace-nowrap px-4 py-2 text-gray-700 font-semibold dark:text-gray-200">
+                                        class="whitespace-nowrap px-4  text-wrap py-2 text-gray-700 font-semibold dark:text-gray-200">
                                         3.
                                         Kondisi Penyediaan Air Minum
                                     </td>
@@ -317,7 +317,7 @@
                                 </tr>
                                 {{-- 4 --}}
                                 <tr class="bg-gray-50 dark:bg-gray-800/50">
-                                    <td class="whitespace-nowrap px-4 py-2  text-gray-900 dark:text-white">
+                                    <td class="whitespace-nowrap  text-wrap  px-4 py-2  text-gray-900 dark:text-white">
                                         a. Ketidakmampuan Mengalirkan Limpasan Air
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
@@ -336,7 +336,8 @@
                                         {{ $kumuhAkhir?->{'4an'} ?: 0 }}</td>
                                 </tr>
                                 <tr class="bg-gray-50 dark:bg-gray-800/50">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">
+                                    <td
+                                        class="whitespace-nowrap text-wrap  px-4 py-2 font-medium text-gray-900 dark:text-white">
                                         b. Ketidaktersediaan Drainase
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
@@ -355,7 +356,8 @@
                                         {{ $kumuhAkhir?->{'4bn'} ?: 0 }}</td>
                                 </tr>
                                 <tr class="bg-gray-50 dark:bg-gray-800/50">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">
+                                    <td
+                                        class="whitespace-nowrap  text-wrap px-4 py-2 font-medium text-gray-900 dark:text-white">
                                         c. Kualitas Konstruksi Drainase
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
@@ -375,7 +377,7 @@
                                 </tr>
                                 <tr class="bg-gray-50 dark:bg-gray-800/50">
                                     <td colspan="2"
-                                        class="whitespace-nowrap px-4 py-2 text-gray-700 font-semibold dark:text-gray-200">
+                                        class="whitespace-nowrap  text-wrap px-4 py-2 text-gray-700 font-semibold dark:text-gray-200">
                                         4.
                                         Kondisi Drainase Lingkungan
                                     </td>
@@ -389,7 +391,7 @@
                                 </tr>
                                 {{-- 5 --}}
                                 <tr>
-                                    <td class="whitespace-nowrap px-4 py-2  text-gray-900 dark:text-white">
+                                    <td class="whitespace-nowrap  text-wrap px-4 py-2  text-gray-900 dark:text-white">
                                         a. Sistem Pengelolaan Air Limbah Tidak Sesuai Standar Teknis
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
@@ -408,7 +410,7 @@
                                         {{ $kumuhAkhir?->{'5an'} ?: 0 }}</td>
                                 </tr>
                                 <tr>
-                                    <td class="whitespace-nowrap px-4 py-2  text-gray-900 dark:text-white">
+                                    <td class="whitespace-nowrap text-wrap px-4 py-2  text-gray-900 dark:text-white">
                                         b. Prasarana dan Sarana Pengelolaan Air Limbah Tidak Sesuai dengan Persyaratan
                                         Teknis
                                     </td>
@@ -429,7 +431,7 @@
                                 </tr>
                                 <tr>
                                     <td colspan="2"
-                                        class="whitespace-nowrap px-4 py-2 text-gray-700 font-semibold dark:text-gray-200">
+                                        class="whitespace-nowrap  text-wrap  px-4 py-2 text-gray-700 font-semibold dark:text-gray-200">
                                         5. Kondisi Pengelolaan Air Limbah
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 bg-orange-300 ">
@@ -442,7 +444,7 @@
                                 </tr>
                                 {{-- 6 --}}
                                 <tr class="bg-gray-50 dark:bg-gray-800/50">
-                                    <td class="whitespace-nowrap px-4 py-2  text-gray-900 dark:text-white">
+                                    <td class="whitespace-nowrap  text-wrap px-4 py-2  text-gray-900 dark:text-white">
                                         a. Prasarana dan Sarana Persampahan Tidak Sesuai dengan persyaratan Teknis
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
@@ -462,7 +464,7 @@
                                         {{ $kumuhAkhir?->{'6an'} ?: 0 }}</td>
                                 </tr>
                                 <tr class="bg-gray-50 dark:bg-gray-800/50">
-                                    <td class="whitespace-nowrap px-4 py-2  text-gray-900 dark:text-white">
+                                    <td class="whitespace-nowrap  text-wrap px-4 py-2  text-gray-900 dark:text-white">
                                         b. Sistem Pengelolaan Persampahan yang tidak sesuai Standar Teknis
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
@@ -483,7 +485,7 @@
                                 </tr>
                                 <tr cl class="bg-gray-50 dark:bg-gray-800/50">
                                     <td colspan="2"
-                                        class="whitespace-nowrap px-4 py-2 text-gray-700 font-semibold dark:text-gray-200">
+                                        class="whitespace-nowrap px-4  text-wrap py-2 text-gray-700 font-semibold dark:text-gray-200">
                                         6. Kondisi Pengelolaan Persampahan
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 bg-orange-300 ">
@@ -496,7 +498,7 @@
                                 </tr>
                                 {{-- 7 --}}
                                 <tr>
-                                    <td class="whitespace-nowrap px-4 py-2  text-gray-900 dark:text-white">
+                                    <td class="whitespace-nowrap  text-wrap px-4 py-2  text-gray-900 dark:text-white">
                                         a. Ketidaktersediaan Prasarana Proteksi Kebakaran
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
@@ -516,7 +518,7 @@
                                         {{ $kumuhAkhir?->{'7an'} ?: 0 }}</td>
                                 </tr>
                                 <tr>
-                                    <td class="whitespace-nowrap px-4 py-2  text-gray-900 dark:text-white">
+                                    <td class="whitespace-nowrap px-4  text-wrap py-2  text-gray-900 dark:text-white">
                                         b. Ketidaktersediaan Sarana Proteksi Kebakaran
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
@@ -537,7 +539,7 @@
                                 </tr>
                                 <tr>
                                     <td colspan="2"
-                                        class="whitespace-nowrap px-4 py-2 text-gray-700 font-semibold dark:text-gray-200">
+                                        class="whitespace-nowrap text-wrap  px-4 py-2 text-gray-700 font-semibold dark:text-gray-200">
                                         7. Kondisi Proteksi Kebakaran
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 bg-orange-300 ">
@@ -557,7 +559,7 @@
                                         Kekumuhan / Total Nilai
                                     </td>
                                     <td colspan="2"
-                                        class="whitespace-nowrap px-4 py-2 text-center  {{ $kumuhAwal ? $kumuhAwal->getWarnaAttribute()[1] : '' }}">
+                                        class="whitespace-nowrap px-4 py-2 text-center  {{ $kumuhAwal ? $kumuhAwal?->getWarnaAttribute()[1] : '' }}">
                                         {{ $kumuhAwal ? $kumuhAwal->getWarnaAttribute()[0] : '' }}
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2  text-gray-900 dark:text-white">
@@ -613,13 +615,6 @@
 
             <template x-if="$wire.show=='investasi'">
                 <div id="tab-investasi">
-                    <h4>{{ $investasi }}</h4>
-
-                    <!--
-  Heads up! 👋
-
-  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
--->
 
                     <div class="overflow-x-auto">
                         <table
@@ -650,8 +645,10 @@
                                     <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">
                                         1. Kondisi Bangunan Gedung
                                     </td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">a.
-                                        Ketidakteraturan Bangunan
+                                    <td rowspan="2"
+                                        class="whitespace-nowrap text-wrap px-4 py-2 text-gray-700 dark:text-gray-200">
+                                        a.
+                                        Ketidakteraturan Bangunan Ketidakteraturan Bangunan Ketidakteraturan Bangunan
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">test</td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">test</td>
@@ -659,12 +656,7 @@
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">test</td>
                                 </tr>
                                 <tr>
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">
-                                        1. Kondisi Bangunan Gedung
-                                    </td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">a.
-                                        Ketidakteraturan Bangunan
-                                    </td>
+
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">test</td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">test</td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">test</td>
