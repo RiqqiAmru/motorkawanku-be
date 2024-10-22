@@ -28,8 +28,9 @@ class InvestasiSeeder extends Seeder
                 'volume' => $row['volume'],
                 'kegiatan' => $row['kegiatan'],
                 'sumberAnggaran' => $sumberAnggaran,
-                'anggaran' => $anggaran
+                'anggaran' => $anggaran,
+                'locked' => 1
             ]);
-        }   
+        }
     }
 }

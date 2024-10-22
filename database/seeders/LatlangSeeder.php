@@ -26,5 +26,17 @@ class LatlangSeeder extends Seeder
                 'coordinates' => $coordinate,
             ]);
         }
+
+        $json = file_get_contents(database_path('seeders/baru.json'));
+        $data = json_decode($json, true);
+        foreach ($data as $row) {
+            $coordinate = json_encode($row["geometry"]['coordinates']);
+            DB::table('latlong')->insert([
+                'kelurahan' => $row["properties"]['KECAMATAN'],
+                'type' => $row["geometry"]['type'],
+                'kodeRTRW' => '',
+                'coordinates' => $coordinate,
+            ]);
+        }
     }
 }

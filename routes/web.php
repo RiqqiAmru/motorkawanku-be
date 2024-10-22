@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Livewire\KumuhGuest;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,5 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/users/{id}', [UsersController::class, 'destroy'])->name('users.destroy');
     Route::patch('/users/{id}', [UsersController::class, 'update'])->name('users.update');
 });
+
+Route::get('/guest', KumuhGuest::class);
 
 require __DIR__ . '/auth.php';
