@@ -37,7 +37,9 @@
                         let description = $wire.description;
                 
                         let co = JSON.parse($wire.coordinate.coordinates);
-                        let latlng = L.latLng(co);
+                        if ($wire.coordinate2) {
+                            co = [JSON.parse($wire.coordinate2.coordinates), JSON.parse($wire.coordinate.coordinates)]
+                        }
                         let polygon = L.polygon(co, { color: $wire.description.color }).addTo(this.map);
                         polygon.bindPopup(
                             $wire.coordinate.kelurahan +
@@ -45,9 +47,9 @@
                         );
                         this.map.fitBounds(polygon.getBounds());
                         if ($wire.coordinate2) {
-                            let polygon2 = L.polygon([JSON.parse($wire.coordinate2.coordinates), co], { color: 'gray' }).addTo(this.map);
+                            let polygon2 = L.polygon([JSON.parse($wire.coordinate2.coordinates)], { color: $wire.description2.color }).addTo(this.map);
                             polygon2.bindPopup(
-                                $wire.coordinate2.kelurahan
+                                $wire.coordinate2.kelurahan + ($wire.coordinate2.kodeRTRW ? ' - ' + $wire.coordinate2.kodeRTRW : '') + ' - ' + $wire.tahun + ($wire.description2 ? ' - ' + $wire.description2.description : '')
                             );
                             this.map.fitBounds(polygon2.getBounds());
                         }

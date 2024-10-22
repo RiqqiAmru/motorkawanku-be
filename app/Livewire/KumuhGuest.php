@@ -26,6 +26,8 @@ class KumuhGuest extends Component
     public $show = 'kumuh';
     public $investasi = null;
     public $description = null;
+    public $description2 = null;
+
 
 
     public function showTab($tab)
@@ -94,9 +96,10 @@ class KumuhGuest extends Component
         $this->kumuhAkhir = KumuhRT::where(['tahun' => $this->tahun, 'kawasan' => $this->idKawasanTerpilih, 'rt' => $this->idRTTerpilih])->first();
         $this->investasi = Investasi::where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih, 'idRTRW' => $this->idRTTerpilih])->get()->toArray();
 
-        $this->coordinate2 = $this->coordinate;
         $kelurahan = Kawasan::find($this->idKawasanTerpilih);
-        $this->coordinate = Latlang::where(['kelurahan' => $kelurahan->kawasan, 'kodeRTRW' => $this->header->rtrw])->first()?->toArray();
+        $this->coordinate2 = Latlang::where(['kelurahan' => $kelurahan->kawasan, 'kodeRTRW' => $this->header->rtrw])->first()?->toArray();
+        $kumuh = $this->kumuhAkhir?->toArray() ? $this->kumuhAkhir?->toArray() : $this->kumuhAwal?->toArray();
+        $this->description2 = $this->coordinateDescription($kumuh);
 
         $this->dispatch('updated-investasi');
     }
