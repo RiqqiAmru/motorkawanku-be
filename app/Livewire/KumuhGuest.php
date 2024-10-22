@@ -9,6 +9,7 @@ use App\Models\KumuhRT;
 use App\Models\Latlang;
 use App\Models\Rtrw;
 use Carbon\Carbon;
+use Illuminate\Support\Arr;
 use Livewire\Component;
 
 class KumuhGuest extends Component
@@ -23,6 +24,7 @@ class KumuhGuest extends Component
     public $coordinate = ['main' => null, 'secondary' => null];
     public $show = 'kumuh';
     public $investasi = null;
+
 
     public function showTab($tab)
     {
@@ -67,6 +69,8 @@ class KumuhGuest extends Component
         }
     }
 
+    public function updatedInvesasi() {}
+
     public function loadKumuhKawasan()
     {
 
@@ -76,15 +80,16 @@ class KumuhGuest extends Component
         $this->kumuhAwal = KumuhKawasan::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih])->first();
         $this->kumuhAkhir = KumuhKawasan::where(['tahun' => $this->tahun, 'kawasan' => $this->idKawasanTerpilih])->first();
 
-
         $this->investasi = Investasi::where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih])->get()->toArray();
+        $this->dispatch('updated-investasi');
     }
 
     public function loadKumuhRT()
     {
         $this->kumuhAwal = KumuhRT::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih, 'rt' => $this->idRTTerpilih])->first();
         $this->kumuhAkhir = KumuhRT::where(['tahun' => $this->tahun, 'kawasan' => $this->idKawasanTerpilih, 'rt' => $this->idRTTerpilih])->first();
-        $this->investasi = Investasi::where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih, 'idRTRW' => $this->idRTTerpilih])->get();
+        $this->investasi = Investasi::where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih, 'idRTRW' => $this->idRTTerpilih])->get()->toArray();
+        $this->dispatch('updated-investasi');
     }
 
 
