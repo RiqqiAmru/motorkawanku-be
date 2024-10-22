@@ -905,10 +905,6 @@
 <body class="font-sans antialiased dark:bg-black/55 dark:text-white/50 bg-fixed object-cover "
     style="background-position:center; background-size: cover; background-image:url(/pekalongan.jpg)">
     <div class="bg-gray-50 text-black/50 dark:bg-black/55 dark:text-white/50">
-        {{-- <img id="background" class="dark:absolute  object-cover" alt="background kota pekalongan in night view"
-            src="/pekalongan-night.jpg" /> --}}
-        {{-- <img id="background" class=" dark:hidden  object-cover sticky" alt="background kota pekalongan in daylight"
-            src="/pekalongan.jpg" /> --}}
         <div
             class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
             <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
@@ -925,16 +921,10 @@
                                 </a>
                             @else
                                 <a href="{{ route('login') }}"
-                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:ring-2 hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                                     Log in
                                 </a>
 
-                                {{-- @if (Route::has('register'))
-                                    <a href="{{ route('register') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                        Register
-                                    </a>
-                                @endif --}}
                             @endauth
                         </nav>
                     @endif
@@ -960,8 +950,9 @@
 
                                     <div class="pt-3 sm:pt-5 lg:pt-0">
 
-                                        <h2 class="text-xl font-semibold text-black dark:text-white">Motor Kawanku | Cek
-                                            Kawasan Kumuh Kota Pekalongan</h2>
+                                        <h2 class="text-xl font-semibold text-black dark:text-white">Motor Kawanku | E
+                                            Monitoring
+                                            Kawasan Permukiman Kumuh Kota Pekalongan</h2>
                                         <p class="mt-4 text-sm/relaxed">
                                             Motor Kawanku adalah website yang menyediakan data kawasan kumuh kota
                                             pekalongan yang dikelompokkan berdasarkan PERMEN PUPR No.14 Tahun 2018
@@ -981,7 +972,7 @@
                     </div>
                 </main>
 
-                <footer class="py-16 text-center text-sm text-black dark:text-white/70">
+                <footer class="py-16 text-center font-bold  shadow-lg drop-shadow-lg text-white">
                     Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     <p> Dinas Perumahan Rakyat dan Kawasan Permukiman Kota Pekalongan &copy
                         {{ date_format(Date::now(), 'Y') }}
