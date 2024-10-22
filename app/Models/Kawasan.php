@@ -11,7 +11,16 @@ class Kawasan extends Model
     use HasFactory;
     protected $table = 'kawasan';
     protected $fillable = [
-        'kawasan',    'wilayah', 'rt-rw', 'luasFlag', 'luasVerifikasi', 'jumlahBangunan',            'jumlahPenduduk',    'jumlahKK', 'panjangJalanIdeal',    'panjangDrainaseIdeal'
+        'kawasan',
+        'wilayah',
+        'rt-rw',
+        'luasFlag',
+        'luasVerifikasi',
+        'jumlahBangunan',
+        'jumlahPenduduk',
+        'jumlahKK',
+        'panjangJalanIdeal',
+        'panjangDrainaseIdeal'
     ];
     public $timestamps = false;
 
@@ -21,5 +30,4 @@ class Kawasan extends Model
             ->select('kawasan', 'id')
             ->get();
     }
-    
 }
