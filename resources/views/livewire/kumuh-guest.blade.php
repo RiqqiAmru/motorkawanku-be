@@ -1,15 +1,67 @@
 <div class='py-6 px-6'>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <div class="grid grid-cols-1 gap-4 md:grid-cols-3 lg:gap-8 h-min">
         <div
             class="flex flex-col min-h-32   bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg px-2 py-2 gap-2">
+
+            {{-- title --}}
             <div class="text-center">
                 <h1 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight"> Motor Kawanku</h1>
-                <h6 class="font-light text-xs text-gray-800 dark:text-gray-200 leading-tight">Cek Kawasan Kumuh Kota
-                    Pekalongan</h6>
+                <h6 class="font-light text-xs text-gray-800 dark:text-gray-200 leading-tight">E Monitoring Kawasan
+                    Permukiman Kumuh Kota Pekalongan</h6>
             </div>
-            <div wire:ignore>
-                <div class="h-64 bg-gray-200 shadow-sm sm:rounded-lg border-black" id="map"></div>
+
+            {{-- map --}}
+            <div>
+                <div wire:ignore x-data="{
+                    map: null,
+                    init() {
+                        this.map = L.map(this.$refs.map).setView([-6.8908, 109.6756], 13);
+                        const baseLayer = L.tileLayer(
+                            'https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                attribution: '&copy; <a href=\'https://www.openstreetmap.org/copyright\'>OpenStreetMap</a>',
+                            }
+                        ).addTo(this.map);
+                        Livewire.on('updated-investasi', (event) => {
+                            this.handleMapChange();
+                        });
+                    },
+                    handleMapChange() {
+                        this.map.eachLayer(function(layer) {
+                            // Check if the layer is a polygon
+                            if (layer instanceof L.Polygon) {
+                                layer.remove();
+                            }
+                        });
+                        let description = $wire.description;
+                
+                        let co = JSON.parse($wire.coordinate.coordinates);
+                        let latlng = L.latLng(co);
+                        let polygon = L.polygon(co, { color: $wire.description.color }).addTo(this.map);
+                        polygon.bindPopup(
+                            $wire.coordinate.kelurahan +
+                            ($wire.coordinate.kodeRTRW ? ' - ' + $wire.coordinate.kodeRTRW : '') + ' - ' + $wire.tahun + ($wire.description ? ' - ' + $wire.description.description : '')
+                        );
+                        this.map.fitBounds(polygon.getBounds());
+                        if ($wire.coordinate2) {
+                            let polygon2 = L.polygon([JSON.parse($wire.coordinate2.coordinates), co], { color: 'gray' }).addTo(this.map);
+                            polygon2.bindPopup(
+                                $wire.coordinate2.kelurahan
+                            );
+                            this.map.fitBounds(polygon2.getBounds());
+                        }
+                    }
+                }">
+                    <div class="w-full h-96 bg-gray-200 shadow-sm sm:rounded-lg border-black" x-ref="map"></div>
+                </div>
             </div>
+            {{-- <div wire:ignore>
+                <div class="h-96 bg-gray-200 shadow-sm sm:rounded-lg border-black" id="map"></div>
+            </div> --}}
+
+
+            {{-- header --}}
             <div class="flow-root">
                 <dl class="-my-3 divide-y divide-gray-100 text-sm dark:divide-gray-700">
                     <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
@@ -963,22 +1015,34 @@
         </div>
     </div>
 </div>
-
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
-    var map = L.map("map").setView([-6.8908, 109.6756], 13);
-    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    }).addTo(map);
+    // var map = L.map("map").setView([-6.8908, 109.6756], 13);
+    // L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    //     maxZoom: 19,
+    //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    // }).addTo(map);
 </script>
+{{-- @script
+    <script>
+        // Livewire.on('updated-investasi', (coordinate) => {
+        //     let coor = JSON.parse(coordinate[0].coordinates);
+        //     let color = {
+        //         color: 'green'
+        //     }
+        //     console.log(coor)
+        //     console.log(coor2)
 
-<script>
-    // document.addEventListener('livewire:init', () => {
-    //     Livewire.on('updated-investasi', (event) => {
-    //         // console.log(Livewire.investasi);
-    //     });
-    // });
-</script>
+
+        //     if (coor.length > 0) {
+
+        //         let polygon = L.polygon(coor, color).addTo(map);
+        //         polygon.bindPopup(
+        //             data.kelurahan +
+        //             (data.kodeRTRW ? ' - ' + data.kodeRTRW : '') +
+        //             (data.description ? ' - ' + data.description : '')
+        //         );
+        //         map.fitBounds(polygon.getBounds());
+        //     }
+        // });
+    </script>
+@endscript --}}
