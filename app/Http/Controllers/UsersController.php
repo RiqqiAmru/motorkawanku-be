@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Kawasan;
 use App\Models\User;
-use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller
@@ -16,8 +16,14 @@ class UsersController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct() {}
+
     public function index()
     {
+        $user = Auth::user();
+        if ($user->role != 'admin') {
+            return Redirect::to('/dashboard')->with('info', "Kamu tidak memiliki wewenang admin !");
+        }
 
         $userWithSession = User::with('session')->get()->where('is_active', '1'); // Mengambil semua User beserta relasi Session
         $userWithSession->transform(function ($user) {
@@ -48,6 +54,11 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
+        if ($user->role != 'admin') {
+            return Redirect::to('/dashboard')->with('info', "Kamu tidak memiliki wewenang admin !");
+        }
+
         $validated = $request->validateWithBag('addNewUser', [
             'nama' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users'
@@ -89,6 +100,11 @@ class UsersController extends Controller
      */
     public function update(Request $request, User $user, string $id)
     {
+        $user = Auth::user();
+        if ($user->role != 'admin') {
+            return Redirect::to('/dashboard')->with('info', "Kamu tidak memiliki wewenang admin !");
+        }
+
         // return nothing if the data is same as the previous one
         $previousData = User::where(['id' => $id])->first();
         if ($previousData?->name) {
@@ -121,6 +137,11 @@ class UsersController extends Controller
      */
     public function destroy(string $id, Request $request)
     {
+        $user = Auth::user();
+        if ($user->role != 'admin') {
+            return Redirect::to('/dashboard')->with('info', "Kamu tidak memiliki wewenang admin !");
+        }
+
         $user = User::find($id);
         if ($user == $request->user()) {
             return Redirect::to('/users')->with('error', "Silahkan hapus user anda di menu profile");

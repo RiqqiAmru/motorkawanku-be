@@ -28,6 +28,7 @@
                         });
                     },
                     handleMapChange() {
+                       
                         this.map.eachLayer(function(layer) {
                             // Check if the layer is a polygon
                             if (layer instanceof L.Polygon) {
@@ -55,7 +56,8 @@
                         }
                     }
                 }">
-                    <div class="w-full h-96 bg-gray-200 shadow-sm sm:rounded-lg border-black" x-ref="map"></div>
+                    <div class="w-full h-96 bg-gray-200 shadow-sm sm:rounded-lg border-black" x-ref="map"
+                        id='map'></div>
                 </div>
             </div>
             {{-- <div wire:ignore>
