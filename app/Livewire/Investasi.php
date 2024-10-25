@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Forms\InvForm;
 use App\Models\Kawasan;
 use App\Models\Rtrw;
 use App\Models\Investasi as InvestasiModel;
@@ -19,6 +20,13 @@ class Investasi extends Component
     public $rt = null;
     public $tahun = 2024;
     public $investasi = null;
+
+    public InvForm $form;
+
+    public function save()
+    {
+        $this->form->store($this->tahun);
+    }
 
     public function updatedidKawasanTerpilih()
     {

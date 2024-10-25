@@ -1,5 +1,5 @@
 <x-modal name="add-new-investasi" :show="$errors->addNewUser->isNotEmpty()" maxWidth='lg' focusable>
-    <form method="post" class="p-6" x-data="{
+    <form wire:submit="save" method="post" class="p-6" x-data="{
         'kegiatanInvestasi': [{
                 'kriteria': ['1a'],
                 'kegiatan': ['Jalan Aspal Hotmix', 'Jalan Beton', 'Jalan Buras (Leburan Aspal)', 'Jalan Kayu/Titian/Jerambah Kayu', 'Jalan Lapen (Lapisan Penetrasi)', 'Jalan Makadam', 'Jalan Paving Block', 'Jalan Sirtu', 'Jalan Tanah', 'Jalan Telford', 'Pedestrian/Jalur Pejalan Kaki', 'Penataan Rumah Deret/Rumah Susun'],
@@ -66,9 +66,10 @@
 
         <div class="mt-6  flex  items-center align-middle gap-2">
             <x-input-label for="kegiatan" value="{{ __('Kegiatan') }}" />
-            <select name="kegiatan" id="kegiatan" required
-                class="border-gray-300  dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+            <select wire:model.live="form.kegiatan" name="kegiatan" id="kegiatan" required
+                class="border-gray-300  dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-full overflow-hidden">
                 <option disabled>{{ __(' pilih kegiatan') }}</option>
+                <option value="kocak">kocak</option>
                 <template x-if="keg.kegiatan" class="text-wrap">
                     <template x-for="(item,index) in keg.kegiatan">
                         <option value="item" x-text="item"></option>
@@ -80,13 +81,16 @@
 
         <div class="mt-6  flex items-center align-middle gap-2">
             <x-input-label for="sumberAnggaran" value="{{ __('Sumber Anggaran') }}" />
-            <select name="sumberAnggaran" id="sumberAnggaran" required
+            <select name="sumberAnggaran" id="sumberAnggaran" required wire:model.live="form.sumberAnggaran"
                 class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                 <option disabled>{{ __('pilih Sumber Anggaran') }}</option>
-                {{-- @foreach ($kawasan as $key => $item)
-                    <option value="{{ $key }}" @if (old('kawasan') == $key) selected @endif>
-                        {{ $item }}</option>
-                @endforeach --}}
+                <option value="APBD">APBD</option>
+                <option value="DAK">DAK</option>
+                <option value="APBD Provinsi">APBD Provinsi</option>
+                <option value="APBN">APBN</option>
+                <option value="CSR">CSR</option>
+                <option value="Dana Desa">Dana Desa</option>
+                <option value="Lainnya">Lainnya</option>
             </select>
         </div>
 
@@ -94,7 +98,7 @@
             <div class="flex items-center align-middle gap-2">
                 <x-input-label for="volume" value="{{ __('Volume ') }}" class="sr-only" />
                 <x-text-input id="volume" name="volume" type="number" class="mt-1 block w-full" min="0"
-                    required :value="old('volume')" placeholder="{{ __('volume') }}" />
+                    required :value="old('volume')" placeholder="{{ __('volume') }}" wire:model="form.volume" />
                 <x-input-error :messages="$errors->addNewUser->get('volume')" class="mt-2" />
                 <span x-text="keg.satuan">Unit</span>
             </div>
@@ -102,13 +106,12 @@
                 <span>Rp</span>
                 <x-input-label for="anggaran" value="{{ __('anggaran') }}" class="sr-only basis-0" />
                 <x-text-input id="anggaran" name="anggaran" type="number" class="mt-1 block w-full " min="0"
-                    required placeholder="{{ __('anggaran') }}" :value="old('anggaran')" />
+                    required placeholder="{{ __('anggaran') }}" :value="old('anggaran')" wire:model="form.anggaran" />
                 <x-input-error :messages="$errors->addNewUser->get('anggaran')" class="mt-2" />
             </div>
+            <input type="hidden" name="idKriteria" id="idKriteria" wire:model="form.idKriteria">
         </div>
 
-        <div class="mt-6 ">
-        </div>
 
 
         <div class="mt-6 flex justify-end">
