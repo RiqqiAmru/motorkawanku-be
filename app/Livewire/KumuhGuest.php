@@ -10,6 +10,8 @@ use App\Models\Latlang;
 use App\Models\Rtrw;
 use Carbon\Carbon;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Number;
+
 use Livewire\Component;
 
 class KumuhGuest extends Component
@@ -60,9 +62,13 @@ class KumuhGuest extends Component
         $this->reset('kumuhAkhir');
         $this->reset('investasi');
         $this->reset('coordinate2');
-        $this->header = Rtrw::find($idRTTerpilih);
-        if ($this->header) {
-            $this->loadKumuhRT();
+        if ($idRTTerpilih == 0) {
+            $this->updatedidKawasanTerpilih($this->idKawasanTerpilih);
+        } else {
+            $this->header = Rtrw::find($idRTTerpilih);
+            if ($this->header) {
+                $this->loadKumuhRT();
+            }
         }
     }
 
@@ -83,7 +89,13 @@ class KumuhGuest extends Component
         $this->kumuhAwal = KumuhKawasan::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih])->first();
         $this->kumuhAkhir = KumuhKawasan::where(['tahun' => $this->tahun, 'kawasan' => $this->idKawasanTerpilih])->first();
 
-        $this->investasi = Investasi::where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih])->get()->toArray();
+        $investasi = Investasi::where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih])->get()->toArray();
+        $this->investasi = Arr::map($investasi, function ($value) {
+            return [
+                ...$value,
+                'anggaran' => Number::currency(intval($value['anggaran']), 'IDR', 'id')
+            ];
+        });
         $kumuh = $this->kumuhAkhir?->toArray() ? $this->kumuhAkhir?->toArray() : $this->kumuhAwal?->toArray();
         $this->description = $this->coordinateDescription($kumuh);
 
@@ -94,7 +106,13 @@ class KumuhGuest extends Component
     {
         $this->kumuhAwal = KumuhRT::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih, 'rt' => $this->idRTTerpilih])->first();
         $this->kumuhAkhir = KumuhRT::where(['tahun' => $this->tahun, 'kawasan' => $this->idKawasanTerpilih, 'rt' => $this->idRTTerpilih])->first();
-        $this->investasi = Investasi::where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih, 'idRTRW' => $this->idRTTerpilih])->get()->toArray();
+        $investasi = Investasi::where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih, 'idRTRW' => $this->idRTTerpilih])->get()->toArray();
+        $this->investasi = Arr::map($investasi, function ($value) {
+            return [
+                ...$value,
+                'anggaran' => Number::currency(intval($value['anggaran']), 'IDR', 'id')
+            ];
+        });
 
         $kelurahan = Kawasan::find($this->idKawasanTerpilih);
         $this->coordinate2 = Latlang::where(['kelurahan' => $kelurahan->kawasan, 'kodeRTRW' => $this->header->rtrw])->first()?->toArray();

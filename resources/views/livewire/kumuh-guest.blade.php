@@ -28,7 +28,7 @@
                         });
                     },
                     handleMapChange() {
-                       
+                
                         this.map.eachLayer(function(layer) {
                             // Check if the layer is a polygon
                             if (layer instanceof L.Polygon) {
@@ -87,7 +87,7 @@
                         <dd class="text-gray-700 sm:col-span-2 dark:text-gray-200">
                             <select wire:model.live="idRTTerpilih" wire:key="idKawasanTerpilih"
                                 class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
-                                <option value="">Pilih RT/RW</option>
+                                <option value="0">Pilih RT/RW</option>
                                 @if ($daftarRT)
                                     @foreach ($daftarRT as $item)
                                         <option value="{{ $item->id }}">{{ $item->rtrw }}</option>
