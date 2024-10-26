@@ -25,13 +25,19 @@ class Investasi extends Component
 
     public function save()
     {
-        $this->form->store($this->tahun);
+        $this->form->store($this->tahun, $this->idKawasanTerpilih, $this->idRTTerpilih, $this->user->id);
+
+        session()->flash('success', 'berhasil menambah investasi.');
+        $this->updatedidRTTerpilih();
+        $this->dispatch('close');
     }
 
     public function updatedidKawasanTerpilih()
     {
         $this->reset('rt');
+        $this->reset('idRTTerpilih');
         $this->reset('investasi');
+
         $this->rt = Rtrw::where(['kawasan' => $this->idKawasanTerpilih])->get(['id', 'rtrw'])->toArray();
         $investasi = InvestasiModel::where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih])->get()->toArray();
         $this->investasi = Arr::map($investasi, function ($value) {

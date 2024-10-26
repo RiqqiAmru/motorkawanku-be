@@ -52,7 +52,8 @@
     }"
         x-on:open-modal.window="keg = kegiatanInvestasi.find((a) =>
           a.kriteria.find((k) => k === idKriteria)
-        )">
+        );
+        $wire.set('form.idKriteria',idKriteria)">
         @csrf
         @method('post')
 
@@ -66,13 +67,12 @@
 
         <div class="mt-6  flex  items-center align-middle gap-2">
             <x-input-label for="kegiatan" value="{{ __('Kegiatan') }}" />
-            <select wire:model.live="form.kegiatan" name="kegiatan" id="kegiatan" required
+            <select wire:model="form.kegiatan" name="kegiatan" id="kegiatan" required
                 class="border-gray-300  dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-full overflow-hidden">
-                <option disabled>{{ __(' pilih kegiatan') }}</option>
-                <option value="kocak">kocak</option>
+                <option value="">{{ __(' pilih kegiatan') }}</option>
                 <template x-if="keg.kegiatan" class="text-wrap">
                     <template x-for="(item,index) in keg.kegiatan">
-                        <option value="item" x-text="item"></option>
+                        <option :value="item" x-text="item"></option>
                     </template>
                 </template>
             </select>
@@ -81,9 +81,9 @@
 
         <div class="mt-6  flex items-center align-middle gap-2">
             <x-input-label for="sumberAnggaran" value="{{ __('Sumber Anggaran') }}" />
-            <select name="sumberAnggaran" id="sumberAnggaran" required wire:model.live="form.sumberAnggaran"
+            <select name="sumberAnggaran" id="sumberAnggaran" required wire:model="form.sumberAnggaran"
                 class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
-                <option disabled>{{ __('pilih Sumber Anggaran') }}</option>
+                <option value="">{{ __('pilih Sumber Anggaran') }}</option>
                 <option value="APBD">APBD</option>
                 <option value="DAK">DAK</option>
                 <option value="APBD Provinsi">APBD Provinsi</option>
@@ -109,7 +109,6 @@
                     required placeholder="{{ __('anggaran') }}" :value="old('anggaran')" wire:model="form.anggaran" />
                 <x-input-error :messages="$errors->addNewUser->get('anggaran')" class="mt-2" />
             </div>
-            <input type="hidden" name="idKriteria" id="idKriteria" wire:model="form.idKriteria">
         </div>
 
 

@@ -2,6 +2,8 @@
 
 namespace App\Livewire\Forms;
 
+use App\Livewire\Investasi;
+use App\Models\Investasi as ModelsInvestasi;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
@@ -16,8 +18,25 @@ class InvForm extends Form
     #[Validate('required')]
     public $anggaran = '';
 
-    public function store($tahun)
+    public $idKriteria = "";
+
+    public function store($tahun, $idKawasanTerpilih, $idRTTerpilih, $idUser)
     {
-        dump($this->kegiatan, $this->sumberAnggaran, $this->volume, $this->anggaran, $tahun);
+        $this->validate();
+
+        ModelsInvestasi::create(
+            [
+                'tahun' => $tahun,
+                'idKawasan' => $idKawasanTerpilih,
+                'idRTRW' => $idRTTerpilih,
+                'idkriteria' => $this->idKriteria,
+                'volume' => $this->volume,
+                'kegiatan' => $this->kegiatan,
+                'sumberAnggaran' => $this->sumberAnggaran,
+                'anggaran' => $this->anggaran,
+                'id_user' => $idUser
+            ]
+        );
+        $this->reset();
     }
 }

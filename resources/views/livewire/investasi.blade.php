@@ -71,9 +71,8 @@
 
     {{-- investasi --}}
     {{-- @php
-        dump($investasi, $idRTTerpilih);
+        dump($idKawasanTerpilih, $idRTTerpilih);
     @endphp --}}
-
     <div class="pt-4" id="tab-investasi" x-data="{
         investasi: [{
                 aspek: '1. Kondisi Bangunan Gedung',
@@ -199,7 +198,9 @@
             // Mendengarkan event dari Livewire
             Livewire.on('updated-investasi', () => {
                 this.handleInvestasiChange();
+                this.$dispatch('close')
             });
+    
         },
         handleInvestasiChange() {
             let data = [{
@@ -421,4 +422,6 @@
         </div>
     </div>
     @include('livewire.partials.modal-add-investasi')
+    @include('components.alert')
+
 </div>
