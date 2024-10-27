@@ -118,7 +118,7 @@
                 {{ __('Cancel') }}
             </x-secondary-button>
 
-            <x-primary-button class="ms-3">
+            <x-primary-button class="ms-3" x-on:click="$dispatch('close')">
                 {{ __('add investasi') }}
             </x-primary-button>
         </div>

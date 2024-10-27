@@ -29,6 +29,6 @@ Route::middleware('auth')->group(function () {
     Route::view('/investasi', 'investasi')->name('investasi');
 });
 
-Route::get('/guest', KumuhGuest::class);
+Route::get('/guest', KumuhGuest::class)->name('kumuh');
 
 require __DIR__ . '/auth.php';

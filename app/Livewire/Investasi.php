@@ -31,6 +31,7 @@ class Investasi extends Component
         InvestasiModel::where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih])->update(['locked' => 2]);
         $namaKawasan = Kawasan::where('id', $this->idKawasanTerpilih)->get()->first()->kawasan;
         session()->flash('info', 'Berhasil Mengunci Data Investasi ' . $namaKawasan);
+        $this->updatedidKawasanTerpilih();
     }
 
     public function save()
@@ -39,7 +40,6 @@ class Investasi extends Component
 
         session()->flash('success', 'berhasil menambah investasi.');
         $this->updatedidRTTerpilih();
-        $this->dispatch('close');
     }
 
     public function updatedidKawasanTerpilih()

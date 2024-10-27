@@ -339,27 +339,29 @@
                     idKriteria: '7b',
                 },
             ]
-            $wire.investasi.forEach((inv) => {
-                const index = data.findIndex((d) => d.idKriteria === inv.idkriteria);
-                if (index !== -1) {
-                    if (!data[index].kegiatan) {
-                        data[index] = { ...inv, ...data[index] };
-                    } else {
-                        // menambahkan rowspan di data sebelumnya
-                        if (!data[index].aspekSpan) {
-                            const indexAspek = data.findIndex(
-                                (d) => d.idKriteria[0] === inv.idkriteria[0]
-                            );
-                            data[indexAspek].aspekSpan = data[indexAspek].aspekSpan + 1;
+            if ($wire.investasi) {
+                $wire.investasi.forEach((inv) => {
+                    const index = data.findIndex((d) => d.idKriteria === inv.idkriteria);
+                    if (index !== -1) {
+                        if (!data[index].kegiatan) {
+                            data[index] = { ...inv, ...data[index] };
                         } else {
-                            data[index].aspekSpan = data[index].aspekSpan + 1;
+                            // menambahkan rowspan di data sebelumnya
+                            if (!data[index].aspekSpan) {
+                                const indexAspek = data.findIndex(
+                                    (d) => d.idKriteria[0] === inv.idkriteria[0]
+                                );
+                                data[indexAspek].aspekSpan = data[indexAspek].aspekSpan + 1;
+                            } else {
+                                data[index].aspekSpan = data[index].aspekSpan + 1;
+                            }
+                            data[index].kriteriaSpan = data[index].kriteriaSpan + 1;
+                            let satuan = data[index].satuan;
+                            data.splice(index + 1, 0, { ...inv, satuan });
                         }
-                        data[index].kriteriaSpan = data[index].kriteriaSpan + 1;
-                        let satuan = data[index].satuan;
-                        data.splice(index + 1, 0, { ...inv, satuan });
                     }
-                }
-            });
+                });
+            }
             this.investasi = data;
         }
     }">
@@ -401,7 +403,7 @@
                                     <template x-if="$wire.locked == false">
                                         <template x-if="$wire.tahun == new Date().getFullYear() && $wire.idRTTerpilih">
                                             <x-primary-button x-data=''
-                                                x-on:click.prevent="$dispatch('open-modal',{name:'add-new-investasi',idKriteria :item.id})">{{ __('Tambah') }}</x-primary-button>
+                                                x-on:click.prevent="$dispatch('open-modal',{name:'add-new-investasi',idKriteria :item.idKriteria})">{{ __('Tambah') }}</x-primary-button>
                                         </template>
                                     </template>
                                 </td>
