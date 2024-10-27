@@ -987,7 +987,7 @@
                                         <template x-if="item.kegiatan != undefined">
 
                                             <td x-text="item.kegiatan"
-                                                class="whitespace-nowrap px-4 py-2  font-medium text-gray-900 dark:text-white">
+                                                class="whitespace-nowrap text-wrap px-4 py-2  font-medium text-gray-900 dark:text-white">
                                             </td>
                                         </template>
                                         <template x-if="item.kegiatan != undefined">

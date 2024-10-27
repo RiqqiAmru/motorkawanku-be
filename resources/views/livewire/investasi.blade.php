@@ -414,7 +414,8 @@
                                     Tidak ada Pembangunan Investasi</td>
                             </template>
                             <template x-if="item.kegiatan != undefined">
-                                <td class="whitespace-nowrap px-4 py-2  font-medium text-gray-900 dark:text-white">
+                                <td
+                                    class="whitespace-nowrap text-wrap px-4 py-2  font-medium text-gray-900 dark:text-white">
 
                                     <span x-text="item.kegiatan"></span>
                                 </td>
