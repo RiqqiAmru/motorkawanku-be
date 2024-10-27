@@ -58,20 +58,35 @@
                         @endif
                     </select>
                 </li>
+                <li class="rtl:rotate-180">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </li>
+                <li>
+                    <span>{{ $tahun }}</span>
+                </li>
             </ol>
         </nav>
-
-        <select wire:model.live="tahun" wire:key="idKawasanTerpilih"
-            class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
-            @for ($i = 2020; $i <= now()->year; $i++)
-                <option value="{{ $i }}">{{ $i }}</option>
-            @endfor
-        </select>
+        <template x-if="$wire.idKawasanTerpilih  && $wire.idRTTerpilih == null ">
+            <template x-if="$wire.locked == false">
+                <x-primary-button x-data=''
+                    wire:confirm="**Apakah
+                Anda Yakin ingin mengunci data investasi ?** \n \n dengan mengunci data anda tidak dapat mengedit /
+                merubah lagi data investasi, hubungi admin bila ada kesalahan"
+                    wire:click="lock">{{ __('Kunci Investasi') }}</x-primary-button>
+            </template>
+        </template>
+        <template x-if="$wire.locked == true">
+            <span>Locked</span>
+        </template>
     </div>
 
     {{-- investasi --}}
     {{-- @php
-        dump($idKawasanTerpilih, $idRTTerpilih);
+        dump($kawasan, $idKawasanTerpilih, $investasi);
     @endphp --}}
     <div class="pt-4" id="tab-investasi" x-data="{
         investasi: [{
@@ -196,6 +211,7 @@
         ],
         init() {
             // Mendengarkan event dari Livewire
+            this.handleInvestasiChange();
             Livewire.on('updated-investasi', () => {
                 this.handleInvestasiChange();
                 this.$dispatch('close')
@@ -209,17 +225,17 @@
                     kriteriaSpan: 1,
                     aspekSpan: 3,
                     satuan: 'Unit',
-                    id: '1a',
+                    idKriteria: '1a',
                 },
                 {
                     aspek: '1',
                     satuan: 'Ha',
                     kriteriaSpan: 1,
                     kriteria: 'b. Kepadatan Bangunan',
-                    id: '1b',
+                    idKriteria: '1b',
                 },
                 {
-                    id: '1c',
+                    idKriteria: '1c',
                     aspek: '1',
                     kriteriaSpan: 1,
                     satuan: 'Unit',
@@ -231,14 +247,14 @@
                     kriteriaSpan: 1,
                     satuan: 'Meter',
                     aspekSpan: 2,
-                    id: '2a',
+                    idKriteria: '2a',
                 },
                 {
                     kriteriaSpan: 1,
                     aspek: '2',
                     kriteria: 'b. Kualitas Permukaan Jalan Lingkungan',
                     satuan: 'Meter',
-                    id: '2b',
+                    idKriteria: '2b',
                 },
                 {
                     kriteriaSpan: 1,
@@ -246,14 +262,14 @@
                     satuan: 'KK',
                     kriteria: 'a. Ketersediaan Akses Aman Air Minum',
                     aspekSpan: 2,
-                    id: '3a',
+                    idKriteria: '3a',
                 },
                 {
                     kriteriaSpan: 1,
                     aspek: '3',
                     satuan: 'KK',
                     kriteria: 'b. Tidak Terpenuhinya Kebutuhan Air Minum',
-                    id: '3b',
+                    idKriteria: '3b',
                 },
                 {
                     kriteriaSpan: 1,
@@ -261,21 +277,21 @@
                     aspek: '4. Kondisi Drainase Lingkungan',
                     kriteria: 'a. Ketidakmampuan Mengalirkan Limpasan Air',
                     aspekSpan: 3,
-                    id: '4a',
+                    idKriteria: '4a',
                 },
                 {
                     kriteriaSpan: 1,
                     aspek: '4',
                     satuan: 'Meter',
                     kriteria: 'b. Ketidaktersediaan Drainase',
-                    id: '4b',
+                    idKriteria: '4b',
                 },
                 {
                     kriteriaSpan: 1,
                     aspek: '4',
                     satuan: 'Meter',
                     kriteria: 'c. Kualitas Konstruksi Drainase',
-                    id: '4c',
+                    idKriteria: '4c',
                 },
                 {
                     kriteriaSpan: 1,
@@ -283,14 +299,14 @@
                     aspek: '5. Kondisi Pengelolaan Air Limbah',
                     kriteria: 'a. Sistem Pengelolaan Air Limbah Tidak Sesuai Standar Teknis',
                     aspekSpan: 2,
-                    id: '5a',
+                    idKriteria: '5a',
                 },
                 {
                     kriteriaSpan: 1,
                     satuan: 'KK',
                     aspek: '5',
                     kriteria: 'b. Prasarana Dan Sarana Pengelolaan Air Limbah Tidak Sesuai Dengan Persyaratan Teknis',
-                    id: '5b',
+                    idKriteria: '5b',
                 },
                 {
                     aspek: '6. Kondisi Pengelolaan Persampahan',
@@ -298,14 +314,14 @@
                     kriteriaSpan: 1,
                     aspekSpan: 2,
                     kriteria: 'a. Prasarana Dan Sarana Persampahan Tidak Sesuai Dengan Persyaratan Teknis',
-                    id: '6a',
+                    idKriteria: '6a',
                 },
                 {
                     kriteriaSpan: 1,
                     satuan: 'KK',
                     aspek: '6',
                     kriteria: 'b. Sistem Pengelolaan Persampahan Yang Tidak Sesuai Standar Teknis',
-                    id: '6b',
+                    idKriteria: '6b',
                 },
                 {
                     kriteriaSpan: 1,
@@ -313,18 +329,18 @@
                     satuan: 'Unit',
                     aspek: '7. Kondisi Proteksi Kebakaran',
                     kriteria: 'a. Ketidaktersediaan Prasarana Proteksi Kebakaran',
-                    id: '7a',
+                    idKriteria: '7a',
                 },
                 {
                     kriteriaSpan: 1,
                     satuan: 'Unit',
                     aspek: '7',
                     kriteria: 'b. Ketidaktersediaan Sarana Proteksi Kebakaran',
-                    id: '7b',
+                    idKriteria: '7b',
                 },
             ]
             $wire.investasi.forEach((inv) => {
-                const index = data.findIndex((d) => d.id === inv.idkriteria);
+                const index = data.findIndex((d) => d.idKriteria === inv.idkriteria);
                 if (index !== -1) {
                     if (!data[index].kegiatan) {
                         data[index] = { ...inv, ...data[index] };
@@ -332,7 +348,7 @@
                         // menambahkan rowspan di data sebelumnya
                         if (!data[index].aspekSpan) {
                             const indexAspek = data.findIndex(
-                                (d) => d.id[0] === inv.idkriteria[0]
+                                (d) => d.idKriteria[0] === inv.idkriteria[0]
                             );
                             data[indexAspek].aspekSpan = data[indexAspek].aspekSpan + 1;
                         } else {
@@ -382,9 +398,11 @@
                                     class="whitespace-nowrap px-4 py-2 text-wrap font-medium text-gray-900 dark:text-white">
                                     <span x-text="item.kriteria"></span>
                                     {{-- button tambah --}}
-                                    <template x-if="$wire.tahun == new Date().getFullYear() && $wire.idRTTerpilih">
-                                        <x-primary-button x-data=''
-                                            x-on:click.prevent="$dispatch('open-modal',{name:'add-new-investasi',idKriteria :item.id})">{{ __('Tambah') }}</x-primary-button>
+                                    <template x-if="$wire.locked == false">
+                                        <template x-if="$wire.tahun == new Date().getFullYear() && $wire.idRTTerpilih">
+                                            <x-primary-button x-data=''
+                                                x-on:click.prevent="$dispatch('open-modal',{name:'add-new-investasi',idKriteria :item.id})">{{ __('Tambah') }}</x-primary-button>
+                                        </template>
                                     </template>
                                 </td>
                             </template>
@@ -394,9 +412,9 @@
                                     Tidak ada Pembangunan Investasi</td>
                             </template>
                             <template x-if="item.kegiatan != undefined">
+                                <td class="whitespace-nowrap px-4 py-2  font-medium text-gray-900 dark:text-white">
 
-                                <td x-text="item.kegiatan"
-                                    class="whitespace-nowrap px-4 py-2  font-medium text-gray-900 dark:text-white">
+                                    <span x-text="item.kegiatan"></span>
                                 </td>
                             </template>
                             <template x-if="item.kegiatan != undefined">
@@ -412,6 +430,22 @@
                             <template x-if="item.kegiatan != undefined">
                                 <td x-text="item.anggaran"
                                     class="whitespace-nowrap px-4 py-2  font-medium text-gray-900 dark:text-white">
+                                </td>
+                            </template>
+                            <template x-if="$wire.idRTTerpilih && item.kegiatan !=undefined && item.locked !=2">
+                                <td>
+                                    <x-danger-button x-data="" aria-describedby="hapus data"
+                                        wire:click="delete(item.id)"
+                                        wire:confirm="Apakah Kamu yakin ingin menghapus data investasi">
+                                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                                        <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M4 6H20M16 6L15.7294 5.18807C15.4671 4.40125 15.3359 4.00784 15.0927 3.71698C14.8779 3.46013 14.6021 3.26132 14.2905 3.13878C13.9376 3 13.523 3 12.6936 3H11.3064C10.477 3 10.0624 3 9.70951 3.13878C9.39792 3.26132 9.12208 3.46013 8.90729 3.71698C8.66405 4.00784 8.53292 4.40125 8.27064 5.18807L8 6M18 6V16.2C18 17.8802 18 18.7202 17.673 19.362C17.3854 19.9265 16.9265 20.3854 16.362 20.673C15.7202 21 14.8802 21 13.2 21H10.8C9.11984 21 8.27976 21 7.63803 20.673C7.07354 20.3854 6.6146 19.9265 6.32698 19.362C6 18.7202 6 17.8802 6 16.2V6M14 10V17M10 10V17"
+                                                stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </x-danger-button>
                                 </td>
                             </template>
                         </tr>

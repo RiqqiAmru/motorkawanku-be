@@ -6,6 +6,7 @@ use App\Livewire\Investasi;
 use App\Models\Investasi as ModelsInvestasi;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
+use Symfony\Component\CssSelector\Node\FunctionNode;
 
 class InvForm extends Form
 {
@@ -38,5 +39,11 @@ class InvForm extends Form
             ]
         );
         $this->reset();
+    }
+
+    public function delete($param)
+    {
+        ModelsInvestasi::find($param)->delete();
+        session()->flash('success', 'berhasil menghapus investasi.');
     }
 }

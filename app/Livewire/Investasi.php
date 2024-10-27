@@ -6,6 +6,7 @@ use App\Livewire\Forms\InvForm;
 use App\Models\Kawasan;
 use App\Models\Rtrw;
 use App\Models\Investasi as InvestasiModel;
+use Carbon\Carbon;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Number;
 use Livewire\Component;
@@ -18,10 +19,19 @@ class Investasi extends Component
     public $idKawasanTerpilih = null;
     public $idRTTerpilih = null;
     public $rt = null;
-    public $tahun = 2024;
+    public $tahun = null;
     public $investasi = null;
+    public $locked = false;
 
     public InvForm $form;
+
+
+    public function lock()
+    {
+        InvestasiModel::where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih])->update(['locked' => 2]);
+        $namaKawasan = Kawasan::where('id', $this->idKawasanTerpilih)->get()->first()->kawasan;
+        session()->flash('info', 'Berhasil Mengunci Data Investasi ' . $namaKawasan);
+    }
 
     public function save()
     {
@@ -37,6 +47,7 @@ class Investasi extends Component
         $this->reset('rt');
         $this->reset('idRTTerpilih');
         $this->reset('investasi');
+        $this->reset('locked');
 
         $this->rt = Rtrw::where(['kawasan' => $this->idKawasanTerpilih])->get(['id', 'rtrw'])->toArray();
         $investasi = InvestasiModel::where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih])->get()->toArray();
@@ -46,6 +57,13 @@ class Investasi extends Component
                 'anggaran' => Number::currency(intval($value['anggaran']), 'IDR', 'id')
             ];
         });
+
+        if ($this->investasi) {
+            if ($this->investasi[0]['locked'] == 2) {
+                $this->locked = true;
+            }
+        }
+
         $this->dispatch('updated-investasi');
     }
 
@@ -66,19 +84,19 @@ class Investasi extends Component
         $this->dispatch('updated-investasi');
     }
 
-    public function updatedTahun()
+    public function delete($param)
     {
-        if ($this->idRTTerpilih) {
-            $this->updatedidRTTerpilih();
-        } else {
-            $this->updatedidKawasanTerpilih();
-        }
+        $this->form->delete($param);
+        $this->updatedidRTTerpilih();
     }
+
 
 
     public function mount()
     {
         $this->user = Auth::user();
+        $this->tahun = Carbon::now()->year;
+
         if ($this->user->role == 'admin') {
             // ambil semua kawasan
             $this->kawasan = Kawasan::umum();
@@ -86,6 +104,7 @@ class Investasi extends Component
             // hanya kawasan yang di wenangi sekaligus rt
             $this->kawasan = Kawasan::where(['id' => $this->user->kawasan_id])->get(['id', 'kawasan'])->first()->toArray();
             $this->idKawasanTerpilih = $this->kawasan['id'];
+            $this->updatedidKawasanTerpilih();
         }
     }
 
