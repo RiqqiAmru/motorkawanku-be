@@ -76,3 +76,9 @@ The project is licensed under the MIT License. You can find the full text of the
 
 -   [] there are a register button in the welcome page (delete?) that [feat:admin]
 -   [] users cannot change their name because its determined the kumuh location
+
+<!-- perubahan SK 2024 -->
+
+-   buat kunci data dan save di admin, hanya admin yang dapat kunci data
+-   view semua investasi di dashboard admin
+-   buat laman capaian di admin yang nanti nya akan menampilkan laporan yg bisa didownload di excel

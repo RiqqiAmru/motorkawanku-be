@@ -70,15 +70,17 @@
                 </li>
             </ol>
         </nav>
-        <template x-if="$wire.idKawasanTerpilih  && $wire.idRTTerpilih == null ">
-            <template x-if="$wire.locked == false">
-                <x-primary-button x-data=''
-                    wire:confirm="**Apakah
+        @if ($user->role == 'admin')
+            <template x-if="$wire.idKawasanTerpilih  && $wire.idRTTerpilih == null   ">
+                <template x-if="$wire.locked == false">
+                    <x-primary-button x-data=''
+                        wire:confirm="**Apakah
                 Anda Yakin ingin mengunci data investasi ?** \n \n dengan mengunci data anda tidak dapat mengedit /
                 merubah lagi data investasi, hubungi admin bila ada kesalahan"
-                    wire:click="lock">{{ __('Kunci Investasi') }}</x-primary-button>
+                        wire:click="lock">{{ __('Kunci Investasi') }}</x-primary-button>
+                </template>
             </template>
-        </template>
+        @endif
         <template x-if="$wire.locked == true">
             <div class="flex items-center gap-2">
                 <span>Locked</span>

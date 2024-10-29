@@ -10,12 +10,12 @@ use Carbon\Carbon;
 class AdminDashboard extends Component
 {
     public $tahun = null;
-    public $terkunci = '';
+    public $investasi = '';
 
     public function mount()
     {
         $this->tahun = Carbon::now()->year;
-        $this->terkunci = Investasi::where(['tahun' => $this->tahun, 'locked' => 2])->orderBy('idKawasan')->get()->toArray();
+        $this->investasi = Investasi::where(['tahun' => $this->tahun])->orderBy('idKawasan')->get()->toArray();
     }
 
     public function render()

@@ -30,5 +30,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/guest', KumuhGuest::class)->name('kumuh');
+Route::view('/map', 'map')->name('map');
+
 
 require __DIR__ . '/auth.php';

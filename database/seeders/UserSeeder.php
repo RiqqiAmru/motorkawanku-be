@@ -24,11 +24,11 @@ class UserSeeder extends Seeder
             'role' => 'admin',
             'kawasan_id' => null
         ]);
-        User::factory()->count(4)->create([
-            'role' => 'admin',
-            'kawasan_id' => null
-        ]);
-        User::factory()->count(4)->create();
+        // User::factory()->count(4)->create([
+        //     'role' => 'admin',
+        //     'kawasan_id' => null
+        // ]);
+        // User::factory()->count(4)->create();
         $wilayahID = 1;
         foreach ($wilayah as $w) {
             User::factory()->create([
