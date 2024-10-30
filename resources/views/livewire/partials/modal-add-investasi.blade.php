@@ -1,5 +1,5 @@
 <x-modal name="add-new-investasi" :show="$errors->addNewUser->isNotEmpty()" maxWidth='lg' focusable>
-    <form wire:submit="save" method="post" class="p-6" x-data="{
+    <form wire:submit="save; $dispatch('close');" method="post" class="p-6" x-data="{
         'kegiatanInvestasi': [{
                 'kriteria': ['1a'],
                 'kegiatan': ['Jalan Aspal Hotmix', 'Jalan Beton', 'Jalan Buras (Leburan Aspal)', 'Jalan Kayu/Titian/Jerambah Kayu', 'Jalan Lapen (Lapisan Penetrasi)', 'Jalan Makadam', 'Jalan Paving Block', 'Jalan Sirtu', 'Jalan Tanah', 'Jalan Telford', 'Pedestrian/Jalur Pejalan Kaki', 'Penataan Rumah Deret/Rumah Susun'],
@@ -118,7 +118,7 @@
                 {{ __('Cancel') }}
             </x-secondary-button>
 
-            <x-primary-button class="ms-3" x-on:click="$dispatch('close')">
+            <x-primary-button class="ms-3">
                 {{ __('add investasi') }}
             </x-primary-button>
         </div>

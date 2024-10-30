@@ -23,6 +23,6 @@ class Investasi extends Model
         'anggaran'
     ];
 
-    // editing 0, locked 2, valid 1
+    // editing 0, lock=1
 
 }

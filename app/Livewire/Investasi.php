@@ -38,7 +38,6 @@ class Investasi extends Component
     public function swapPreview()
     {
         $this->preview = !$this->preview;
-        dump($this->preview);
     }
 
 
@@ -90,7 +89,7 @@ class Investasi extends Component
         $this->kumuhAkhir = $this->hitungKumuhRtAkhir($this->investasi, $this->kumuhAwal, $this->header);
 
         if ($this->investasi) {
-            if ($this->investasi[0]['locked'] == 2) {
+            if ($this->investasi[0]['locked'] == 1) {
                 $this->locked = true;
             }
         }
@@ -144,47 +143,6 @@ class Investasi extends Component
                 return ["KUMUH BERAT", 'text-red-600 bg-red-50'];
         }
     }
-    // public function hitungKumuhAkhir($kumuhAwal, $investasi = null, $header)
-    // {
-    //     if ($investasi) {
-    //         $kriteriaid = [
-    //             "1a",
-    //             "1b",
-    //             "1c",
-    //             "1r",
-    //             "2a",
-    //             "2b",
-    //             "2r",
-    //             "3a",
-    //             "3b",
-    //             "3r",
-    //             "4a",
-    //             "4b",
-    //             "4c",
-    //             "4r",
-    //             "5a",
-    //             "5b",
-    //             "5r",
-    //             "6a",
-    //             "6b",
-    //             "6r",
-    //             "7a",
-    //             "7b",
-    //             "7r",
-    //         ];
-    //         $kumuhakhir = [];
-    //         $rata = [];
-    //         $totalRata = [];
-
-    //         foreach ($kriteriaid as $id) {
-
-    //             if ($id[1] == "r") {
-    //             }
-    //         }
-    //     } else {
-    //         return $kumuhAwal;
-    //     }
-    // }
 
     public function mount()
     {
