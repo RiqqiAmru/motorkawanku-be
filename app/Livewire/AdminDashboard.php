@@ -67,7 +67,10 @@ class AdminDashboard extends Component
 
         $this->kumuhAwal = KumuhKawasan::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih])->first();
         $this->kumuhAwalArr = $this->kumuhAwal->toArray();
-        $this->kumuhAkhir = $this->hitungKumuhRtAkhir($this->investasi, $this->kumuhAwal, $this->header);
+
+        $header = Rtrw::where('kawasan', $this->idKawasanTerpilih)->get(['id', 'jumlahBangunan'])->pluck('jumlahBangunan', 'id');
+        $dataVolume = $this->totalVolumeInvestasi($this->investasi, $header, true);
+        $this->kumuhAkhir = $this->hitungKumuhRtAkhir($dataVolume, $this->kumuhAwal, $this->header);
 
         if ($this->investasi) {
             if ($this->investasi[0]['locked'] == 1) {
@@ -92,7 +95,8 @@ class AdminDashboard extends Component
             $this->header = Rtrw::find($this->idRTTerpilih);
             $this->kumuhAwal = KumuhRT::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih, 'rt' => $this->idRTTerpilih])->first();
 
-            $this->kumuhAkhir = $this->hitungKumuhRtAkhir($this->investasi, $this->kumuhAwal, $this->header);
+            $dataVolume = $this->totalVolumeInvestasi($this->investasi, $this->header);
+            $this->kumuhAkhir = $this->hitungKumuhRtAkhir($dataVolume, $this->kumuhAwal, $this->header);
         }
         $this->dispatch('updated-investasi');
     }
@@ -156,22 +160,18 @@ class AdminDashboard extends Component
         return view('livewire.admin-dashboard');
     }
 
-    function totalkanVolumeInvestasi($investasi, $headerRT) {}
-
-    function hitungKumuhRtAkhir($investasi, $kumuhRTAwal, $headerRT)
+    function totalVolumeInvestasi($investasi, $headerRT, $kawasan = false)
     {
-        // kumuh akhir = kumuh awal - investasi
-        $kumuhRTAkhir = [];
-        $kumuhRTAkhir['kawasan'] = $kumuhRTAwal['kawasan'];
-        $kumuhRTAkhir['rt'] = $kumuhRTAwal['rt'];
-        $kumuhRTAkhir['tahun'] =  date("Y");
-
-        // map investasi menjadi total volume per kriteria
         $dataVolume = [];
+        $idRTkrit2ab = [];
         if (count($investasi) > 0) {
+            // idkriteria, idRTRW, idKawasan
             foreach ($investasi as $element) {
                 $idKriteria = $element['idkriteria'];
                 $volume = floatval($element['volume']);
+                if ($element['idkriteria'] == '2a' || $element['idkriteria'] == '2b') {
+                    $idRTkrit2ab = Arr::add($idRTkrit2ab, $element['idRTRW'], $element['idRTRW']);
+                }
                 if (!isset($dataVolume[$idKriteria])) {
                     $dataVolume[$idKriteria] = $volume;
                     $dataVolume["k{$idKriteria}"] = $element['kegiatan'];
@@ -183,20 +183,44 @@ class AdminDashboard extends Component
 
             // investasi 2a/2b
             if (isset($dataVolume['2a']) | isset($dataVolume['2b'])) {
+                $jumlahBangunan = 0;
+                if ($kawasan) {
+                    // cari dulu rt mana yang ada pembangunan 2a/2b
+                    if ($idRTkrit2ab) {
+                        foreach ($idRTkrit2ab as $item) {
+                            $jumlahBangunan += ($headerRT[$item]);
+                        }
+                    }
+                } else {
+                    $jumlahBangunan = ($headerRT['jumlahBangunan']);
+                }
                 // masukkan untuk 1a
                 if (!isset($dataVolume['1a'])) {
-                    $dataVolume['1a'] = $headerRT['jumlahBangunan'];
+                    $dataVolume['1a'] = $jumlahBangunan;
                 } else {
-                    $dataVolume['1a'] += $headerRT['jumlahBangunan'];
+                    $dataVolume['1a'] += ($jumlahBangunan);
                 }
                 // masukkan untuk 7b
                 if (!isset($dataVolume['7b'])) {
-                    $dataVolume['7b'] = $headerRT['jumlahBangunan'];
+                    $dataVolume['7b'] = $jumlahBangunan;
                 } else {
-                    $dataVolume['7b'] += $headerRT['jumlahBangunan'];
+                    $dataVolume['7b'] += ($jumlahBangunan);
                 }
             }
         }
+        return $dataVolume;
+    }
+
+    function hitungKumuhRtAkhir($dataVolume, $kumuhRTAwal, $headerRT)
+    {
+        // kumuh akhir = kumuh awal - investasi
+        $kumuhRTAkhir = [];
+        $kumuhRTAkhir['kawasan'] = $kumuhRTAwal['kawasan'];
+        $kumuhRTAkhir['rt'] = $kumuhRTAwal['rt'];
+        $kumuhRTAkhir['tahun'] =  date("Y");
+
+        // map investasi menjadi total volume per kriteria
+
 
         // loop per id kriteria
         $kumuhRTAkhir['totalNilai'] = 0;

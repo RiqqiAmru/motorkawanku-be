@@ -1068,7 +1068,7 @@
     @include('components.alert')
 
 
-    @php
+    {{-- @php
         dump($investasi);
-    @endphp
+    @endphp --}}
 </div>
