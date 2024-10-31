@@ -13,11 +13,16 @@ class Investasi extends Model
         'tahun',
         'idKawasan',
         'idRTRW',
-        'idKriteria',
+        'idkriteria',
         'volume',
         'kegiatan',
-        'locked'
+        'locked',
+        'ket',
+        'id_user',
+        'sumberAnggaran',
+        'anggaran'
     ];
 
-    
+    // editing 0, lock=1
+
 }

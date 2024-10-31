@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('kegiatan');
             $table->string('sumberAnggaran')->nullable();
             $table->integer('anggaran')->nullable();
+            $table->timestamps();
         });
     }
 

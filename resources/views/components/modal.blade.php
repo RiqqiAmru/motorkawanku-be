@@ -12,6 +12,7 @@
 
 <div x-data="{
     email: null,
+    idKriteria: null,
     id: 0,
     show: @js($show),
     focusables() {
@@ -35,7 +36,7 @@
         document.body.classList.remove('overflow-y-hidden');
     }
 })"
-    x-on:open-modal.window="$event.detail.name == '{{ $name }}' ? (show = true, id=$event.detail.id, email=$event.detail.email) : null"
+    x-on:open-modal.window="$event.detail.name == '{{ $name }}' ? (show = true, id=$event.detail.id, email=$event.detail.email, idKriteria = $event.detail.idKriteria) : null"
     x-on:close-modal.window="$event.detail.name == '{{ $name }}' ? show = false : null"
     x-on:close.stop="show = false" x-on:keydown.escape.window="show = false"
     x-on:keydown.tab.prevent="$event.shiftKey || nextFocusable().focus()"
