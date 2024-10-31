@@ -83,6 +83,7 @@ return new class extends Migration
             $table->float('ratarataKekumuhan');
             $table->float('kontribusiPenanganan');
 
+            $table->timestamps();
             $table->foreign('kawasan')->references('id')->on('kawasan');
         });
     }

@@ -139,20 +139,44 @@ class AdminDashboard extends Component
     public function lock($id, $kawasan)
     {
         Investasi::where(['tahun' => Carbon::now()->year, 'idKawasan' => $id])->update(['locked' => 1]);
+
+        // input tabel kumuh kawasan
+        $investasi = Investasi::where(['tahun' => Carbon::now()->year, 'idKawasan' => $id])->get()->toArray();
+        $header = Rtrw::where('kawasan', $id)->get(['id', 'jumlahBangunan'])->pluck('jumlahBangunan', 'id');
+        $dataVolume = $this->totalVolumeInvestasi($investasi, $header, true);
+        $kumuhAwal = KumuhKawasan::where(['tahun' => (Carbon::now()->year - 1), 'kawasan' => $id])->first();
+        $headerKawasan = Kawasan::find($id)->toArray();
+        $kumuhAkhir = $this->hitungKumuhRtAkhir($dataVolume, $kumuhAwal, $headerKawasan);
+        KumuhKawasan::create(
+            $kumuhAkhir
+        );
+
+        // loop input tabel kumuh rt
+        $header = Rtrw::where('kawasan', $id)->get(['id'])->toArray();
+        foreach ($header as $item) {
+            $investasi = Investasi::where(['tahun' => Carbon::now()->year, 'idKawasan' => $id, 'idRTRW' => $item['id']])->get()->toArray();
+            $headerRT = Rtrw::find($item['id']);
+            $kumuhAwal = KumuhRT::where(['tahun' => (Carbon::now()->year - 1), 'kawasan' => $id, 'rt' => $item['id']])->first();
+
+            $dataVolume = $this->totalVolumeInvestasi($investasi, $headerRT);
+            $kumuhAkhir = $this->hitungKumuhRtAkhir($dataVolume, $kumuhAwal, $headerRT);
+            KumuhRT::create($kumuhAkhir);
+        }
+
+
+
         session()->flash('success', 'berhasil mengunci investasi ' . $kawasan);
         $this->mount();
-
-        // input tabel kumuh
     }
     public function unlock($id, $kawasan)
     {
         Investasi::where(['tahun' => Carbon::now()->year, 'idKawasan' => $id])->update(['locked' => 0]);
+        // hapus kumuh
+        KumuhRT::where(['tahun' => Carbon::now()->year, 'kawasan' => $id])->delete();
+        KumuhKawasan::where(['tahun' => Carbon::now()->year, 'kawasan' => $id])->delete();
+
         session()->flash('success', 'berhasil membuka kunci  investasi ' . $kawasan);
         $this->mount();
-
-        // hapus kumuh
-        KumuhRT::where(['tahun' => Carbon::now()->year, 'idKawasan' => $id])->delete();
-        KumuhKawasan::where(['tahun' => Carbon::now()->year, 'idKawasan' => $id])->delete();
     }
 
     public function render()

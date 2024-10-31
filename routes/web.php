@@ -27,6 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/users/{id}', [UsersController::class, 'update'])->name('users.update');
 
     Route::view('/investasi', 'investasi')->name('investasi');
+    Route::view('/capaian', 'capaian')->name('capaian');
 });
 
 Route::get('/guest', KumuhGuest::class)->name('kumuh');

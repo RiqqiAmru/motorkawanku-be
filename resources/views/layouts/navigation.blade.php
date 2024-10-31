@@ -32,6 +32,11 @@
                             {{ __('Users') }}
                         </x-nav-link>
                     </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('capaian')" :active="request()->routeIs('capaian')">
+                            {{ __('Capaian') }}
+                        </x-nav-link>
+                    </div>
                 @endif
             </div>
 
@@ -104,6 +109,9 @@
             @if (Auth::user()->role == 'admin')
                 <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
                     {{ __('Users') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('capaian')" :active="request()->routeIs('capaian')">
+                    {{ __('Capaian') }}
                 </x-responsive-nav-link>
             @endif
         </div>
