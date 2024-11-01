@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class KumuhRT extends Model
+class SK24KumuhRT extends Model
 {
     use HasFactory;
-    public $table = 'kumuh_rt';
+    public $table = 'sk24_kumuh_rt';
     protected $fillable = [
         'kawasan',
         'rt',
