@@ -1,5 +1,18 @@
 [
   {
+    "id": 2,
+    "kawasan": 1,
+    "rtrw": "RT002-RW002",
+    "luasFlag": 0.569885,
+    "luasVerifikasi": 0.569885,
+    "jumlahBangunan": 29,
+    "jumlahPenduduk": 125,
+    "jumlahKK": 29,
+    "panjangJalanIdeal": 150,
+    "panjangDrainaseIdeal": 350
+  },
+  {
+    "id": 3,
     "kawasan": 1,
     "rtrw": "RT002-RW006",
     "luasFlag": 1.078233,
@@ -11,6 +24,7 @@
     "panjangDrainaseIdeal": 600
   },
   {
+    "id": 4,
     "kawasan": 1,
     "rtrw": "RT003-RW003",
     "luasFlag": 0.741672,
@@ -22,6 +36,7 @@
     "panjangDrainaseIdeal": 400
   },
   {
+    "id": 6,
     "kawasan": 1,
     "rtrw": "RT005-RW002",
     "luasFlag": 0.85713,
@@ -33,6 +48,19 @@
     "panjangDrainaseIdeal": 300
   },
   {
+    "id": 7,
+    "kawasan": 1,
+    "rtrw": "RT005-RW006",
+    "luasFlag": 1.729199,
+    "luasVerifikasi": 1.729199,
+    "jumlahBangunan": 83,
+    "jumlahPenduduk": 346,
+    "jumlahKK": 104,
+    "panjangJalanIdeal": 1125,
+    "panjangDrainaseIdeal": 1655
+  },
+  {
+    "id": 10,
     "kawasan": 3,
     "rtrw": "RT001-RW001",
     "luasFlag": 0.806749,
@@ -44,6 +72,7 @@
     "panjangDrainaseIdeal": 750
   },
   {
+    "id": 11,
     "kawasan": 3,
     "rtrw": "RT002-RW001",
     "luasFlag": 1.151046,
@@ -55,6 +84,31 @@
     "panjangDrainaseIdeal": 900
   },
   {
+    "id": 12,
+    "kawasan": 3,
+    "rtrw": "RT002-RW002",
+    "luasFlag": 1.05398,
+    "luasVerifikasi": 1.05398,
+    "jumlahBangunan": 89,
+    "jumlahPenduduk": 364,
+    "jumlahKK": 118,
+    "panjangJalanIdeal": 720,
+    "panjangDrainaseIdeal": 910
+  },
+  {
+    "id": 16,
+    "kawasan": 3,
+    "rtrw": "RT003-RW008",
+    "luasFlag": 1.361333,
+    "luasVerifikasi": 1.361333,
+    "jumlahBangunan": 67,
+    "jumlahPenduduk": 272,
+    "jumlahKK": 72,
+    "panjangJalanIdeal": 380,
+    "panjangDrainaseIdeal": 310
+  },
+  {
+    "id": 17,
     "kawasan": 3,
     "rtrw": "RT004-RW001",
     "luasFlag": 0.512875,
@@ -66,6 +120,7 @@
     "panjangDrainaseIdeal": 700
   },
   {
+    "id": 18,
     "kawasan": 3,
     "rtrw": "RT004-RW008",
     "luasFlag": 0.367795,
@@ -77,6 +132,7 @@
     "panjangDrainaseIdeal": 490
   },
   {
+    "id": 19,
     "kawasan": 3,
     "rtrw": "RT005-RW001",
     "luasFlag": 0.726219,
@@ -88,6 +144,43 @@
     "panjangDrainaseIdeal": 1048
   },
   {
+    "id": 20,
+    "kawasan": 3,
+    "rtrw": "RT005-RW002",
+    "luasFlag": 0.954433,
+    "luasVerifikasi": 0.954433,
+    "jumlahBangunan": 42,
+    "jumlahPenduduk": 211,
+    "jumlahKK": 42,
+    "panjangJalanIdeal": 740,
+    "panjangDrainaseIdeal": 640
+  },
+  {
+    "id": 21,
+    "kawasan": 3,
+    "rtrw": "RT006-RW001",
+    "luasFlag": 0.822444,
+    "luasVerifikasi": 0.822444,
+    "jumlahBangunan": 50,
+    "jumlahPenduduk": 225,
+    "jumlahKK": 68,
+    "panjangJalanIdeal": 590,
+    "panjangDrainaseIdeal": 300
+  },
+  {
+    "id": 22,
+    "kawasan": 3,
+    "rtrw": "RT006-RW002",
+    "luasFlag": 0.389462,
+    "luasVerifikasi": 0.389462,
+    "jumlahBangunan": 65,
+    "jumlahPenduduk": 253,
+    "jumlahKK": 65,
+    "panjangJalanIdeal": 376,
+    "panjangDrainaseIdeal": 285
+  },
+  {
+    "id": 24,
     "kawasan": 4,
     "rtrw": "RT001-RW005",
     "luasFlag": 1.280914,
@@ -99,6 +192,7 @@
     "panjangDrainaseIdeal": 526
   },
   {
+    "id": 28,
     "kawasan": 4,
     "rtrw": "RT001-RW011",
     "luasFlag": 1.742409,
@@ -110,6 +204,7 @@
     "panjangDrainaseIdeal": 500
   },
   {
+    "id": 32,
     "kawasan": 4,
     "rtrw": "RT002-RW007",
     "luasFlag": 1.513979,
@@ -121,6 +216,7 @@
     "panjangDrainaseIdeal": 660
   },
   {
+    "id": 33,
     "kawasan": 4,
     "rtrw": "RT002-RW008",
     "luasFlag": 1.257256,
@@ -132,6 +228,7 @@
     "panjangDrainaseIdeal": 332
   },
   {
+    "id": 41,
     "kawasan": 4,
     "rtrw": "RT003-RW018",
     "luasFlag": 0.393925,
@@ -143,6 +240,7 @@
     "panjangDrainaseIdeal": 185
   },
   {
+    "id": 42,
     "kawasan": 4,
     "rtrw": "RT003-RW019",
     "luasFlag": 0.405215,
@@ -154,6 +252,7 @@
     "panjangDrainaseIdeal": 240
   },
   {
+    "id": 48,
     "kawasan": 4,
     "rtrw": "RT004-RW019",
     "luasFlag": 0.716252,
@@ -165,6 +264,19 @@
     "panjangDrainaseIdeal": 248
   },
   {
+    "id": 49,
+    "kawasan": 4,
+    "rtrw": "RT005-RW018",
+    "luasFlag": 0.511864,
+    "luasVerifikasi": 0.511864,
+    "jumlahBangunan": 25,
+    "jumlahPenduduk": 104,
+    "jumlahKK": 27,
+    "panjangJalanIdeal": 200,
+    "panjangDrainaseIdeal": 240
+  },
+  {
+    "id": 50,
     "kawasan": 4,
     "rtrw": "RT005-RW019",
     "luasFlag": 0.4246,
@@ -176,6 +288,43 @@
     "panjangDrainaseIdeal": 250
   },
   {
+    "id": 51,
+    "kawasan": 4,
+    "rtrw": "RT006-RW018",
+    "luasFlag": 0.720948,
+    "luasVerifikasi": 0.720948,
+    "jumlahBangunan": 20,
+    "jumlahPenduduk": 92,
+    "jumlahKK": 22,
+    "panjangJalanIdeal": 530,
+    "panjangDrainaseIdeal": 430
+  },
+  {
+    "id": 52,
+    "kawasan": 4,
+    "rtrw": "RT006-RW019",
+    "luasFlag": 0.350043,
+    "luasVerifikasi": 0.350043,
+    "jumlahBangunan": 25,
+    "jumlahPenduduk": 122,
+    "jumlahKK": 32,
+    "panjangJalanIdeal": 370,
+    "panjangDrainaseIdeal": 230
+  },
+  {
+    "id": 53,
+    "kawasan": 4,
+    "rtrw": "RT007-RW018",
+    "luasFlag": 0.439493,
+    "luasVerifikasi": 0.439493,
+    "jumlahBangunan": 23,
+    "jumlahPenduduk": 96,
+    "jumlahKK": 26,
+    "panjangJalanIdeal": 550,
+    "panjangDrainaseIdeal": 400
+  },
+  {
+    "id": 54,
     "kawasan": 5,
     "rtrw": "RT003-RW011",
     "luasFlag": 1.09231,
@@ -187,6 +336,43 @@
     "panjangDrainaseIdeal": 150
   },
   {
+    "id": 55,
+    "kawasan": 5,
+    "rtrw": "RT004-RW018",
+    "luasFlag": 0.544331,
+    "luasVerifikasi": 0.544331,
+    "jumlahBangunan": 32,
+    "jumlahPenduduk": 163,
+    "jumlahKK": 44,
+    "panjangJalanIdeal": 343,
+    "panjangDrainaseIdeal": 282
+  },
+  {
+    "id": 57,
+    "kawasan": 5,
+    "rtrw": "RT006-RW018",
+    "luasFlag": 0.246812,
+    "luasVerifikasi": 0.246812,
+    "jumlahBangunan": 22,
+    "jumlahPenduduk": 96,
+    "jumlahKK": 33,
+    "panjangJalanIdeal": 600,
+    "panjangDrainaseIdeal": 550
+  },
+  {
+    "id": 58,
+    "kawasan": 6,
+    "rtrw": "RT001-RW001",
+    "luasFlag": 0.270545,
+    "luasVerifikasi": 0.270545,
+    "jumlahBangunan": 52,
+    "jumlahPenduduk": 152,
+    "jumlahKK": 59,
+    "panjangJalanIdeal": 300,
+    "panjangDrainaseIdeal": 200
+  },
+  {
+    "id": 59,
     "kawasan": 6,
     "rtrw": "RT001-RW002",
     "luasFlag": 0.723632,
@@ -198,6 +384,7 @@
     "panjangDrainaseIdeal": 600
   },
   {
+    "id": 60,
     "kawasan": 6,
     "rtrw": "RT001-RW003",
     "luasFlag": 0.748863,
@@ -209,6 +396,91 @@
     "panjangDrainaseIdeal": 180
   },
   {
+    "id": 62,
+    "kawasan": 6,
+    "rtrw": "RT001-RW005",
+    "luasFlag": 0.681278,
+    "luasVerifikasi": 0.681278,
+    "jumlahBangunan": 68,
+    "jumlahPenduduk": 281,
+    "jumlahKK": 68,
+    "panjangJalanIdeal": 500,
+    "panjangDrainaseIdeal": 500
+  },
+  {
+    "id": 64,
+    "kawasan": 6,
+    "rtrw": "RT001-RW007",
+    "luasFlag": 1.920817,
+    "luasVerifikasi": 1.920817,
+    "jumlahBangunan": 34,
+    "jumlahPenduduk": 124,
+    "jumlahKK": 38,
+    "panjangJalanIdeal": 130,
+    "panjangDrainaseIdeal": 210
+  },
+  {
+    "id": 65,
+    "kawasan": 6,
+    "rtrw": "RT001-RW008",
+    "luasFlag": 0.771766,
+    "luasVerifikasi": 0.771766,
+    "jumlahBangunan": 42,
+    "jumlahPenduduk": 144,
+    "jumlahKK": 47,
+    "panjangJalanIdeal": 2075,
+    "panjangDrainaseIdeal": 500
+  },
+  {
+    "id": 66,
+    "kawasan": 6,
+    "rtrw": "RT001-RW009",
+    "luasFlag": 1.08632,
+    "luasVerifikasi": 1.08632,
+    "jumlahBangunan": 42,
+    "jumlahPenduduk": 179,
+    "jumlahKK": 58,
+    "panjangJalanIdeal": 1050,
+    "panjangDrainaseIdeal": 100
+  },
+  {
+    "id": 67,
+    "kawasan": 6,
+    "rtrw": "RT001-RW010",
+    "luasFlag": 0.443967,
+    "luasVerifikasi": 0.443967,
+    "jumlahBangunan": 54,
+    "jumlahPenduduk": 214,
+    "jumlahKK": 71,
+    "panjangJalanIdeal": 400,
+    "panjangDrainaseIdeal": 800
+  },
+  {
+    "id": 68,
+    "kawasan": 6,
+    "rtrw": "RT001-RW011",
+    "luasFlag": 0.77825,
+    "luasVerifikasi": 0.77825,
+    "jumlahBangunan": 41,
+    "jumlahPenduduk": 191,
+    "jumlahKK": 56,
+    "panjangJalanIdeal": 290,
+    "panjangDrainaseIdeal": 555
+  },
+  {
+    "id": 69,
+    "kawasan": 6,
+    "rtrw": "RT001-RW012",
+    "luasFlag": 0.436737,
+    "luasVerifikasi": 0.436737,
+    "jumlahBangunan": 40,
+    "jumlahPenduduk": 183,
+    "jumlahKK": 51,
+    "panjangJalanIdeal": 350,
+    "panjangDrainaseIdeal": 325
+  },
+  {
+    "id": 70,
     "kawasan": 6,
     "rtrw": "RT001-RW013",
     "luasFlag": 0.687315,
@@ -220,6 +492,7 @@
     "panjangDrainaseIdeal": 700
   },
   {
+    "id": 71,
     "kawasan": 6,
     "rtrw": "RT001-RW014",
     "luasFlag": 0.380125,
@@ -231,6 +504,67 @@
     "panjangDrainaseIdeal": 600
   },
   {
+    "id": 72,
+    "kawasan": 6,
+    "rtrw": "RT001-RW015",
+    "luasFlag": 1.114584,
+    "luasVerifikasi": 1.114584,
+    "jumlahBangunan": 16,
+    "jumlahPenduduk": 59,
+    "jumlahKK": 18,
+    "panjangJalanIdeal": 600,
+    "panjangDrainaseIdeal": 600
+  },
+  {
+    "id": 73,
+    "kawasan": 6,
+    "rtrw": "RT001-RW016",
+    "luasFlag": 0.134648,
+    "luasVerifikasi": 0.134648,
+    "jumlahBangunan": 26,
+    "jumlahPenduduk": 151,
+    "jumlahKK": 45,
+    "panjangJalanIdeal": 100,
+    "panjangDrainaseIdeal": 100
+  },
+  {
+    "id": 74,
+    "kawasan": 6,
+    "rtrw": "RT002-RW001",
+    "luasFlag": 0.313131,
+    "luasVerifikasi": 0.313131,
+    "jumlahBangunan": 45,
+    "jumlahPenduduk": 182,
+    "jumlahKK": 61,
+    "panjangJalanIdeal": 250,
+    "panjangDrainaseIdeal": 200
+  },
+  {
+    "id": 75,
+    "kawasan": 6,
+    "rtrw": "RT002-RW002",
+    "luasFlag": 0.776759,
+    "luasVerifikasi": 0.776759,
+    "jumlahBangunan": 29,
+    "jumlahPenduduk": 130,
+    "jumlahKK": 30,
+    "panjangJalanIdeal": 200,
+    "panjangDrainaseIdeal": 400
+  },
+  {
+    "id": 76,
+    "kawasan": 6,
+    "rtrw": "RT002-RW003",
+    "luasFlag": 0.250732,
+    "luasVerifikasi": 0.250732,
+    "jumlahBangunan": 40,
+    "jumlahPenduduk": 171,
+    "jumlahKK": 51,
+    "panjangJalanIdeal": 240,
+    "panjangDrainaseIdeal": 216
+  },
+  {
+    "id": 77,
     "kawasan": 6,
     "rtrw": "RT002-RW004",
     "luasFlag": 0.530494,
@@ -242,6 +576,7 @@
     "panjangDrainaseIdeal": 200
   },
   {
+    "id": 78,
     "kawasan": 6,
     "rtrw": "RT002-RW005",
     "luasFlag": 0.442642,
@@ -253,6 +588,7 @@
     "panjangDrainaseIdeal": 350
   },
   {
+    "id": 79,
     "kawasan": 6,
     "rtrw": "RT002-RW006",
     "luasFlag": 0.35655,
@@ -264,6 +600,7 @@
     "panjangDrainaseIdeal": 445
   },
   {
+    "id": 80,
     "kawasan": 6,
     "rtrw": "RT002-RW007",
     "luasFlag": 0.906528,
@@ -275,6 +612,7 @@
     "panjangDrainaseIdeal": 480
   },
   {
+    "id": 81,
     "kawasan": 6,
     "rtrw": "RT002-RW008",
     "luasFlag": 0.518978,
@@ -286,6 +624,7 @@
     "panjangDrainaseIdeal": 200
   },
   {
+    "id": 82,
     "kawasan": 6,
     "rtrw": "RT002-RW009",
     "luasFlag": 0.575298,
@@ -297,6 +636,7 @@
     "panjangDrainaseIdeal": 200
   },
   {
+    "id": 83,
     "kawasan": 6,
     "rtrw": "RT002-RW010",
     "luasFlag": 0.275847,
@@ -308,6 +648,7 @@
     "panjangDrainaseIdeal": 300
   },
   {
+    "id": 86,
     "kawasan": 6,
     "rtrw": "RT002-RW013",
     "luasFlag": 0.529696,
@@ -319,6 +660,19 @@
     "panjangDrainaseIdeal": 800
   },
   {
+    "id": 88,
+    "kawasan": 6,
+    "rtrw": "RT002-RW015",
+    "luasFlag": 0.341299,
+    "luasVerifikasi": 0.341299,
+    "jumlahBangunan": 32,
+    "jumlahPenduduk": 131,
+    "jumlahKK": 40,
+    "panjangJalanIdeal": 550,
+    "panjangDrainaseIdeal": 550
+  },
+  {
+    "id": 89,
     "kawasan": 6,
     "rtrw": "RT002-RW016",
     "luasFlag": 0.098368,
@@ -330,6 +684,7 @@
     "panjangDrainaseIdeal": 550
   },
   {
+    "id": 90,
     "kawasan": 6,
     "rtrw": "RT003-RW001",
     "luasFlag": 0.445355,
@@ -341,6 +696,7 @@
     "panjangDrainaseIdeal": 300
   },
   {
+    "id": 91,
     "kawasan": 6,
     "rtrw": "RT003-RW002",
     "luasFlag": 0.635765,
@@ -352,6 +708,7 @@
     "panjangDrainaseIdeal": 230
   },
   {
+    "id": 92,
     "kawasan": 6,
     "rtrw": "RT003-RW003",
     "luasFlag": 0.312864,
@@ -363,6 +720,19 @@
     "panjangDrainaseIdeal": 115
   },
   {
+    "id": 93,
+    "kawasan": 6,
+    "rtrw": "RT003-RW004",
+    "luasFlag": 0.553386,
+    "luasVerifikasi": 0.553386,
+    "jumlahBangunan": 45,
+    "jumlahPenduduk": 205,
+    "jumlahKK": 59,
+    "panjangJalanIdeal": 315,
+    "panjangDrainaseIdeal": 525
+  },
+  {
+    "id": 94,
     "kawasan": 6,
     "rtrw": "RT003-RW005",
     "luasFlag": 0.736823,
@@ -374,6 +744,19 @@
     "panjangDrainaseIdeal": 360
   },
   {
+    "id": 95,
+    "kawasan": 6,
+    "rtrw": "RT003-RW006",
+    "luasFlag": 1.121041,
+    "luasVerifikasi": 1.121041,
+    "jumlahBangunan": 67,
+    "jumlahPenduduk": 296,
+    "jumlahKK": 90,
+    "panjangJalanIdeal": 700,
+    "panjangDrainaseIdeal": 600
+  },
+  {
+    "id": 96,
     "kawasan": 6,
     "rtrw": "RT003-RW007",
     "luasFlag": 1.59786,
@@ -385,6 +768,7 @@
     "panjangDrainaseIdeal": 220
   },
   {
+    "id": 97,
     "kawasan": 6,
     "rtrw": "RT003-RW008",
     "luasFlag": 0.498831,
@@ -396,6 +780,7 @@
     "panjangDrainaseIdeal": 300
   },
   {
+    "id": 98,
     "kawasan": 6,
     "rtrw": "RT003-RW009",
     "luasFlag": 0.328495,
@@ -407,6 +792,7 @@
     "panjangDrainaseIdeal": 200
   },
   {
+    "id": 99,
     "kawasan": 6,
     "rtrw": "RT003-RW010",
     "luasFlag": 0.363511,
@@ -418,6 +804,7 @@
     "panjangDrainaseIdeal": 350
   },
   {
+    "id": 100,
     "kawasan": 6,
     "rtrw": "RT003-RW011",
     "luasFlag": 0.261904,
@@ -429,6 +816,7 @@
     "panjangDrainaseIdeal": 840
   },
   {
+    "id": 101,
     "kawasan": 6,
     "rtrw": "RT003-RW012",
     "luasFlag": 0.648901,
@@ -440,6 +828,7 @@
     "panjangDrainaseIdeal": 670
   },
   {
+    "id": 102,
     "kawasan": 6,
     "rtrw": "RT003-RW013",
     "luasFlag": 0.483759,
@@ -451,6 +840,7 @@
     "panjangDrainaseIdeal": 50
   },
   {
+    "id": 103,
     "kawasan": 6,
     "rtrw": "RT003-RW014",
     "luasFlag": 0.407222,
@@ -462,6 +852,7 @@
     "panjangDrainaseIdeal": 500
   },
   {
+    "id": 104,
     "kawasan": 6,
     "rtrw": "RT003-RW015",
     "luasFlag": 2.577322,
@@ -473,6 +864,7 @@
     "panjangDrainaseIdeal": 300
   },
   {
+    "id": 105,
     "kawasan": 6,
     "rtrw": "RT003-RW016",
     "luasFlag": 0.420674,
@@ -484,6 +876,7 @@
     "panjangDrainaseIdeal": 300
   },
   {
+    "id": 106,
     "kawasan": 6,
     "rtrw": "RT004-RW001",
     "luasFlag": 0.566939,
@@ -495,6 +888,7 @@
     "panjangDrainaseIdeal": 400
   },
   {
+    "id": 107,
     "kawasan": 6,
     "rtrw": "RT004-RW002",
     "luasFlag": 0.36519,
@@ -506,6 +900,7 @@
     "panjangDrainaseIdeal": 700
   },
   {
+    "id": 108,
     "kawasan": 6,
     "rtrw": "RT004-RW003",
     "luasFlag": 0.393969,
@@ -517,6 +912,7 @@
     "panjangDrainaseIdeal": 200
   },
   {
+    "id": 109,
     "kawasan": 6,
     "rtrw": "RT004-RW004",
     "luasFlag": 0.424463,
@@ -528,6 +924,7 @@
     "panjangDrainaseIdeal": 210
   },
   {
+    "id": 111,
     "kawasan": 6,
     "rtrw": "RT004-RW006",
     "luasFlag": 0.935794,
@@ -539,6 +936,7 @@
     "panjangDrainaseIdeal": 220
   },
   {
+    "id": 112,
     "kawasan": 6,
     "rtrw": "RT004-RW008",
     "luasFlag": 0.220551,
@@ -550,6 +948,7 @@
     "panjangDrainaseIdeal": 300
   },
   {
+    "id": 113,
     "kawasan": 6,
     "rtrw": "RT004-RW009",
     "luasFlag": 0.37151,
@@ -561,6 +960,7 @@
     "panjangDrainaseIdeal": 200
   },
   {
+    "id": 114,
     "kawasan": 6,
     "rtrw": "RT004-RW010",
     "luasFlag": 0.461332,
@@ -572,6 +972,7 @@
     "panjangDrainaseIdeal": 205
   },
   {
+    "id": 116,
     "kawasan": 6,
     "rtrw": "RT004-RW012",
     "luasFlag": 0.343149,
@@ -583,6 +984,7 @@
     "panjangDrainaseIdeal": 390
   },
   {
+    "id": 117,
     "kawasan": 6,
     "rtrw": "RT004-RW013",
     "luasFlag": 0.723696,
@@ -594,6 +996,31 @@
     "panjangDrainaseIdeal": 500
   },
   {
+    "id": 118,
+    "kawasan": 6,
+    "rtrw": "RT004-RW015",
+    "luasFlag": 0.728038,
+    "luasVerifikasi": 0.728038,
+    "jumlahBangunan": 36,
+    "jumlahPenduduk": 155,
+    "jumlahKK": 46,
+    "panjangJalanIdeal": 380,
+    "panjangDrainaseIdeal": 400
+  },
+  {
+    "id": 119,
+    "kawasan": 6,
+    "rtrw": "RT004-RW016",
+    "luasFlag": 0.151064,
+    "luasVerifikasi": 0.151064,
+    "jumlahBangunan": 15,
+    "jumlahPenduduk": 49,
+    "jumlahKK": 15,
+    "panjangJalanIdeal": 400,
+    "panjangDrainaseIdeal": 600
+  },
+  {
+    "id": 120,
     "kawasan": 6,
     "rtrw": "RT005-RW002",
     "luasFlag": 0.562812,
@@ -605,6 +1032,19 @@
     "panjangDrainaseIdeal": 250
   },
   {
+    "id": 121,
+    "kawasan": 6,
+    "rtrw": "RT005-RW003",
+    "luasFlag": 0.467847,
+    "luasVerifikasi": 0.467847,
+    "jumlahBangunan": 27,
+    "jumlahPenduduk": 120,
+    "jumlahKK": 41,
+    "panjangJalanIdeal": 420,
+    "panjangDrainaseIdeal": 200
+  },
+  {
+    "id": 122,
     "kawasan": 6,
     "rtrw": "RT005-RW004",
     "luasFlag": 0.288288,
@@ -616,6 +1056,7 @@
     "panjangDrainaseIdeal": 300
   },
   {
+    "id": 123,
     "kawasan": 6,
     "rtrw": "RT005-RW005",
     "luasFlag": 0.426421,
@@ -627,6 +1068,7 @@
     "panjangDrainaseIdeal": 310
   },
   {
+    "id": 124,
     "kawasan": 6,
     "rtrw": "RT005-RW006",
     "luasFlag": 0.874661,
@@ -638,6 +1080,7 @@
     "panjangDrainaseIdeal": 750
   },
   {
+    "id": 125,
     "kawasan": 6,
     "rtrw": "RT005-RW008",
     "luasFlag": 1.173321,
@@ -649,6 +1092,7 @@
     "panjangDrainaseIdeal": 400
   },
   {
+    "id": 126,
     "kawasan": 6,
     "rtrw": "RT005-RW011",
     "luasFlag": 0.821565,
@@ -660,6 +1104,7 @@
     "panjangDrainaseIdeal": 320
   },
   {
+    "id": 128,
     "kawasan": 6,
     "rtrw": "RT005-RW013",
     "luasFlag": 0.541414,
@@ -671,6 +1116,7 @@
     "panjangDrainaseIdeal": 500
   },
   {
+    "id": 129,
     "kawasan": 6,
     "rtrw": "RT005-RW016",
     "luasFlag": 0.295881,
@@ -682,6 +1128,7 @@
     "panjangDrainaseIdeal": 300
   },
   {
+    "id": 130,
     "kawasan": 6,
     "rtrw": "RT006-RW002",
     "luasFlag": 0.456138,
@@ -693,6 +1140,7 @@
     "panjangDrainaseIdeal": 300
   },
   {
+    "id": 131,
     "kawasan": 6,
     "rtrw": "RT006-RW003",
     "luasFlag": 0.180037,
@@ -704,6 +1152,7 @@
     "panjangDrainaseIdeal": 250
   },
   {
+    "id": 132,
     "kawasan": 6,
     "rtrw": "RT006-RW004",
     "luasFlag": 0.619164,
@@ -715,6 +1164,7 @@
     "panjangDrainaseIdeal": 310
   },
   {
+    "id": 133,
     "kawasan": 6,
     "rtrw": "RT006-RW006",
     "luasFlag": 0.851959,
@@ -726,6 +1176,7 @@
     "panjangDrainaseIdeal": 725
   },
   {
+    "id": 134,
     "kawasan": 6,
     "rtrw": "RT006-RW016",
     "luasFlag": 0.121953,
@@ -737,6 +1188,7 @@
     "panjangDrainaseIdeal": 200
   },
   {
+    "id": 135,
     "kawasan": 6,
     "rtrw": "RT007-RW004",
     "luasFlag": 0.583241,
@@ -748,6 +1200,7 @@
     "panjangDrainaseIdeal": 225
   },
   {
+    "id": 136,
     "kawasan": 6,
     "rtrw": "RT008-RW004",
     "luasFlag": 0.57163,
@@ -759,6 +1212,7 @@
     "panjangDrainaseIdeal": 480
   },
   {
+    "id": 138,
     "kawasan": 7,
     "rtrw": "RT001-RW011",
     "luasFlag": 0.524999,
@@ -770,6 +1224,7 @@
     "panjangDrainaseIdeal": 230
   },
   {
+    "id": 139,
     "kawasan": 7,
     "rtrw": "RT002-RW003",
     "luasFlag": 0.862964,
@@ -781,6 +1236,7 @@
     "panjangDrainaseIdeal": 355
   },
   {
+    "id": 140,
     "kawasan": 7,
     "rtrw": "RT002-RW004",
     "luasFlag": 0.298462,
@@ -792,6 +1248,7 @@
     "panjangDrainaseIdeal": 420
   },
   {
+    "id": 142,
     "kawasan": 7,
     "rtrw": "RT002-RW010",
     "luasFlag": 0.419104,
@@ -803,6 +1260,7 @@
     "panjangDrainaseIdeal": 216
   },
   {
+    "id": 143,
     "kawasan": 7,
     "rtrw": "RT002-RW011",
     "luasFlag": 0.536773,
@@ -814,6 +1272,7 @@
     "panjangDrainaseIdeal": 218
   },
   {
+    "id": 145,
     "kawasan": 7,
     "rtrw": "RT003-RW011",
     "luasFlag": 0.322349,
@@ -825,6 +1284,7 @@
     "panjangDrainaseIdeal": 100
   },
   {
+    "id": 148,
     "kawasan": 7,
     "rtrw": "RT004-RW010",
     "luasFlag": 0.502545,
@@ -836,6 +1296,7 @@
     "panjangDrainaseIdeal": 430
   },
   {
+    "id": 149,
     "kawasan": 8,
     "rtrw": "RT001-RW002",
     "luasFlag": 1.140851,
@@ -847,6 +1308,19 @@
     "panjangDrainaseIdeal": 200
   },
   {
+    "id": 152,
+    "kawasan": 8,
+    "rtrw": "RT003-RW010",
+    "luasFlag": 0.590363,
+    "luasVerifikasi": 0.590363,
+    "jumlahBangunan": 56,
+    "jumlahPenduduk": 247,
+    "jumlahKK": 73,
+    "panjangJalanIdeal": 350,
+    "panjangDrainaseIdeal": 350
+  },
+  {
+    "id": 161,
     "kawasan": 10,
     "rtrw": "RT002-RW012",
     "luasFlag": 1.138632,
@@ -858,6 +1332,7 @@
     "panjangDrainaseIdeal": 200
   },
   {
+    "id": 167,
     "kawasan": 12,
     "rtrw": "RT002-RW005",
     "luasFlag": 1.484146,
@@ -869,6 +1344,7 @@
     "panjangDrainaseIdeal": 200
   },
   {
+    "id": 172,
     "kawasan": 13,
     "rtrw": "RT003-RW001",
     "luasFlag": 1.656037,
@@ -880,6 +1356,7 @@
     "panjangDrainaseIdeal": 300
   },
   {
+    "id": 173,
     "kawasan": 13,
     "rtrw": "RT003-RW004",
     "luasFlag": 0.504203,
@@ -891,6 +1368,19 @@
     "panjangDrainaseIdeal": 150
   },
   {
+    "id": 181,
+    "kawasan": 14,
+    "rtrw": "RT002-RW002",
+    "luasFlag": 0.274021,
+    "luasVerifikasi": 0.274021,
+    "jumlahBangunan": 43,
+    "jumlahPenduduk": 198,
+    "jumlahKK": 43,
+    "panjangJalanIdeal": 190,
+    "panjangDrainaseIdeal": 300
+  },
+  {
+    "id": 182,
     "kawasan": 14,
     "rtrw": "RT003-RW001",
     "luasFlag": 0.322417,
@@ -902,6 +1392,7 @@
     "panjangDrainaseIdeal": 350
   },
   {
+    "id": 183,
     "kawasan": 14,
     "rtrw": "RT003-RW002",
     "luasFlag": 0.489032,
@@ -913,6 +1404,7 @@
     "panjangDrainaseIdeal": 160
   },
   {
+    "id": 184,
     "kawasan": 14,
     "rtrw": "RT004-RW002",
     "luasFlag": 0.304989,
@@ -924,6 +1416,7 @@
     "panjangDrainaseIdeal": 250
   },
   {
+    "id": 185,
     "kawasan": 14,
     "rtrw": "RT005-RW001",
     "luasFlag": 0.286042,
@@ -935,6 +1428,7 @@
     "panjangDrainaseIdeal": 90
   },
   {
+    "id": 189,
     "kawasan": 14,
     "rtrw": "RT007-RW001",
     "luasFlag": 0.535306,
@@ -946,6 +1440,7 @@
     "panjangDrainaseIdeal": 200
   },
   {
+    "id": 191,
     "kawasan": 14,
     "rtrw": "RT008-RW001",
     "luasFlag": 0.228506,
@@ -957,6 +1452,7 @@
     "panjangDrainaseIdeal": 50
   },
   {
+    "id": 195,
     "kawasan": 15,
     "rtrw": "RT001-RW008",
     "luasFlag": 0.866427,
@@ -968,6 +1464,7 @@
     "panjangDrainaseIdeal": 700
   },
   {
+    "id": 196,
     "kawasan": 15,
     "rtrw": "RT001-RW010",
     "luasFlag": 0.970515,
@@ -979,6 +1476,7 @@
     "panjangDrainaseIdeal": 330
   },
   {
+    "id": 197,
     "kawasan": 15,
     "rtrw": "RT001-RW012",
     "luasFlag": 0.748074,
@@ -990,6 +1488,7 @@
     "panjangDrainaseIdeal": 700
   },
   {
+    "id": 198,
     "kawasan": 15,
     "rtrw": "RT001-RW013",
     "luasFlag": 0.120991,
@@ -1001,6 +1500,7 @@
     "panjangDrainaseIdeal": 200
   },
   {
+    "id": 199,
     "kawasan": 15,
     "rtrw": "RT002-RW001",
     "luasFlag": 0.758456,
@@ -1012,6 +1512,19 @@
     "panjangDrainaseIdeal": 450
   },
   {
+    "id": 202,
+    "kawasan": 15,
+    "rtrw": "RT002-RW013",
+    "luasFlag": 0.418789,
+    "luasVerifikasi": 0.418789,
+    "jumlahBangunan": 39,
+    "jumlahPenduduk": 149,
+    "jumlahKK": 44,
+    "panjangJalanIdeal": 370,
+    "panjangDrainaseIdeal": 335
+  },
+  {
+    "id": 204,
     "kawasan": 15,
     "rtrw": "RT003-RW005",
     "luasFlag": 0.775205,
@@ -1023,6 +1536,7 @@
     "panjangDrainaseIdeal": 400
   },
   {
+    "id": 205,
     "kawasan": 15,
     "rtrw": "RT003-RW006",
     "luasFlag": 0.75263,
@@ -1034,6 +1548,7 @@
     "panjangDrainaseIdeal": 330
   },
   {
+    "id": 207,
     "kawasan": 15,
     "rtrw": "RT003-RW011",
     "luasFlag": 0.241572,
@@ -1045,6 +1560,7 @@
     "panjangDrainaseIdeal": 540
   },
   {
+    "id": 208,
     "kawasan": 15,
     "rtrw": "RT003-RW013",
     "luasFlag": 0.500467,
@@ -1056,6 +1572,7 @@
     "panjangDrainaseIdeal": 325
   },
   {
+    "id": 209,
     "kawasan": 15,
     "rtrw": "RT004-RW001",
     "luasFlag": 0.451755,
@@ -1067,6 +1584,7 @@
     "panjangDrainaseIdeal": 100
   },
   {
+    "id": 210,
     "kawasan": 15,
     "rtrw": "RT004-RW006",
     "luasFlag": 0.167756,
@@ -1078,6 +1596,7 @@
     "panjangDrainaseIdeal": 235
   },
   {
+    "id": 212,
     "kawasan": 15,
     "rtrw": "RT004-RW009",
     "luasFlag": 0.647339,
@@ -1089,6 +1608,7 @@
     "panjangDrainaseIdeal": 350
   },
   {
+    "id": 213,
     "kawasan": 15,
     "rtrw": "RT004-RW013",
     "luasFlag": 0.405502,
@@ -1100,6 +1620,7 @@
     "panjangDrainaseIdeal": 850
   },
   {
+    "id": 216,
     "kawasan": 15,
     "rtrw": "RT005-RW012",
     "luasFlag": 0.871068,
@@ -1111,6 +1632,19 @@
     "panjangDrainaseIdeal": 400
   },
   {
+    "id": 217,
+    "kawasan": 15,
+    "rtrw": "RT006-RW011",
+    "luasFlag": 0.468807,
+    "luasVerifikasi": 0.468807,
+    "jumlahBangunan": 26,
+    "jumlahPenduduk": 106,
+    "jumlahKK": 26,
+    "panjangJalanIdeal": 180,
+    "panjangDrainaseIdeal": 200
+  },
+  {
+    "id": 220,
     "kawasan": 16,
     "rtrw": "RT003-RW002",
     "luasFlag": 0.497645,
@@ -1122,6 +1656,7 @@
     "panjangDrainaseIdeal": 378
   },
   {
+    "id": 221,
     "kawasan": 17,
     "rtrw": "RT001-RW008",
     "luasFlag": 0.176825,
@@ -1133,6 +1668,7 @@
     "panjangDrainaseIdeal": 300
   },
   {
+    "id": 222,
     "kawasan": 17,
     "rtrw": "RT001-RW014",
     "luasFlag": 0.638633,
@@ -1144,6 +1680,19 @@
     "panjangDrainaseIdeal": 300
   },
   {
+    "id": 223,
+    "kawasan": 17,
+    "rtrw": "RT001-RW015",
+    "luasFlag": 0.349136,
+    "luasVerifikasi": 0.349136,
+    "jumlahBangunan": 36,
+    "jumlahPenduduk": 218,
+    "jumlahKK": 36,
+    "panjangJalanIdeal": 135,
+    "panjangDrainaseIdeal": 700
+  },
+  {
+    "id": 224,
     "kawasan": 17,
     "rtrw": "RT001-RW016",
     "luasFlag": 0.694689,
@@ -1155,6 +1704,7 @@
     "panjangDrainaseIdeal": 130
   },
   {
+    "id": 225,
     "kawasan": 17,
     "rtrw": "RT002-RW006",
     "luasFlag": 0.613866,
@@ -1166,6 +1716,19 @@
     "panjangDrainaseIdeal": 500
   },
   {
+    "id": 227,
+    "kawasan": 17,
+    "rtrw": "RT002-RW009",
+    "luasFlag": 0.633752,
+    "luasVerifikasi": 0.633752,
+    "jumlahBangunan": 52,
+    "jumlahPenduduk": 251,
+    "jumlahKK": 76,
+    "panjangJalanIdeal": 450,
+    "panjangDrainaseIdeal": 225
+  },
+  {
+    "id": 231,
     "kawasan": 17,
     "rtrw": "RT003-RW015",
     "luasFlag": 0.451707,
@@ -1177,6 +1740,31 @@
     "panjangDrainaseIdeal": 275
   },
   {
+    "id": 232,
+    "kawasan": 17,
+    "rtrw": "RT004-RW008",
+    "luasFlag": 0.276448,
+    "luasVerifikasi": 0.276448,
+    "jumlahBangunan": 22,
+    "jumlahPenduduk": 86,
+    "jumlahKK": 26,
+    "panjangJalanIdeal": 300,
+    "panjangDrainaseIdeal": 170
+  },
+  {
+    "id": 234,
+    "kawasan": 17,
+    "rtrw": "RT005-RW008",
+    "luasFlag": 0.471827,
+    "luasVerifikasi": 0.471827,
+    "jumlahBangunan": 31,
+    "jumlahPenduduk": 143,
+    "jumlahKK": 49,
+    "panjangJalanIdeal": 210,
+    "panjangDrainaseIdeal": 135
+  },
+  {
+    "id": 235,
     "kawasan": 17,
     "rtrw": "RT006-RW008",
     "luasFlag": 0.482931,
@@ -1188,6 +1776,7 @@
     "panjangDrainaseIdeal": 263
   },
   {
+    "id": 239,
     "kawasan": 19,
     "rtrw": "RT001-RW001",
     "luasFlag": 0.709866,
@@ -1199,6 +1788,31 @@
     "panjangDrainaseIdeal": 520
   },
   {
+    "id": 240,
+    "kawasan": 19,
+    "rtrw": "RT002-RW001",
+    "luasFlag": 0.118398,
+    "luasVerifikasi": 0.118398,
+    "jumlahBangunan": 31,
+    "jumlahPenduduk": 142,
+    "jumlahKK": 43,
+    "panjangJalanIdeal": 250,
+    "panjangDrainaseIdeal": 250
+  },
+  {
+    "id": 241,
+    "kawasan": 19,
+    "rtrw": "RT003-RW001",
+    "luasFlag": 0.983404,
+    "luasVerifikasi": 0.983404,
+    "jumlahBangunan": 64,
+    "jumlahPenduduk": 243,
+    "jumlahKK": 68,
+    "panjangJalanIdeal": 220,
+    "panjangDrainaseIdeal": 325
+  },
+  {
+    "id": 243,
     "kawasan": 20,
     "rtrw": "RT002-RW015",
     "luasFlag": 1.106821,
@@ -1210,6 +1824,103 @@
     "panjangDrainaseIdeal": 800
   },
   {
+    "id": 247,
+    "kawasan": 21,
+    "rtrw": "RT001-RW003",
+    "luasFlag": 0.691534,
+    "luasVerifikasi": 0.691534,
+    "jumlahBangunan": 41,
+    "jumlahPenduduk": 168,
+    "jumlahKK": 52,
+    "panjangJalanIdeal": 250,
+    "panjangDrainaseIdeal": 400
+  },
+  {
+    "id": 249,
+    "kawasan": 21,
+    "rtrw": "RT001-RW005",
+    "luasFlag": 0.688692,
+    "luasVerifikasi": 0.688692,
+    "jumlahBangunan": 45,
+    "jumlahPenduduk": 148,
+    "jumlahKK": 49,
+    "panjangJalanIdeal": 350,
+    "panjangDrainaseIdeal": 275
+  },
+  {
+    "id": 252,
+    "kawasan": 21,
+    "rtrw": "RT002-RW002",
+    "luasFlag": 0.99103,
+    "luasVerifikasi": 0.99103,
+    "jumlahBangunan": 44,
+    "jumlahPenduduk": 171,
+    "jumlahKK": 61,
+    "panjangJalanIdeal": 332,
+    "panjangDrainaseIdeal": 300
+  },
+  {
+    "id": 253,
+    "kawasan": 21,
+    "rtrw": "RT002-RW003",
+    "luasFlag": 0.504005,
+    "luasVerifikasi": 0.504005,
+    "jumlahBangunan": 47,
+    "jumlahPenduduk": 182,
+    "jumlahKK": 61,
+    "panjangJalanIdeal": 330,
+    "panjangDrainaseIdeal": 300
+  },
+  {
+    "id": 255,
+    "kawasan": 21,
+    "rtrw": "RT002-RW005",
+    "luasFlag": 0.218826,
+    "luasVerifikasi": 0.218826,
+    "jumlahBangunan": 43,
+    "jumlahPenduduk": 179,
+    "jumlahKK": 50,
+    "panjangJalanIdeal": 600,
+    "panjangDrainaseIdeal": 600
+  },
+  {
+    "id": 257,
+    "kawasan": 21,
+    "rtrw": "RT003-RW001",
+    "luasFlag": 0.953969,
+    "luasVerifikasi": 0.953969,
+    "jumlahBangunan": 32,
+    "jumlahPenduduk": 146,
+    "jumlahKK": 46,
+    "panjangJalanIdeal": 300,
+    "panjangDrainaseIdeal": 300
+  },
+  {
+    "id": 262,
+    "kawasan": 21,
+    "rtrw": "RT004-RW001",
+    "luasFlag": 0.80554,
+    "luasVerifikasi": 0.80554,
+    "jumlahBangunan": 52,
+    "jumlahPenduduk": 223,
+    "jumlahKK": 73,
+    "panjangJalanIdeal": 325,
+    "panjangDrainaseIdeal": 150
+  },
+  {
+    "id": 263,
+    "kawasan": 21,
+    "rtrw": "RT004-RW002",
+    "luasFlag": 0.383255,
+    "luasVerifikasi": 0.383255,
+    "jumlahBangunan": 30,
+    "jumlahPenduduk": 146,
+    "jumlahKK": 44,
+    "panjangJalanIdeal": 175,
+    "panjangDrainaseIdeal": 200
+  },
+  {
+    "id": 264,
     "kawasan": 21,
     "rtrw": "RT004-RW003",
     "luasFlag": 0.609455,
@@ -1221,6 +1932,67 @@
     "panjangDrainaseIdeal": 500
   },
   {
+    "id": 266,
+    "kawasan": 21,
+    "rtrw": "RT004-RW005",
+    "luasFlag": 0.461499,
+    "luasVerifikasi": 0.461499,
+    "jumlahBangunan": 42,
+    "jumlahPenduduk": 269,
+    "jumlahKK": 55,
+    "panjangJalanIdeal": 90,
+    "panjangDrainaseIdeal": 40
+  },
+  {
+    "id": 267,
+    "kawasan": 21,
+    "rtrw": "RT005-RW003",
+    "luasFlag": 0.299811,
+    "luasVerifikasi": 0.299811,
+    "jumlahBangunan": 36,
+    "jumlahPenduduk": 127,
+    "jumlahKK": 40,
+    "panjangJalanIdeal": 250,
+    "panjangDrainaseIdeal": 250
+  },
+  {
+    "id": 270,
+    "kawasan": 22,
+    "rtrw": "RT001-RW007",
+    "luasFlag": 0.63926,
+    "luasVerifikasi": 0.63926,
+    "jumlahBangunan": 43,
+    "jumlahPenduduk": 222,
+    "jumlahKK": 62,
+    "panjangJalanIdeal": 450,
+    "panjangDrainaseIdeal": 375
+  },
+  {
+    "id": 271,
+    "kawasan": 22,
+    "rtrw": "RT001-RW008",
+    "luasFlag": 0.603634,
+    "luasVerifikasi": 0.603634,
+    "jumlahBangunan": 37,
+    "jumlahPenduduk": 153,
+    "jumlahKK": 49,
+    "panjangJalanIdeal": 500,
+    "panjangDrainaseIdeal": 200
+  },
+  {
+    "id": 272,
+    "kawasan": 22,
+    "rtrw": "RT001-RW009",
+    "luasFlag": 0.905735,
+    "luasVerifikasi": 0.905735,
+    "jumlahBangunan": 61,
+    "jumlahPenduduk": 264,
+    "jumlahKK": 83,
+    "panjangJalanIdeal": 1560,
+    "panjangDrainaseIdeal": 400
+  },
+  {
+    "id": 273,
     "kawasan": 22,
     "rtrw": "RT002-RW003",
     "luasFlag": 1.178508,
@@ -1232,6 +2004,55 @@
     "panjangDrainaseIdeal": 150
   },
   {
+    "id": 275,
+    "kawasan": 22,
+    "rtrw": "RT002-RW007",
+    "luasFlag": 0.804346,
+    "luasVerifikasi": 0.804346,
+    "jumlahBangunan": 48,
+    "jumlahPenduduk": 249,
+    "jumlahKK": 79,
+    "panjangJalanIdeal": 190,
+    "panjangDrainaseIdeal": 190
+  },
+  {
+    "id": 276,
+    "kawasan": 22,
+    "rtrw": "RT002-RW008",
+    "luasFlag": 0.405885,
+    "luasVerifikasi": 0.405885,
+    "jumlahBangunan": 35,
+    "jumlahPenduduk": 150,
+    "jumlahKK": 45,
+    "panjangJalanIdeal": 400,
+    "panjangDrainaseIdeal": 250
+  },
+  {
+    "id": 277,
+    "kawasan": 22,
+    "rtrw": "RT002-RW009",
+    "luasFlag": 0.682649,
+    "luasVerifikasi": 0.682649,
+    "jumlahBangunan": 34,
+    "jumlahPenduduk": 153,
+    "jumlahKK": 48,
+    "panjangJalanIdeal": 470,
+    "panjangDrainaseIdeal": 350
+  },
+  {
+    "id": 278,
+    "kawasan": 22,
+    "rtrw": "RT003-RW004",
+    "luasFlag": 0.652138,
+    "luasVerifikasi": 0.652138,
+    "jumlahBangunan": 35,
+    "jumlahPenduduk": 147,
+    "jumlahKK": 47,
+    "panjangJalanIdeal": 800,
+    "panjangDrainaseIdeal": 300
+  },
+  {
+    "id": 280,
     "kawasan": 22,
     "rtrw": "RT003-RW007",
     "luasFlag": 0.641644,
@@ -1243,6 +2064,7 @@
     "panjangDrainaseIdeal": 240
   },
   {
+    "id": 281,
     "kawasan": 22,
     "rtrw": "RT003-RW008",
     "luasFlag": 0.730459,
@@ -1254,6 +2076,91 @@
     "panjangDrainaseIdeal": 950
   },
   {
+    "id": 282,
+    "kawasan": 22,
+    "rtrw": "RT003-RW009",
+    "luasFlag": 0.169553,
+    "luasVerifikasi": 0.169553,
+    "jumlahBangunan": 24,
+    "jumlahPenduduk": 97,
+    "jumlahKK": 24,
+    "panjangJalanIdeal": 650,
+    "panjangDrainaseIdeal": 50
+  },
+  {
+    "id": 283,
+    "kawasan": 22,
+    "rtrw": "RT004-RW004",
+    "luasFlag": 0.621592,
+    "luasVerifikasi": 0.621592,
+    "jumlahBangunan": 38,
+    "jumlahPenduduk": 165,
+    "jumlahKK": 54,
+    "panjangJalanIdeal": 890,
+    "panjangDrainaseIdeal": 440
+  },
+  {
+    "id": 274,
+    "kawasan": 22,
+    "rtrw": "RT004-RW007",
+    "luasFlag": 0.926203,
+    "luasVerifikasi": 0.926203,
+    "jumlahBangunan": 53,
+    "jumlahPenduduk": 246,
+    "jumlahKK": 62,
+    "panjangJalanIdeal": 630,
+    "panjangDrainaseIdeal": 490
+  },
+  {
+    "id": 284,
+    "kawasan": 22,
+    "rtrw": "RT004-RW008",
+    "luasFlag": 0.580137,
+    "luasVerifikasi": 0.580137,
+    "jumlahBangunan": 32,
+    "jumlahPenduduk": 116,
+    "jumlahKK": 33,
+    "panjangJalanIdeal": 150,
+    "panjangDrainaseIdeal": 150
+  },
+  {
+    "id": 287,
+    "kawasan": 22,
+    "rtrw": "RT005-RW007",
+    "luasFlag": 0.769911,
+    "luasVerifikasi": 0.769911,
+    "jumlahBangunan": 56,
+    "jumlahPenduduk": 258,
+    "jumlahKK": 66,
+    "panjangJalanIdeal": 760,
+    "panjangDrainaseIdeal": 330
+  },
+  {
+    "id": 288,
+    "kawasan": 22,
+    "rtrw": "RT005-RW008",
+    "luasFlag": 0.612263,
+    "luasVerifikasi": 0.612263,
+    "jumlahBangunan": 8,
+    "jumlahPenduduk": 35,
+    "jumlahKK": 10,
+    "panjangJalanIdeal": 116,
+    "panjangDrainaseIdeal": 232
+  },
+  {
+    "id": 289,
+    "kawasan": 22,
+    "rtrw": "RT006-RW007",
+    "luasFlag": 0.773876,
+    "luasVerifikasi": 0.773876,
+    "jumlahBangunan": 52,
+    "jumlahPenduduk": 192,
+    "jumlahKK": 60,
+    "panjangJalanIdeal": 1180,
+    "panjangDrainaseIdeal": 800
+  },
+  {
+    "id": 290,
     "kawasan": 22,
     "rtrw": "RT006-RW008",
     "luasFlag": 0.466329,
@@ -1265,6 +2172,7 @@
     "panjangDrainaseIdeal": 20
   },
   {
+    "id": 292,
     "kawasan": 23,
     "rtrw": "RT002-RW006",
     "luasFlag": 0.383395,
@@ -1276,6 +2184,7 @@
     "panjangDrainaseIdeal": 314
   },
   {
+    "id": 293,
     "kawasan": 23,
     "rtrw": "RT003-RW006",
     "luasFlag": 0.437281,
@@ -1287,6 +2196,7 @@
     "panjangDrainaseIdeal": 575
   },
   {
+    "id": 294,
     "kawasan": 23,
     "rtrw": "RT004-RW006",
     "luasFlag": 0.452402,
@@ -1298,6 +2208,7 @@
     "panjangDrainaseIdeal": 500
   },
   {
+    "id": 295,
     "kawasan": 24,
     "rtrw": "RT001-RW001",
     "luasFlag": 0.465299,
@@ -1309,6 +2220,43 @@
     "panjangDrainaseIdeal": 150
   },
   {
+    "id": 296,
+    "kawasan": 24,
+    "rtrw": "RT001-RW005",
+    "luasFlag": 0.941761,
+    "luasVerifikasi": 0.941761,
+    "jumlahBangunan": 40,
+    "jumlahPenduduk": 155,
+    "jumlahKK": 40,
+    "panjangJalanIdeal": 375,
+    "panjangDrainaseIdeal": 250
+  },
+  {
+    "id": 299,
+    "kawasan": 24,
+    "rtrw": "RT001-RW010",
+    "luasFlag": 0.984039,
+    "luasVerifikasi": 0.984039,
+    "jumlahBangunan": 46,
+    "jumlahPenduduk": 147,
+    "jumlahKK": 64,
+    "panjangJalanIdeal": 455,
+    "panjangDrainaseIdeal": 400
+  },
+  {
+    "id": 300,
+    "kawasan": 24,
+    "rtrw": "RT001-RW011",
+    "luasFlag": 0.608042,
+    "luasVerifikasi": 0.608042,
+    "jumlahBangunan": 41,
+    "jumlahPenduduk": 155,
+    "jumlahKK": 58,
+    "panjangJalanIdeal": 190,
+    "panjangDrainaseIdeal": 190
+  },
+  {
+    "id": 301,
     "kawasan": 24,
     "rtrw": "RT002-RW001",
     "luasFlag": 0.545946,
@@ -1320,6 +2268,19 @@
     "panjangDrainaseIdeal": 150
   },
   {
+    "id": 302,
+    "kawasan": 24,
+    "rtrw": "RT002-RW002",
+    "luasFlag": 0.538085,
+    "luasVerifikasi": 0.538085,
+    "jumlahBangunan": 16,
+    "jumlahPenduduk": 59,
+    "jumlahKK": 18,
+    "panjangJalanIdeal": 350,
+    "panjangDrainaseIdeal": 400
+  },
+  {
+    "id": 305,
     "kawasan": 24,
     "rtrw": "RT002-RW006",
     "luasFlag": 0.108013,
@@ -1331,6 +2292,43 @@
     "panjangDrainaseIdeal": 80
   },
   {
+    "id": 307,
+    "kawasan": 24,
+    "rtrw": "RT002-RW010",
+    "luasFlag": 0.751376,
+    "luasVerifikasi": 0.751376,
+    "jumlahBangunan": 45,
+    "jumlahPenduduk": 175,
+    "jumlahKK": 49,
+    "panjangJalanIdeal": 550,
+    "panjangDrainaseIdeal": 450
+  },
+  {
+    "id": 309,
+    "kawasan": 24,
+    "rtrw": "RT003-RW001",
+    "luasFlag": 0.613727,
+    "luasVerifikasi": 0.613727,
+    "jumlahBangunan": 53,
+    "jumlahPenduduk": 267,
+    "jumlahKK": 73,
+    "panjangJalanIdeal": 700,
+    "panjangDrainaseIdeal": 150
+  },
+  {
+    "id": 310,
+    "kawasan": 24,
+    "rtrw": "RT003-RW002",
+    "luasFlag": 0.193916,
+    "luasVerifikasi": 0.193916,
+    "jumlahBangunan": 20,
+    "jumlahPenduduk": 65,
+    "jumlahKK": 25,
+    "panjangJalanIdeal": 350,
+    "panjangDrainaseIdeal": 400
+  },
+  {
+    "id": 312,
     "kawasan": 24,
     "rtrw": "RT003-RW008",
     "luasFlag": 0.479905,
@@ -1342,6 +2340,7 @@
     "panjangDrainaseIdeal": 200
   },
   {
+    "id": 313,
     "kawasan": 24,
     "rtrw": "RT003-RW010",
     "luasFlag": 1.133195,
@@ -1353,6 +2352,7 @@
     "panjangDrainaseIdeal": 686
   },
   {
+    "id": 315,
     "kawasan": 24,
     "rtrw": "RT004-RW001",
     "luasFlag": 0.322008,
@@ -1364,6 +2364,7 @@
     "panjangDrainaseIdeal": 50
   },
   {
+    "id": 317,
     "kawasan": 24,
     "rtrw": "RT004-RW005",
     "luasFlag": 0.292863,
@@ -1375,6 +2376,7 @@
     "panjangDrainaseIdeal": 205
   },
   {
+    "id": 318,
     "kawasan": 24,
     "rtrw": "RT004-RW007",
     "luasFlag": 0.468822,
@@ -1386,6 +2388,31 @@
     "panjangDrainaseIdeal": 300
   },
   {
+    "id": 319,
+    "kawasan": 24,
+    "rtrw": "RT004-RW008",
+    "luasFlag": 0.260682,
+    "luasVerifikasi": 0.260682,
+    "jumlahBangunan": 18,
+    "jumlahPenduduk": 89,
+    "jumlahKK": 27,
+    "panjangJalanIdeal": 100,
+    "panjangDrainaseIdeal": 100
+  },
+  {
+    "id": 322,
+    "kawasan": 24,
+    "rtrw": "RT005-RW001",
+    "luasFlag": 0.759704,
+    "luasVerifikasi": 0.759704,
+    "jumlahBangunan": 63,
+    "jumlahPenduduk": 231,
+    "jumlahKK": 75,
+    "panjangJalanIdeal": 350,
+    "panjangDrainaseIdeal": 20
+  },
+  {
+    "id": 323,
     "kawasan": 24,
     "rtrw": "RT005-RW003",
     "luasFlag": 0.205607,
@@ -1397,6 +2424,19 @@
     "panjangDrainaseIdeal": 240
   },
   {
+    "id": 326,
+    "kawasan": 24,
+    "rtrw": "RT005-RW011",
+    "luasFlag": 0.655597,
+    "luasVerifikasi": 0.655597,
+    "jumlahBangunan": 64,
+    "jumlahPenduduk": 271,
+    "jumlahKK": 88,
+    "panjangJalanIdeal": 540,
+    "panjangDrainaseIdeal": 540
+  },
+  {
+    "id": 327,
     "kawasan": 24,
     "rtrw": "RT005-RW012",
     "luasFlag": 0.383314,
@@ -1408,6 +2448,7 @@
     "panjangDrainaseIdeal": 300
   },
   {
+    "id": 328,
     "kawasan": 24,
     "rtrw": "RT006-RW003",
     "luasFlag": 0.248281,
@@ -1419,6 +2460,19 @@
     "panjangDrainaseIdeal": 150
   },
   {
+    "id": 329,
+    "kawasan": 24,
+    "rtrw": "RT006-RW004",
+    "luasFlag": 0.375233,
+    "luasVerifikasi": 0.375233,
+    "jumlahBangunan": 23,
+    "jumlahPenduduk": 91,
+    "jumlahKK": 34,
+    "panjangJalanIdeal": 200,
+    "panjangDrainaseIdeal": 380
+  },
+  {
+    "id": 331,
     "kawasan": 24,
     "rtrw": "RT006-RW012",
     "luasFlag": 0.557015,
@@ -1430,6 +2484,7 @@
     "panjangDrainaseIdeal": 380
   },
   {
+    "id": 334,
     "kawasan": 24,
     "rtrw": "RT007-RW008",
     "luasFlag": 0.432142,
@@ -1441,6 +2496,7 @@
     "panjangDrainaseIdeal": 452
   },
   {
+    "id": 337,
     "kawasan": 24,
     "rtrw": "RT008-RW013",
     "luasFlag": 0.56886,
@@ -1452,6 +2508,7 @@
     "panjangDrainaseIdeal": 900
   },
   {
+    "id": 340,
     "kawasan": 25,
     "rtrw": "RT001-RW005",
     "luasFlag": 0.70208,
@@ -1463,6 +2520,19 @@
     "panjangDrainaseIdeal": 150
   },
   {
+    "id": 342,
+    "kawasan": 25,
+    "rtrw": "RT001-RW007",
+    "luasFlag": 0.029693,
+    "luasVerifikasi": 0.029693,
+    "jumlahBangunan": 27,
+    "jumlahPenduduk": 133,
+    "jumlahKK": 33,
+    "panjangJalanIdeal": 180,
+    "panjangDrainaseIdeal": 100
+  },
+  {
+    "id": 346,
     "kawasan": 25,
     "rtrw": "RT002-RW004",
     "luasFlag": 0.769194,
@@ -1474,6 +2544,7 @@
     "panjangDrainaseIdeal": 300
   },
   {
+    "id": 347,
     "kawasan": 25,
     "rtrw": "RT002-RW005",
     "luasFlag": 0.328946,
@@ -1485,6 +2556,31 @@
     "panjangDrainaseIdeal": 175
   },
   {
+    "id": 349,
+    "kawasan": 25,
+    "rtrw": "RT002-RW007",
+    "luasFlag": 0.09564,
+    "luasVerifikasi": 0.09564,
+    "jumlahBangunan": 25,
+    "jumlahPenduduk": 131,
+    "jumlahKK": 32,
+    "panjangJalanIdeal": 200,
+    "panjangDrainaseIdeal": 300
+  },
+  {
+    "id": 352,
+    "kawasan": 25,
+    "rtrw": "RT003-RW004",
+    "luasFlag": 0.612161,
+    "luasVerifikasi": 0.612161,
+    "jumlahBangunan": 44,
+    "jumlahPenduduk": 204,
+    "jumlahKK": 63,
+    "panjangJalanIdeal": 450,
+    "panjangDrainaseIdeal": 450
+  },
+  {
+    "id": 353,
     "kawasan": 25,
     "rtrw": "RT003-RW005",
     "luasFlag": 0.698641,
@@ -1496,6 +2592,7 @@
     "panjangDrainaseIdeal": 200
   },
   {
+    "id": 355,
     "kawasan": 25,
     "rtrw": "RT003-RW007",
     "luasFlag": 0.059991,
@@ -1507,6 +2604,31 @@
     "panjangDrainaseIdeal": 125
   },
   {
+    "id": 356,
+    "kawasan": 25,
+    "rtrw": "RT003-RW010",
+    "luasFlag": 0.424854,
+    "luasVerifikasi": 0.424854,
+    "jumlahBangunan": 26,
+    "jumlahPenduduk": 171,
+    "jumlahKK": 45,
+    "panjangJalanIdeal": 350,
+    "panjangDrainaseIdeal": 400
+  },
+  {
+    "id": 358,
+    "kawasan": 25,
+    "rtrw": "RT004-RW005",
+    "luasFlag": 0.358142,
+    "luasVerifikasi": 0.358142,
+    "jumlahBangunan": 34,
+    "jumlahPenduduk": 156,
+    "jumlahKK": 50,
+    "panjangJalanIdeal": 200,
+    "panjangDrainaseIdeal": 240
+  },
+  {
+    "id": 359,
     "kawasan": 25,
     "rtrw": "RT004-RW006",
     "luasFlag": 0.178813,
@@ -1518,6 +2640,7 @@
     "panjangDrainaseIdeal": 150
   },
   {
+    "id": 360,
     "kawasan": 25,
     "rtrw": "RT004-RW007",
     "luasFlag": 0.081177,
@@ -1529,6 +2652,7 @@
     "panjangDrainaseIdeal": 500
   },
   {
+    "id": 361,
     "kawasan": 25,
     "rtrw": "RT004-RW010",
     "luasFlag": 0.47334,
@@ -1540,6 +2664,7 @@
     "panjangDrainaseIdeal": 350
   },
   {
+    "id": 368,
     "kawasan": 25,
     "rtrw": "RT006-RW010",
     "luasFlag": 0.363193,
@@ -1551,6 +2676,7 @@
     "panjangDrainaseIdeal": 800
   },
   {
+    "id": 369,
     "kawasan": 25,
     "rtrw": "RT007-RW005",
     "luasFlag": 0.265483,
@@ -1562,6 +2688,7 @@
     "panjangDrainaseIdeal": 150
   },
   {
+    "id": 373,
     "kawasan": 26,
     "rtrw": "RT001-RW012",
     "luasFlag": 0.165565,
@@ -1573,6 +2700,19 @@
     "panjangDrainaseIdeal": 130
   },
   {
+    "id": 374,
+    "kawasan": 26,
+    "rtrw": "RT001-RW013",
+    "luasFlag": 0.445224,
+    "luasVerifikasi": 0.445224,
+    "jumlahBangunan": 34,
+    "jumlahPenduduk": 166,
+    "jumlahKK": 51,
+    "panjangJalanIdeal": 200,
+    "panjangDrainaseIdeal": 250
+  },
+  {
+    "id": 375,
     "kawasan": 26,
     "rtrw": "RT001-RW014",
     "luasFlag": 0.515013,
@@ -1584,6 +2724,43 @@
     "panjangDrainaseIdeal": 170
   },
   {
+    "id": 376,
+    "kawasan": 26,
+    "rtrw": "RT001-RW015",
+    "luasFlag": 0.183036,
+    "luasVerifikasi": 0.183036,
+    "jumlahBangunan": 30,
+    "jumlahPenduduk": 150,
+    "jumlahKK": 41,
+    "panjangJalanIdeal": 210,
+    "panjangDrainaseIdeal": 330
+  },
+  {
+    "id": 378,
+    "kawasan": 26,
+    "rtrw": "RT002-RW013",
+    "luasFlag": 0.623564,
+    "luasVerifikasi": 0.623564,
+    "jumlahBangunan": 38,
+    "jumlahPenduduk": 188,
+    "jumlahKK": 57,
+    "panjangJalanIdeal": 200,
+    "panjangDrainaseIdeal": 250
+  },
+  {
+    "id": 379,
+    "kawasan": 26,
+    "rtrw": "RT002-RW014",
+    "luasFlag": 0.431345,
+    "luasVerifikasi": 0.431345,
+    "jumlahBangunan": 37,
+    "jumlahPenduduk": 161,
+    "jumlahKK": 44,
+    "panjangJalanIdeal": 485,
+    "panjangDrainaseIdeal": 750
+  },
+  {
+    "id": 382,
     "kawasan": 26,
     "rtrw": "RT003-RW012",
     "luasFlag": 0.674213,
@@ -1595,6 +2772,7 @@
     "panjangDrainaseIdeal": 600
   },
   {
+    "id": 383,
     "kawasan": 26,
     "rtrw": "RT003-RW013",
     "luasFlag": 0.540789,
@@ -1606,6 +2784,19 @@
     "panjangDrainaseIdeal": 300.35
   },
   {
+    "id": 385,
+    "kawasan": 26,
+    "rtrw": "RT003-RW015",
+    "luasFlag": 0.658429,
+    "luasVerifikasi": 0.658429,
+    "jumlahBangunan": 41,
+    "jumlahPenduduk": 195,
+    "jumlahKK": 61,
+    "panjangJalanIdeal": 225,
+    "panjangDrainaseIdeal": 225
+  },
+  {
+    "id": 391,
     "kawasan": 26,
     "rtrw": "RT005-RW015",
     "luasFlag": 0.792397,
@@ -1617,6 +2808,7 @@
     "panjangDrainaseIdeal": 517
   },
   {
+    "id": 392,
     "kawasan": 26,
     "rtrw": "RT006-RW012",
     "luasFlag": 0.322962,
@@ -1628,6 +2820,43 @@
     "panjangDrainaseIdeal": 380
   },
   {
+    "id": 393,
+    "kawasan": 26,
+    "rtrw": "RT006-RW014",
+    "luasFlag": 0.484121,
+    "luasVerifikasi": 0.484121,
+    "jumlahBangunan": 52,
+    "jumlahPenduduk": 206,
+    "jumlahKK": 64,
+    "panjangJalanIdeal": 402,
+    "panjangDrainaseIdeal": 510
+  },
+  {
+    "id": 394,
+    "kawasan": 26,
+    "rtrw": "RT007-RW012",
+    "luasFlag": 0.415949,
+    "luasVerifikasi": 0.415949,
+    "jumlahBangunan": 26,
+    "jumlahPenduduk": 125,
+    "jumlahKK": 44,
+    "panjangJalanIdeal": 320,
+    "panjangDrainaseIdeal": 420
+  },
+  {
+    "id": 396,
+    "kawasan": 26,
+    "rtrw": "RT007-RW015",
+    "luasFlag": 0.243706,
+    "luasVerifikasi": 0.243706,
+    "jumlahBangunan": 29,
+    "jumlahPenduduk": 125,
+    "jumlahKK": 37,
+    "panjangJalanIdeal": 125,
+    "panjangDrainaseIdeal": 125
+  },
+  {
+    "id": 397,
     "kawasan": 26,
     "rtrw": "RT008-RW001",
     "luasFlag": 1.080943,
@@ -1639,6 +2868,7 @@
     "panjangDrainaseIdeal": 200
   },
   {
+    "id": 398,
     "kawasan": 26,
     "rtrw": "RT008-RW012",
     "luasFlag": 0.250916,
@@ -1650,6 +2880,7 @@
     "panjangDrainaseIdeal": 130
   },
   {
+    "id": 399,
     "kawasan": 26,
     "rtrw": "RT008-RW014",
     "luasFlag": 0.476806,
@@ -1659,5 +2890,17 @@
     "jumlahKK": 57,
     "panjangJalanIdeal": 255,
     "panjangDrainaseIdeal": 175
+  },
+  {
+    "id": 400,
+    "kawasan": 26,
+    "rtrw": "RT008-RW015",
+    "luasFlag": 0.517873,
+    "luasVerifikasi": 0.517873,
+    "jumlahBangunan": 24,
+    "jumlahPenduduk": 120,
+    "jumlahKK": 34,
+    "panjangJalanIdeal": 145,
+    "panjangDrainaseIdeal": 145
   }
 ]

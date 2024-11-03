@@ -13,11 +13,15 @@ class SK24RTRWSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::table('sk24_kumuh_rt')->truncate();
+        DB::table('sk24_kumuh_kawasan')->truncate();
         DB::table('sk24_rtrw')->truncate();
         $json = file_get_contents(database_path('seeders/rtrw24.json'));
         $data = json_decode($json, true);
+        $no = 1;
         foreach ($data as $row) {
             DB::table('sk24_rtrw')->insert([
+                'id' => $row['id'],
                 'kawasan' => $row['kawasan'],
                 'rtrw' => $row['rtrw'],
                 'luasFlag' => $row['luasFlag'],

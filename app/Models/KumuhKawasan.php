@@ -70,7 +70,8 @@ class KumuhKawasan extends Model
         'totalNilai',
         'tingkatKekumuhan',
         'ratarataKekumuhan',
-        'kontribusiPenanganan'
+        'kontribusiPenanganan',
+        'updated_at'
     ];
 
     public function getWarnaAttribute()

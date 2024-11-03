@@ -9,6 +9,10 @@ use App\Models\Rtrw;
 use App\Models\Investasi as InvestasiModel;
 use App\Models\KumuhKawasan;
 use App\Models\KumuhRT;
+use App\Models\SK24Kawasan;
+use App\Models\SK24KumuhKawasan;
+use App\Models\SK24KumuhRT;
+use App\Models\SK24Rtrw;
 use Carbon\Carbon;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Number;
@@ -44,7 +48,7 @@ class Investasi extends Component
     public function lock()
     {
         InvestasiModel::where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih])->update(['locked' => 2]);
-        $namaKawasan = Kawasan::where('id', $this->idKawasanTerpilih)->get()->first()->kawasan;
+        $namaKawasan = SK24Kawasan::where('id', $this->idKawasanTerpilih)->get()->first()->kawasan;
         session()->flash('info', 'Berhasil Mengunci Data Investasi ' . $namaKawasan);
         $this->updatedidKawasanTerpilih();
     }
@@ -71,20 +75,17 @@ class Investasi extends Component
 
 
 
-        $this->header = Kawasan::find($this->idKawasanTerpilih)->toArray();
+        $this->header = SK24Kawasan::find($this->idKawasanTerpilih)->toArray();
 
-        $this->rt = Rtrw::where(['kawasan' => $this->idKawasanTerpilih])->get(['id', 'rtrw'])->toArray();
+        $this->rt = SK24Rtrw::where(['kawasan' => $this->idKawasanTerpilih])->get(['id', 'rtrw'])->toArray();
         $investasi = InvestasiModel::where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih])->get()->toArray();
-        // $investasi = DB::table('investasi')->selectRaw('idkriteria, sum(volume),anggaran, sumberAnggaran, kegiatan')->where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih])->groupBy('idkriteria')->get()->toArray();
-        // $this->investasi = $investasi;
-        // dd($investasi);
         $this->investasi = Arr::map($investasi, function ($value) {
             return [
                 ...$value,
                 'anggaran' => Number::currency(intval($value['anggaran']), 'IDR', 'id')
             ];
         });
-        $this->kumuhAwal = KumuhKawasan::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih])->first();
+        $this->kumuhAwal = SK24KumuhKawasan::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih])->first();
         $this->kumuhAwalArr = $this->kumuhAwal->toArray();
         $this->kumuhAkhir = $this->hitungKumuhRtAkhir($this->investasi, $this->kumuhAwal, $this->header);
 
@@ -117,8 +118,8 @@ class Investasi extends Component
                     'anggaran' => Number::currency(intval($value['anggaran']), 'IDR', 'id')
                 ];
             });
-            $this->header = Rtrw::find($this->idRTTerpilih);
-            $this->kumuhAwal = KumuhRT::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih, 'rt' => $this->idRTTerpilih])->first();
+            $this->header = SK24Rtrw::find($this->idRTTerpilih);
+            $this->kumuhAwal = SK24KumuhRT::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih, 'rt' => $this->idRTTerpilih])->first();
 
             $this->kumuhAkhir = $this->hitungKumuhRtAkhir($this->investasi, $this->kumuhAwal, $this->header);
         }
@@ -151,10 +152,10 @@ class Investasi extends Component
 
         if ($this->user->role == 'admin') {
             // ambil semua kawasan
-            $this->kawasan = Kawasan::umum();
+            $this->kawasan = SK24Kawasan::umum();
         } else {
             // hanya kawasan yang di wenangi sekaligus rt
-            $this->kawasan = Kawasan::where(['id' => $this->user->kawasan_id])->get(['id', 'kawasan'])->first()->toArray();
+            $this->kawasan = SK24Kawasan::where(['id' => $this->user->kawasan_id])->get(['id', 'kawasan'])->first()->toArray();
             $this->idKawasanTerpilih = $this->kawasan['id'];
             $this->updatedidKawasanTerpilih();
         }

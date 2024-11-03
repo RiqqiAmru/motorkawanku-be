@@ -84,7 +84,7 @@ return new class extends Migration
             $table->float('kontribusiPenanganan');
 
             $table->timestamps();
-            $table->foreign('kawasan')->references('id')->on('kawasan');
+            $table->foreign('kawasan')->references('id')->on('sk24_kawasan');
         });
     }
 

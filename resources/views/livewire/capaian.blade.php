@@ -45,10 +45,10 @@
             <thead class="ltr:text-left rtl:text-right">
                 <tr>
                     <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">Wilayah / RT</th>
-                    @for ($i = 2019; $i <= $tahun; $i++)
+                    @for ($i = 2023; $i <= $tahun; $i++)
                         <th colspan="2"
                             class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white border-l-2">
-                            {{ $i == 2019 ? 'Baseline' : $i }}
+                            {{ $i == 2023 ? 'Baseline' : $i }}
                         </th>
                     @endfor
                 </tr>

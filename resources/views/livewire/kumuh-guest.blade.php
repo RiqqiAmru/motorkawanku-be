@@ -14,7 +14,7 @@
 
             {{-- map --}}
             <div>
-                <div wire:ignore x-data="{
+                <div wire:ignore x-show="$wire.tahun<2024" x-data="{
                     map: null,
                     init() {
                         this.map = L.map(this.$refs.map).setView([-6.8908, 109.6756], 13);
@@ -58,6 +58,11 @@
                 }">
                     <div class="w-full h-96 bg-gray-200 shadow-sm sm:rounded-lg border-black" x-ref="map"
                         id='map'></div>
+                </div>
+                <div x-show="$wire.tahun>2023" class="text-center py-2">
+                    <x-secondary-button>
+                        <a href="/map" target="_blank" rel="noopener noreferrer">map</a>
+                    </x-secondary-button>
                 </div>
             </div>
             {{-- <div wire:ignore>
@@ -244,7 +249,8 @@
                                         {{ $kumuhAwal ? Number::percentage($kumuhAwal?->{'1cp'} * 100, 2) : 0 }} </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
                                         {{ $kumuhAwal?->{'1cn'} ?: 0 }}</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200 border-l-2">
+                                    <td
+                                        class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200 border-l-2">
                                         {{ $kumuhAkhir?->{'1cv'} ?: 0 }} Unit
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
@@ -1019,34 +1025,3 @@
         </div>
     </div>
 </div>
-<script>
-    // var map = L.map("map").setView([-6.8908, 109.6756], 13);
-    // L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    //     maxZoom: 19,
-    //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    // }).addTo(map);
-</script>
-{{-- @script
-    <script>
-        // Livewire.on('updated-investasi', (coordinate) => {
-        //     let coor = JSON.parse(coordinate[0].coordinates);
-        //     let color = {
-        //         color: 'green'
-        //     }
-        //     console.log(coor)
-        //     console.log(coor2)
-
-
-        //     if (coor.length > 0) {
-
-        //         let polygon = L.polygon(coor, color).addTo(map);
-        //         polygon.bindPopup(
-        //             data.kelurahan +
-        //             (data.kodeRTRW ? ' - ' + data.kodeRTRW : '') +
-        //             (data.description ? ' - ' + data.description : '')
-        //         );
-        //         map.fitBounds(polygon.getBounds());
-        //     }
-        // });
-    </script>
-@endscript --}}

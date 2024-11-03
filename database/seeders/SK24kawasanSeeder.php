@@ -13,13 +13,13 @@ class SK24kawasanSeeder extends Seeder
      */
     public function run(): void
     {
-
+        DB::table('sk24_kumuh_rt')->truncate();
+        DB::table('sk24_kumuh_kawasan')->truncate();
         DB::table('sk24_rtrw')->truncate();
         DB::table('sk24_kawasan')->truncate();
         $json = file_get_contents(database_path('seeders/kawasan24.json'));
         $data = json_decode($json, true);
         foreach ($data as $row) {
-
             DB::table('sk24_kawasan')->insert([
                 'id' => $row['id'],
                 'kawasan' => $row['kawasan'],

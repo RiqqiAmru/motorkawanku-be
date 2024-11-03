@@ -35,7 +35,8 @@ class DatabaseSeeder extends Seeder
             SK24kawasanSeeder::class,
             SK24RTRWSeeder::class,
             SK24KumuhKawasanSeeder::class,
-            SK24KumuhRTSeeder::class,
+            Update24Sandingan::class,
+            // update2024
         ]);
     }
 }

@@ -8,8 +8,13 @@ use App\Models\KumuhKawasan;
 use App\Models\KumuhRT;
 use App\Models\Latlang;
 use App\Models\Rtrw;
+use App\Models\SK24Kawasan;
+use App\Models\SK24KumuhKawasan;
+use App\Models\SK24KumuhRT;
+use App\Models\SK24Rtrw;
 use Carbon\Carbon;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Number;
 
 use Livewire\Component;
@@ -29,6 +34,7 @@ class KumuhGuest extends Component
     public $investasi = null;
     public $description = null;
     public $description2 = null;
+    // public $allKumuhRT = null;
 
 
 
@@ -40,6 +46,7 @@ class KumuhGuest extends Component
     public function mount()
     {
         $this->tahun = Carbon::now()->year;
+    // $this->allKumuhRT = DB::table('sk24_kumuh_rt')->select('totalNilai')->get();
     }
 
     public function updatedidKawasanTerpilih($idKawasanTerpilih)
@@ -50,7 +57,11 @@ class KumuhGuest extends Component
         $this->reset('kumuhAkhir');
         $this->reset('investasi');
         $this->reset('coordinate');
-        $this->header = Kawasan::find($idKawasanTerpilih);
+        if ($this->tahun < 2024) {
+            $this->header = Kawasan::find($idKawasanTerpilih);
+        } else {
+            $this->header = SK24Kawasan::find($idKawasanTerpilih);
+        }
         if ($this->header) {
             $this->loadKumuhKawasan();
         }
@@ -65,7 +76,11 @@ class KumuhGuest extends Component
         if ($idRTTerpilih == 0) {
             $this->updatedidKawasanTerpilih($this->idKawasanTerpilih);
         } else {
-            $this->header = Rtrw::find($idRTTerpilih);
+            if ($this->tahun < 2024) {
+                $this->header = Rtrw::find($idRTTerpilih);
+            } else {
+                $this->header = SK24Rtrw::find($idRTTerpilih);
+            }
             if ($this->header) {
                 $this->loadKumuhRT();
             }
@@ -84,10 +99,19 @@ class KumuhGuest extends Component
 
     public function loadKumuhKawasan()
     {
-        $this->daftarRT = Rtrw::where('kawasan', $this->idKawasanTerpilih)->get(['id', 'rtrw']);
-        $this->coordinate = Latlang::where('kelurahan', $this->header->kawasan)->first()->toArray();
-        $this->kumuhAwal = KumuhKawasan::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih])->first();
-        $this->kumuhAkhir = KumuhKawasan::where(['tahun' => $this->tahun, 'kawasan' => $this->idKawasanTerpilih])->first();
+        if ($this->tahun < 2024) {
+            $this->daftarRT = Rtrw::where('kawasan', $this->idKawasanTerpilih)->get(['id', 'rtrw']);
+            $this->coordinate = Latlang::where('kelurahan', $this->header->kawasan)->first()->toArray();
+            $this->kumuhAwal = KumuhKawasan::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih])->first();
+            $this->kumuhAkhir = KumuhKawasan::where(['tahun' => $this->tahun, 'kawasan' => $this->idKawasanTerpilih])->first();
+            // coordinate ket
+            $kumuh = $this->kumuhAkhir?->toArray() ? $this->kumuhAkhir?->toArray() : $this->kumuhAwal?->toArray();
+            $this->description = $this->coordinateDescription($kumuh);
+        } else {
+            $this->daftarRT = SK24Rtrw::where('kawasan', $this->idKawasanTerpilih)->get(['id', 'rtrw']);
+            $this->kumuhAwal = SK24KumuhKawasan::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih])->first();
+            $this->kumuhAkhir = SK24KumuhKawasan::where(['tahun' => $this->tahun, 'kawasan' => $this->idKawasanTerpilih])->first();
+        }
 
         $investasi = Investasi::where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih])->get()->toArray();
         $this->investasi = Arr::map($investasi, function ($value) {
@@ -96,16 +120,25 @@ class KumuhGuest extends Component
                 'anggaran' => Number::currency(intval($value['anggaran']), 'IDR', 'id')
             ];
         });
-        $kumuh = $this->kumuhAkhir?->toArray() ? $this->kumuhAkhir?->toArray() : $this->kumuhAwal?->toArray();
-        $this->description = $this->coordinateDescription($kumuh);
 
         $this->dispatch('updated-investasi');
     }
 
     public function loadKumuhRT()
     {
-        $this->kumuhAwal = KumuhRT::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih, 'rt' => $this->idRTTerpilih])->first();
-        $this->kumuhAkhir = KumuhRT::where(['tahun' => $this->tahun, 'kawasan' => $this->idKawasanTerpilih, 'rt' => $this->idRTTerpilih])->first();
+        if ($this->tahun < 2024) {
+            $this->kumuhAwal = KumuhRT::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih, 'rt' => $this->idRTTerpilih])->first();
+            $this->kumuhAkhir = KumuhRT::where(['tahun' => $this->tahun, 'kawasan' => $this->idKawasanTerpilih, 'rt' => $this->idRTTerpilih])->first();
+            // coordinate
+            $kelurahan = Kawasan::find($this->idKawasanTerpilih);
+            $this->coordinate2 = Latlang::where(['kelurahan' => $kelurahan->kawasan, 'kodeRTRW' => $this->header->rtrw])->first()?->toArray();
+            $kumuh = $this->kumuhAkhir?->toArray() ? $this->kumuhAkhir?->toArray() : $this->kumuhAwal?->toArray();
+            $this->description2 = $this->coordinateDescription($kumuh);
+        } else {
+            $this->kumuhAwal = SK24KumuhRT::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih, 'rt' => $this->idRTTerpilih])->first();
+            $this->kumuhAkhir = SK24KumuhRT::where(['tahun' => $this->tahun, 'kawasan' => $this->idKawasanTerpilih, 'rt' => $this->idRTTerpilih])->first();
+        }
+
         $investasi = Investasi::where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih, 'idRTRW' => $this->idRTTerpilih])->get()->toArray();
         $this->investasi = Arr::map($investasi, function ($value) {
             return [
@@ -113,11 +146,6 @@ class KumuhGuest extends Component
                 'anggaran' => Number::currency(intval($value['anggaran']), 'IDR', 'id')
             ];
         });
-
-        $kelurahan = Kawasan::find($this->idKawasanTerpilih);
-        $this->coordinate2 = Latlang::where(['kelurahan' => $kelurahan->kawasan, 'kodeRTRW' => $this->header->rtrw])->first()?->toArray();
-        $kumuh = $this->kumuhAkhir?->toArray() ? $this->kumuhAkhir?->toArray() : $this->kumuhAwal?->toArray();
-        $this->description2 = $this->coordinateDescription($kumuh);
 
         $this->dispatch('updated-investasi');
     }
