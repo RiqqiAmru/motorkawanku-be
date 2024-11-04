@@ -16,27 +16,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // DB::table('users')->truncate();
+        DB::table('users')->truncate();
         // // User::factory(10)->create();
 
-        // $this->call([
-        //     UserSeeder::class,
-        //     KotaSeeder::class,
-        //     KawasanSeeder::class,
-        //     RtrwSeeder::class,
-        //     KumuhKawasanSeeder::class,
-        //     KumuhRTSeeder::class,
-        //     InvestasiSeeder::class,
-        //     LatlangSeeder::class,
-        // ]);
+        $this->call([
+            UserSeeder::class,
+            KotaSeeder::class,
+            KawasanSeeder::class,
+            RtrwSeeder::class,
+            KumuhKawasanSeeder::class,
+            KumuhRTSeeder::class,
+            InvestasiSeeder::class,
+            LatlangSeeder::class,
+        ]);
 
         // sk24
         $this->call([
             SK24kawasanSeeder::class,
             SK24RTRWSeeder::class,
             SK24KumuhKawasanSeeder::class,
-            Update24Sandingan::class,
-            // update2024
         ]);
     }
 }

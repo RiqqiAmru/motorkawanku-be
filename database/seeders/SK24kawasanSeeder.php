@@ -20,6 +20,7 @@ class SK24kawasanSeeder extends Seeder
         $json = file_get_contents(database_path('seeders/kawasan24.json'));
         $data = json_decode($json, true);
         foreach ($data as $row) {
+            dump('insert sk24kawasan ' . $row['kawasan'] . '|');
             DB::table('sk24_kawasan')->insert([
                 'id' => $row['id'],
                 'kawasan' => $row['kawasan'],

@@ -18,6 +18,7 @@ class RtrwSeeder extends Seeder
         $json = file_get_contents(database_path('seeders/rtrw.json'));
         $data = json_decode($json, true);
         foreach ($data as $row) {
+            dump('insert rtrw ' . $row['kawasan'] . '|' . $row['rtrw']);
             DB::table('rtrw')->insert([
                 'kawasan' => $row['kawasan'],
                 'rtrw' => $row['rtrw'],

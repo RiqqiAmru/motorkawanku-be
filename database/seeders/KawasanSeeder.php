@@ -15,10 +15,13 @@ class KawasanSeeder extends Seeder
     public function run(): void
     {
         // import from json
+
+        DB::table('rtrw')->truncate();
         DB::table('kawasan')->truncate();
         $json = file_get_contents(database_path('seeders/kawasan.json'));
         $data = json_decode($json, true);
         foreach ($data as $row) {
+            dump('insert kawasan' . $row['kawasan']);
             DB::table('kawasan')->insert([
                 'kawasan' => $row['kawasan'],
                 'wilayah' => $row['wilayah'],

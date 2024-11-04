@@ -25,6 +25,7 @@ class Capaian extends Component
     public $namaKawasan = null;
     public $daftarRT = null;
     public $kumuhKawasan = null;
+    public $test = '';
 
     public array $kumuhRT;
 
@@ -32,6 +33,11 @@ class Capaian extends Component
     {
         $this->kawasan = SK24Kawasan::umum();
         $this->tahun = Carbon::now()->year;
+        $this->test = DB::table('sk24_kumuh_rt')
+            ->join('sk24_rtrw', 'sk24_kumuh_rt.rt', '=', 'sk24_rtrw.id')
+            ->join('sk24_kawasan', 'sk24_kumuh_rt.kawasan', '=', 'sk24_kawasan.id')
+            ->select(['sk24_kawasan.kawasan', 'sk24_kumuh_rt.totalNilai', 'sk24_rtrw.rtrw'])
+            ->get()->toArray();
     }
 
     public function updatedidKawasanTerpilih()

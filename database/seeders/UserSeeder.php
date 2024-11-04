@@ -31,6 +31,7 @@ class UserSeeder extends Seeder
         // User::factory()->count(4)->create();
         $wilayahID = 1;
         foreach ($wilayah as $w) {
+            dump('insert user ' . $w);
             User::factory()->create([
                 'name' => $w,
                 'email' => $w . '@dinperkim.com',

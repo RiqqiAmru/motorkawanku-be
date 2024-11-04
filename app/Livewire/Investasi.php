@@ -86,7 +86,7 @@ class Investasi extends Component
             ];
         });
         $this->kumuhAwal = SK24KumuhKawasan::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih])->first();
-        $this->kumuhAwalArr = $this->kumuhAwal->toArray();
+        $this->kumuhAwalArr = $this->kumuhAwal?->toArray();
         $this->kumuhAkhir = $this->hitungKumuhRtAkhir($this->investasi, $this->kumuhAwal, $this->header);
 
         if ($this->investasi) {

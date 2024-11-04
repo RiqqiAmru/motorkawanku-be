@@ -19,6 +19,7 @@ class LatlangSeeder extends Seeder
         foreach ($data as $row) {
             $coordinate = json_encode($row['coordinates']);
             $kodeRTRW = (isset($row['kodeRTRW'])) ? $row['kodeRTRW'] : '';
+            dump('insert coordinate ' . $row['kelurahan'] . '|' . $kodeRTRW);
             DB::table('latlong')->insert([
                 'kelurahan' => $row['kelurahan'],
                 'type' => $row['type'],

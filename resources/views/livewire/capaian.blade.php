@@ -98,7 +98,18 @@
         </table>
     </div>
 
-    {{-- @php
-        dump($daftarRT, $namaKawasan);
-    @endphp --}}
+
+    <table>
+
+        {{-- @foreach ($test as $item)
+            <tr>
+                <td>{{ $item->kawasan }}</td>
+                <td>{{ $item->rtrw }}</td>
+                <td>{{ $item->totalNilai }}</td>
+            </tr>
+        @endforeach --}}
+    </table>
+    @php
+
+    @endphp
 </div>

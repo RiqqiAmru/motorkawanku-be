@@ -17,10 +17,10 @@ class clearInvestasi2024 extends Seeder
      */
     public function run(): void
     {
-        // Investasi::where('tahun', 2024)->delete();
+        Investasi::where('tahun', 2024)->delete();
         KumuhKawasan::where('tahun', 2024)->delete();
         KumuhRT::where('tahun', 2024)->delete();
-        SK24KumuhKawasan::where('tahun', 2023)->delete();
-        SK24KumuhRT::where('tahun', 2023)->delete();
+        // SK24KumuhKawasan::where('tahun', 2023)->delete();
+        // SK24KumuhRT::where('tahun', 2023)->delete();
     }
 }

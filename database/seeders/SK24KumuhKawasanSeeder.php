@@ -49,7 +49,7 @@ class SK24KumuhKawasanSeeder extends Seeder
                 $kumuhAwal = KumuhRT::where(['tahun' => 2023, 'kawasan' => $h['id'], 'rt' => $item['id']])->first();
                 $kumuhAkhir = $this->hitungKumuhRtAkhir([], $kumuhAwal, $item);
                 Arr::forget($kumuhAkhir, 'rt');
-                dump($no++ . '|k' . $h['id'] . '|r' . $item['id']);
+                dump($no++ . '|' . $h['id'] . '|' . $item['id']);
                 if ($kumuhAwal) {
                     $kumuhAkhir = $this->hitungKumuhRtAkhir([], $kumuhAwal, $headerRT);
                     if ($h['id'] == 22 && $item['id'] == 274) {
@@ -129,7 +129,7 @@ class SK24KumuhKawasanSeeder extends Seeder
         $data = json_decode($json, true);
         foreach ($data as $d) {
             $headerRT = SK24Rtrw::find($d['id']);
-            dump('k' . $headerRT->kawasan . '|r' . $d['id']);
+            dump('upd' . $headerRT->kawasan . '|' . $d['id']);
             $d['kawasan'] = '';
             $d['rt'] = '';
             $kumuh = $this->hitungKumuhRtAkhir([], $d, $headerRT);
@@ -181,7 +181,7 @@ class SK24KumuhKawasanSeeder extends Seeder
             }
             $kumuhAkhir = $this->hitungKumuhRtAkhir([], $kumuhAwal, $hk);
             Arr::forget($kumuhAkhir, ['rt', 'kawasan']);
-            dump($hk['kawasan']);
+            dump('upd' . $hk['kawasan']);
 
             SK24KumuhKawasan::where(['tahun' => 2023, 'kawasan' => $hk])->update($kumuhAkhir);
         }

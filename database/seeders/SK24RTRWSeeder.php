@@ -20,17 +20,19 @@ class SK24RTRWSeeder extends Seeder
         $data = json_decode($json, true);
         $no = 1;
         foreach ($data as $row) {
+            dump('insert sk24rtrw ' . $row['idkawasan'] . '|' . $row['idrt']);
+
             DB::table('sk24_rtrw')->insert([
                 'id' => $row['id'],
-                'kawasan' => $row['kawasan'],
-                'rtrw' => $row['rtrw'],
+                'kawasan' => $row['idkawasan'],
+                'rtrw' => $row['idrt'],
                 'luasFlag' => $row['luasFlag'],
                 'luasVerifikasi' => $row['luasVerifikasi'],
                 'jumlahBangunan' => $row['jumlahBangunan'],
                 'jumlahPenduduk' => $row['jumlahPenduduk'],
                 'jumlahKK' => $row['jumlahKK'],
                 'panjangJalanIdeal' => $row['panjangJalanIdeal'],
-                'panjangDrainaseIdeal' => $row['panjangDrainaseIdeal']
+                'panjangDrainaseIdeal' => $row['PanjangDrainaseIdeal']
             ]);
         }
     }

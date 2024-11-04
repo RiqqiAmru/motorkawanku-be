@@ -18,6 +18,7 @@ class InvestasiSeeder extends Seeder
         $json = file_get_contents(database_path('seeders/investasi.json'));
         $data = json_decode($json, true);
         foreach ($data as $row) {
+            dump('insert investasi ' . $row['idKawasan'] . '|' . $row['idRTRW'] . '|' . $row['tahun'] . '|');
             (isset($row['anggaran'])) ? $anggaran = $row['anggaran'] : $anggaran = 0;
             (isset($row['sumberAnggaran'])) ? $sumberAnggaran = $row['sumberAnggaran'] : $sumberAnggaran = '';
             DB::table('investasi')->insert([

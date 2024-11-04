@@ -135,6 +135,16 @@
                         <dd class="text-gray-700  dark:text-gray-200">
                             {{ Number::format($header?->jumlahKK ?: 0) }} KK</dd>
                     </div>
+                    <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                        <dt class="font-medium sm:col-span-2 text-gray-900 dark:text-white">Panjang Jalan Ideal </dt>
+                        <dd class="text-gray-700  dark:text-gray-200">
+                            {{ Number::format($header?->panjangJalanIdeal ?: 0) }} m</dd>
+                    </div>
+                    <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                        <dt class="font-medium sm:col-span-2 text-gray-900 dark:text-white">Panjang Drainase Ideal </dt>
+                        <dd class="text-gray-700  dark:text-gray-200">
+                            {{ Number::format($header?->panjangDrainaseIdeal ?: 0) }} m</dd>
+                    </div>
                 </dl>
             </div>
 

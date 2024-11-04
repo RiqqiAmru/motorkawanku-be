@@ -17,6 +17,7 @@ class KumuhKawasanSeeder extends Seeder
         $json = file_get_contents(database_path('seeders/kumuhKawasan.json'));
         $data = json_decode($json, true);
         foreach ($data as $row) {
+            dump('insert kumuh kawasan ' . $row['kawasan'] . '|' . $row['tahun']);
             DB::table('kumuh_kawasan')->insert([
                 'kawasan' => $row['kawasan'],
                 'tahun' => $row['tahun'],
