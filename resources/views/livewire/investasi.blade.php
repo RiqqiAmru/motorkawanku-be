@@ -455,7 +455,6 @@
                                         <x-danger-button x-data="" aria-describedby="hapus data"
                                             wire:click="delete(item.id)"
                                             wire:confirm="Apakah Kamu yakin ingin menghapus data investasi">
-                                            <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
                                             <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
