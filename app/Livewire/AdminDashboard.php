@@ -229,10 +229,10 @@ class AdminDashboard extends Component
                     $dataVolume['1a'] += ($jumlahBangunan);
                 }
                 // masukkan untuk 7b
-                if (!isset($dataVolume['7b'])) {
-                    $dataVolume['7b'] = $jumlahBangunan;
+                if (!isset($dataVolume['7a'])) {
+                    $dataVolume['7a'] = $jumlahBangunan;
                 } else {
-                    $dataVolume['7b'] += ($jumlahBangunan);
+                    $dataVolume['7a'] += ($jumlahBangunan);
                 }
             }
         }

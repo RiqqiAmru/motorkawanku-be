@@ -189,7 +189,7 @@
                                 @endisset
                             </td>
                             <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200 border-l-2">
-                                {{ isset($kumuhAkhir['1bv']) ? $kumuhAkhir['1bv'] : 0 }}Ha
+                                {{ isset($kumuhAkhir['1bv']) ? $kumuhAkhir['1bv'] : 0 }} Ha
                             </td>
                             <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
                                 {{ isset($kumuhAkhir) ? Number::percentage($kumuhAkhir['1bp'] * 100, 2) : 0 }}</td>
@@ -417,7 +417,7 @@
                                 @endisset
                             </td>
                             <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200 border-l-2">
-                                {{ isset($kumuhAkhir) ? Number::percentage($kumuhAkhir['4av'] * 100, 2) : 0 }} Ha</td>
+                                {{ isset($kumuhAkhir) ? Number::format($kumuhAkhir['4av'] * 100, 2) : 0 }} Ha</td>
                             </td>
                             <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
                                 {{ isset($kumuhAkhir) ? Number::percentage($kumuhAkhir['4ap'] * 100, 2) : 0 }}</td>
@@ -448,7 +448,7 @@
                                 @endisset
                             </td>
                             <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200 border-l-2">
-                                {{ isset($kumuhAkhir['4bv']) ? $kumuhAkhir['4bv'] : 0 }}Meter
+                                {{ isset($kumuhAkhir['4bv']) ? $kumuhAkhir['4bv'] : 0 }} Meter
                             </td>
                             <td class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200">
                                 {{ isset($kumuhAkhir) ? Number::percentage($kumuhAkhir['4bp'] * 100, 2) : 0 }}</td>

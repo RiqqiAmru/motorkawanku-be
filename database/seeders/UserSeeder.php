@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $wilayah = ['Podosugih', 'Medono', 'Tirto', 'Pringrejo', 'Bendan', 'PasirKratonKramat', 'Sapuro Kebulen', 'Jenggot', 'KuripanYosorejo', 'Sokoduwet', 'KuripanKertoharjo', 'Buaran', 'Banyurip', 'Klego', 'Poncol', 'Gamer', 'Kauman', 'Noyontaansari', 'KaliBaros', 'Setono', 'Bandengan', 'Degayu', 'KandangPanjang', 'PanjangWetan', 'PanjangBaru', 'Kraton', 'Krapyak'];
+        $wilayah = ['Podosugih', 'Tirto', 'Pringrejo', 'Bendan', 'PasirKratonKramat', 'Sapuro Kebulen', 'Jenggot',  'Sokoduwet', 'Buaran', 'Banyurip', 'Klego', 'Poncol', 'Gamer', 'Kauman', 'KaliBaros', 'Setono', 'Bandengan', 'Degayu', 'KandangPanjang', 'PanjangWetan', 'PanjangBaru', 'Kraton'];
         DB::table('users')->truncate();
         User::factory()->create([
             'name' => 'Admin Dinperkim',

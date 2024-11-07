@@ -121,7 +121,7 @@
                     <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
                         <dt class="font-medium sm:col-span-2 text-gray-900 dark:text-white">Jumlah Bangunan </dt>
                         <dd class="text-gray-700  dark:text-gray-200">
-                            {{ Number::format($header?->jumlahBangunan ?: 0) }} Meter
+                            {{ Number::format($header?->jumlahBangunan ?: 0) }} Unit
                         </dd>
                     </div>
                     <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
