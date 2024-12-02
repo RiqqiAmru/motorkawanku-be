@@ -46,7 +46,7 @@
 
                     <div class="pb-12 text-center md:pb-16">
                         <div class="flex justify-center my-4">
-                            <img src="/logo.jpg" alt="logo motorkawanku" class="h-24 drop-shadow-sm">
+                            <img src="/logo.png" alt="logo motorkawanku" class="h-24 drop-shadow-sm">
                         </div>
                         <h1 class="mb-6 drop-shadow-lg my-4 text-5xl font-extrabold text-red-600  md:text-9xl ">Motor
                             <span class="underline decoration-sky-500 text-white">Kawanku</span>
@@ -63,7 +63,6 @@
                 </main>
 
                 <footer class="py-16 text-center font-bold  shadow-lg drop-shadow-lg text-white">
-                    Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     <p> Dinas Perumahan Rakyat dan Kawasan Permukiman Kota Pekalongan &copy
                         {{ date_format(Date::now(), 'Y') }}
                     </p>
