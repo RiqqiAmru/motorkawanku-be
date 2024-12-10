@@ -1,0 +1,471 @@
+[00:00:00.002990900 / 00:00:00.002990900] [8388608 bytes] PHPUnit Started (PHPUnit 11.4.1 using PHP 8.2.12 (cli) on WINNT)
+[00:00:00.024919200 / 00:00:00.021928300] [8388608 bytes] Test Runner Configured
+[00:00:00.026242900 / 00:00:00.001323700] [8388608 bytes] Bootstrap Finished (D:\RIQQI\BELAJAR\LARAVEL\perkim\vendor/autoload.php)
+[00:00:00.179041800 / 00:00:00.152798900] [8388608 bytes] Event Facade Sealed
+[00:00:00.232149400 / 00:00:00.053107600] [12582912 bytes] Test Runner Triggered Warning (No tests found in class "Tests\Feature\Livewire\InvestasiTest".)
+[00:00:00.240487900 / 00:00:00.008338500] [12582912 bytes] Test Suite Loaded (34 tests)
+[00:00:00.243214900 / 00:00:00.002727000] [12582912 bytes] Test Runner Started
+[00:00:00.246858100 / 00:00:00.003643200] [12582912 bytes] Test Suite Sorted
+[00:00:00.248142500 / 00:00:00.001284400] [12582912 bytes] Test Runner Execution Started (34 tests)
+[00:00:00.248762600 / 00:00:00.000620100] [12582912 bytes] Test Suite Started (D:\RIQQI\BELAJAR\LARAVEL\perkim\phpunit.xml, 34 tests)
+[00:00:00.249107900 / 00:00:00.000345300] [12582912 bytes] Test Suite Started (Unit, 5 tests)
+[00:00:00.249637900 / 00:00:00.000530000] [12582912 bytes] Test Suite Started (Tests\Unit\ExampleTest, 1 test)
+[00:00:00.253528200 / 00:00:00.003890300] [12582912 bytes] Test Preparation Started (Tests\Unit\ExampleTest::test_that_true_is_true)
+[00:00:00.254065800 / 00:00:00.000537600] [12582912 bytes] Test Prepared (Tests\Unit\ExampleTest::test_that_true_is_true)
+[00:00:00.272109200 / 00:00:00.018043400] [12582912 bytes] Test Passed (Tests\Unit\ExampleTest::test_that_true_is_true)
+[00:00:00.276956600 / 00:00:00.004847400] [12582912 bytes] Test Finished (Tests\Unit\ExampleTest::test_that_true_is_true)
+[00:00:00.277333000 / 00:00:00.000376400] [12582912 bytes] Test Suite Finished (Tests\Unit\ExampleTest, 1 test)
+[00:00:00.277638600 / 00:00:00.000305600] [12582912 bytes] Test Suite Started (Tests\Unit\hitungkumuhakhirTest, 4 tests)
+[00:00:00.278530300 / 00:00:00.000891700] [12582912 bytes] Test Preparation Started (Tests\Unit\hitungkumuhakhirTest::testTotalVolumeInvestasiBasic)
+[00:00:00.292734200 / 00:00:00.014203900] [12582912 bytes] Before Test Method Called (Tests\Unit\hitungkumuhakhirTest::setUp)
+[00:00:00.293011200 / 00:00:00.000277000] [12582912 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\hitungkumuhakhirTest::setUp
+[00:00:00.293249100 / 00:00:00.000237900] [12582912 bytes] Test Prepared (Tests\Unit\hitungkumuhakhirTest::testTotalVolumeInvestasiBasic)
+[00:00:00.294236700 / 00:00:00.000987600] [12582912 bytes] Test Passed (Tests\Unit\hitungkumuhakhirTest::testTotalVolumeInvestasiBasic)
+[00:00:00.294757500 / 00:00:00.000520800] [12582912 bytes] Test Finished (Tests\Unit\hitungkumuhakhirTest::testTotalVolumeInvestasiBasic)
+[00:00:00.295090500 / 00:00:00.000333000] [12582912 bytes] Test Preparation Started (Tests\Unit\hitungkumuhakhirTest::test_hitung_prosen_kumuh)
+[00:00:00.295357300 / 00:00:00.000266800] [12582912 bytes] Before Test Method Called (Tests\Unit\hitungkumuhakhirTest::setUp)
+[00:00:00.295557500 / 00:00:00.000200200] [12582912 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\hitungkumuhakhirTest::setUp
+[00:00:00.295784500 / 00:00:00.000227000] [12582912 bytes] Test Prepared (Tests\Unit\hitungkumuhakhirTest::test_hitung_prosen_kumuh)
+[00:00:00.296061500 / 00:00:00.000277000] [12582912 bytes] Test Passed (Tests\Unit\hitungkumuhakhirTest::test_hitung_prosen_kumuh)
+[00:00:00.296479900 / 00:00:00.000418400] [12582912 bytes] Test Finished (Tests\Unit\hitungkumuhakhirTest::test_hitung_prosen_kumuh)
+[00:00:00.296808900 / 00:00:00.000329000] [12582912 bytes] Test Preparation Started (Tests\Unit\hitungkumuhakhirTest::test_hitung_nilai_kumuh)
+[00:00:00.297094300 / 00:00:00.000285400] [12582912 bytes] Before Test Method Called (Tests\Unit\hitungkumuhakhirTest::setUp)
+[00:00:00.297293400 / 00:00:00.000199100] [12582912 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\hitungkumuhakhirTest::setUp
+[00:00:00.297557900 / 00:00:00.000264500] [12582912 bytes] Test Prepared (Tests\Unit\hitungkumuhakhirTest::test_hitung_nilai_kumuh)
+[00:00:00.297821300 / 00:00:00.000263400] [12582912 bytes] Test Passed (Tests\Unit\hitungkumuhakhirTest::test_hitung_nilai_kumuh)
+[00:00:00.298243000 / 00:00:00.000421700] [12582912 bytes] Test Finished (Tests\Unit\hitungkumuhakhirTest::test_hitung_nilai_kumuh)
+[00:00:00.298579700 / 00:00:00.000336700] [12582912 bytes] Test Preparation Started (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+[00:00:00.298856300 / 00:00:00.000276600] [12582912 bytes] Before Test Method Called (Tests\Unit\hitungkumuhakhirTest::setUp)
+[00:00:00.299065100 / 00:00:00.000208800] [12582912 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\hitungkumuhakhirTest::setUp
+[00:00:00.299276200 / 00:00:00.000211100] [12582912 bytes] Test Prepared (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+[00:00:00.299559400 / 00:00:00.000283200] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "1bv"
+[00:00:00.313832900 / 00:00:00.014273500] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "1cv"
+[00:00:00.314949800 / 00:00:00.001116900] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "2av"
+[00:00:00.316061700 / 00:00:00.001111900] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "2ap"
+[00:00:00.317168500 / 00:00:00.001106800] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "2an"
+[00:00:00.318453500 / 00:00:00.001285000] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "2bv"
+[00:00:00.319648200 / 00:00:00.001194700] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "2bp"
+[00:00:00.320863500 / 00:00:00.001215300] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "2bn"
+[00:00:00.322138500 / 00:00:00.001275000] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "3av"
+[00:00:00.323559700 / 00:00:00.001421200] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "3ap"
+[00:00:00.324746800 / 00:00:00.001187100] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "3an"
+[00:00:00.325847100 / 00:00:00.001100300] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "3bv"
+[00:00:00.326929600 / 00:00:00.001082500] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "3bp"
+[00:00:00.328111100 / 00:00:00.001181500] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "3bn"
+[00:00:00.329703700 / 00:00:00.001592600] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "4av"
+[00:00:00.331334000 / 00:00:00.001630300] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "4ap"
+[00:00:00.332872000 / 00:00:00.001538000] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "4an"
+[00:00:00.334487900 / 00:00:00.001615900] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "4bv"
+[00:00:00.336396600 / 00:00:00.001908700] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "4bp"
+[00:00:00.338032600 / 00:00:00.001636000] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "4bn"
+[00:00:00.339275300 / 00:00:00.001242700] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "4cv"
+[00:00:00.340386000 / 00:00:00.001110700] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "4cp"
+[00:00:00.341480800 / 00:00:00.001094800] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "4cn"
+[00:00:00.342573500 / 00:00:00.001092700] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "5av"
+[00:00:00.343645300 / 00:00:00.001071800] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "5ap"
+[00:00:00.344777600 / 00:00:00.001132300] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "5an"
+[00:00:00.345940700 / 00:00:00.001163100] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "5bv"
+[00:00:00.347058700 / 00:00:00.001118000] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "5bp"
+[00:00:00.348097400 / 00:00:00.001038700] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "5bn"
+[00:00:00.349185400 / 00:00:00.001088000] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "6av"
+[00:00:00.350221700 / 00:00:00.001036300] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "6ap"
+[00:00:00.352221300 / 00:00:00.001999600] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "6an"
+[00:00:00.354024000 / 00:00:00.001802700] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "6bv"
+[00:00:00.355259700 / 00:00:00.001235700] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "6bp"
+[00:00:00.356355200 / 00:00:00.001095500] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "6bn"
+[00:00:00.357451300 / 00:00:00.001096100] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "7av"
+[00:00:00.358525200 / 00:00:00.001073900] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "7ap"
+[00:00:00.359769700 / 00:00:00.001244500] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "7an"
+[00:00:00.360917500 / 00:00:00.001147800] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "7bv"
+[00:00:00.362015600 / 00:00:00.001098100] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "7bp"
+[00:00:00.363103600 / 00:00:00.001088000] [12582912 bytes] Test Triggered PHP Warning (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+                                                           Undefined array key "7bn"
+[00:00:00.364577600 / 00:00:00.001474000] [12582912 bytes] Test Passed (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+[00:00:00.365031300 / 00:00:00.000453700] [12582912 bytes] Test Finished (Tests\Unit\hitungkumuhakhirTest::test_hitung_kumuh_rt_akhir)
+[00:00:00.365373700 / 00:00:00.000342400] [12582912 bytes] Test Suite Finished (Tests\Unit\hitungkumuhakhirTest, 4 tests)
+[00:00:00.365657800 / 00:00:00.000284100] [12582912 bytes] Test Suite Finished (Unit, 5 tests)
+[00:00:00.366257800 / 00:00:00.000600000] [12582912 bytes] Test Suite Started (Feature, 29 tests)
+[00:00:00.366598800 / 00:00:00.000341000] [12582912 bytes] Test Suite Started (Tests\Feature\Auth\AuthenticationTest, 4 tests)
+[00:00:00.380846900 / 00:00:00.014248100] [14680064 bytes] Test Preparation Started (Tests\Feature\Auth\AuthenticationTest::test_login_screen_can_be_rendered)
+[00:00:03.992190500 / 00:00:03.611343600] [41943040 bytes] Before Test Method Called (Tests\Feature\Auth\AuthenticationTest::setUp)
+[00:00:03.992491500 / 00:00:00.000301000] [41943040 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\Auth\AuthenticationTest::setUp
+[00:00:03.992846000 / 00:00:00.000354500] [41943040 bytes] Test Prepared (Tests\Feature\Auth\AuthenticationTest::test_login_screen_can_be_rendered)
+[00:00:07.707957100 / 00:00:03.715111100] [44040192 bytes] Test Passed (Tests\Feature\Auth\AuthenticationTest::test_login_screen_can_be_rendered)
+[00:00:07.802520200 / 00:00:00.094563100] [44040192 bytes] After Test Method Called (Tests\Feature\Auth\AuthenticationTest::tearDown)
+[00:00:07.802859500 / 00:00:00.000339300] [44040192 bytes] After Test Method Finished:
+                                                           - Tests\Feature\Auth\AuthenticationTest::tearDown
+[00:00:07.803303900 / 00:00:00.000444400] [44040192 bytes] Test Finished (Tests\Feature\Auth\AuthenticationTest::test_login_screen_can_be_rendered)
+[00:00:07.803676000 / 00:00:00.000372100] [44040192 bytes] Test Preparation Started (Tests\Feature\Auth\AuthenticationTest::test_users_can_authenticate_using_the_login_screen)
+[00:00:07.845428500 / 00:00:00.041752500] [44040192 bytes] Before Test Method Called (Tests\Feature\Auth\AuthenticationTest::setUp)
+[00:00:07.845690400 / 00:00:00.000261900] [44040192 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\Auth\AuthenticationTest::setUp
+[00:00:07.845950000 / 00:00:00.000259600] [44040192 bytes] Test Prepared (Tests\Feature\Auth\AuthenticationTest::test_users_can_authenticate_using_the_login_screen)
+[00:00:10.878553600 / 00:00:03.032603600] [48234496 bytes] Test Passed (Tests\Feature\Auth\AuthenticationTest::test_users_can_authenticate_using_the_login_screen)
+[00:00:10.879430800 / 00:00:00.000877200] [48234496 bytes] After Test Method Called (Tests\Feature\Auth\AuthenticationTest::tearDown)
+[00:00:10.879718300 / 00:00:00.000287500] [48234496 bytes] After Test Method Finished:
+                                                           - Tests\Feature\Auth\AuthenticationTest::tearDown
+[00:00:10.880131100 / 00:00:00.000412800] [48234496 bytes] Test Finished (Tests\Feature\Auth\AuthenticationTest::test_users_can_authenticate_using_the_login_screen)
+[00:00:10.880504300 / 00:00:00.000373200] [48234496 bytes] Test Preparation Started (Tests\Feature\Auth\AuthenticationTest::test_users_can_not_authenticate_with_invalid_password)
+[00:00:10.920906500 / 00:00:00.040402200] [48234496 bytes] Before Test Method Called (Tests\Feature\Auth\AuthenticationTest::setUp)
+[00:00:10.921179500 / 00:00:00.000273000] [48234496 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\Auth\AuthenticationTest::setUp
+[00:00:10.921483400 / 00:00:00.000303900] [48234496 bytes] Test Prepared (Tests\Feature\Auth\AuthenticationTest::test_users_can_not_authenticate_with_invalid_password)
+[00:00:11.297466700 / 00:00:00.375983300] [50331648 bytes] Test Passed (Tests\Feature\Auth\AuthenticationTest::test_users_can_not_authenticate_with_invalid_password)
+[00:00:11.298309200 / 00:00:00.000842500] [50331648 bytes] After Test Method Called (Tests\Feature\Auth\AuthenticationTest::tearDown)
+[00:00:11.298652500 / 00:00:00.000343300] [50331648 bytes] After Test Method Finished:
+                                                           - Tests\Feature\Auth\AuthenticationTest::tearDown
+[00:00:11.299310200 / 00:00:00.000657700] [50331648 bytes] Test Finished (Tests\Feature\Auth\AuthenticationTest::test_users_can_not_authenticate_with_invalid_password)
+[00:00:11.299813500 / 00:00:00.000503300] [50331648 bytes] Test Preparation Started (Tests\Feature\Auth\AuthenticationTest::test_users_can_logout)
+[00:00:11.339958100 / 00:00:00.040144600] [50331648 bytes] Before Test Method Called (Tests\Feature\Auth\AuthenticationTest::setUp)
+[00:00:11.340230100 / 00:00:00.000272000] [50331648 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\Auth\AuthenticationTest::setUp
+[00:00:11.340549400 / 00:00:00.000319300] [50331648 bytes] Test Prepared (Tests\Feature\Auth\AuthenticationTest::test_users_can_logout)
+[00:00:11.364160900 / 00:00:00.023611500] [50331648 bytes] Test Passed (Tests\Feature\Auth\AuthenticationTest::test_users_can_logout)
+[00:00:11.364960000 / 00:00:00.000799100] [50331648 bytes] After Test Method Called (Tests\Feature\Auth\AuthenticationTest::tearDown)
+[00:00:11.365247000 / 00:00:00.000287000] [50331648 bytes] After Test Method Finished:
+                                                           - Tests\Feature\Auth\AuthenticationTest::tearDown
+[00:00:11.365683600 / 00:00:00.000436600] [50331648 bytes] Test Finished (Tests\Feature\Auth\AuthenticationTest::test_users_can_logout)
+[00:00:11.366150800 / 00:00:00.000467200] [50331648 bytes] After Last Test Method Called (Tests\Feature\Auth\AuthenticationTest::tearDownAfterClass)
+[00:00:11.366385400 / 00:00:00.000234600] [50331648 bytes] After Last Test Method Finished:
+                                                           - Tests\Feature\Auth\AuthenticationTest::tearDownAfterClass
+[00:00:11.366614900 / 00:00:00.000229500] [50331648 bytes] Test Suite Finished (Tests\Feature\Auth\AuthenticationTest, 4 tests)
+[00:00:11.366998700 / 00:00:00.000383800] [50331648 bytes] Test Suite Started (Tests\Feature\Auth\EmailVerificationTest, 3 tests)
+[00:00:11.381063300 / 00:00:00.014064600] [50331648 bytes] Test Preparation Started (Tests\Feature\Auth\EmailVerificationTest::test_email_verification_screen_can_be_rendered)
+[00:00:11.428453700 / 00:00:00.047390400] [50331648 bytes] Before Test Method Called (Tests\Feature\Auth\EmailVerificationTest::setUp)
+[00:00:11.428730900 / 00:00:00.000277200] [50331648 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\Auth\EmailVerificationTest::setUp
+[00:00:11.429019300 / 00:00:00.000288400] [50331648 bytes] Test Prepared (Tests\Feature\Auth\EmailVerificationTest::test_email_verification_screen_can_be_rendered)
+[00:00:11.565654100 / 00:00:00.136634800] [50331648 bytes] Test Passed (Tests\Feature\Auth\EmailVerificationTest::test_email_verification_screen_can_be_rendered)
+[00:00:11.566401500 / 00:00:00.000747400] [50331648 bytes] After Test Method Called (Tests\Feature\Auth\EmailVerificationTest::tearDown)
+[00:00:11.566661800 / 00:00:00.000260300] [50331648 bytes] After Test Method Finished:
+                                                           - Tests\Feature\Auth\EmailVerificationTest::tearDown
+[00:00:11.567132000 / 00:00:00.000470200] [50331648 bytes] Test Finished (Tests\Feature\Auth\EmailVerificationTest::test_email_verification_screen_can_be_rendered)
+[00:00:11.567575000 / 00:00:00.000443000] [50331648 bytes] Test Preparation Started (Tests\Feature\Auth\EmailVerificationTest::test_email_can_be_verified)
+[00:00:11.613292700 / 00:00:00.045717700] [50331648 bytes] Before Test Method Called (Tests\Feature\Auth\EmailVerificationTest::setUp)
+[00:00:11.613629500 / 00:00:00.000336800] [50331648 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\Auth\EmailVerificationTest::setUp
+[00:00:11.614006300 / 00:00:00.000376800] [50331648 bytes] Test Prepared (Tests\Feature\Auth\EmailVerificationTest::test_email_can_be_verified)
+[00:00:11.837190400 / 00:00:00.223184100] [50331648 bytes] Test Passed (Tests\Feature\Auth\EmailVerificationTest::test_email_can_be_verified)
+[00:00:11.838471100 / 00:00:00.001280700] [50331648 bytes] After Test Method Called (Tests\Feature\Auth\EmailVerificationTest::tearDown)
+[00:00:11.838952200 / 00:00:00.000481100] [50331648 bytes] After Test Method Finished:
+                                                           - Tests\Feature\Auth\EmailVerificationTest::tearDown
+[00:00:11.839629300 / 00:00:00.000677100] [50331648 bytes] Test Finished (Tests\Feature\Auth\EmailVerificationTest::test_email_can_be_verified)
+[00:00:11.840425300 / 00:00:00.000796000] [50331648 bytes] Test Preparation Started (Tests\Feature\Auth\EmailVerificationTest::test_email_is_not_verified_with_invalid_hash)
+[00:00:11.904806200 / 00:00:00.064380900] [50331648 bytes] Before Test Method Called (Tests\Feature\Auth\EmailVerificationTest::setUp)
+[00:00:11.905176000 / 00:00:00.000369800] [50331648 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\Auth\EmailVerificationTest::setUp
+[00:00:11.905580800 / 00:00:00.000404800] [50331648 bytes] Test Prepared (Tests\Feature\Auth\EmailVerificationTest::test_email_is_not_verified_with_invalid_hash)
+[00:00:12.209419000 / 00:00:00.303838200] [50331648 bytes] Test Passed (Tests\Feature\Auth\EmailVerificationTest::test_email_is_not_verified_with_invalid_hash)
+[00:00:12.210209800 / 00:00:00.000790800] [50331648 bytes] After Test Method Called (Tests\Feature\Auth\EmailVerificationTest::tearDown)
+[00:00:12.210482600 / 00:00:00.000272800] [50331648 bytes] After Test Method Finished:
+                                                           - Tests\Feature\Auth\EmailVerificationTest::tearDown
+[00:00:12.210888800 / 00:00:00.000406200] [50331648 bytes] Test Finished (Tests\Feature\Auth\EmailVerificationTest::test_email_is_not_verified_with_invalid_hash)
+[00:00:12.211285900 / 00:00:00.000397100] [50331648 bytes] After Last Test Method Called (Tests\Feature\Auth\EmailVerificationTest::tearDownAfterClass)
+[00:00:12.211513000 / 00:00:00.000227100] [50331648 bytes] After Last Test Method Finished:
+                                                           - Tests\Feature\Auth\EmailVerificationTest::tearDownAfterClass
+[00:00:12.211729500 / 00:00:00.000216500] [50331648 bytes] Test Suite Finished (Tests\Feature\Auth\EmailVerificationTest, 3 tests)
+[00:00:12.212139100 / 00:00:00.000409600] [50331648 bytes] Test Suite Started (Tests\Feature\Auth\PasswordConfirmationTest, 3 tests)
+[00:00:12.225400900 / 00:00:00.013261800] [50331648 bytes] Test Preparation Started (Tests\Feature\Auth\PasswordConfirmationTest::test_confirm_password_screen_can_be_rendered)
+[00:00:12.271071700 / 00:00:00.045670800] [50331648 bytes] Before Test Method Called (Tests\Feature\Auth\PasswordConfirmationTest::setUp)
+[00:00:12.271345800 / 00:00:00.000274100] [50331648 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordConfirmationTest::setUp
+[00:00:12.271644200 / 00:00:00.000298400] [50331648 bytes] Test Prepared (Tests\Feature\Auth\PasswordConfirmationTest::test_confirm_password_screen_can_be_rendered)
+[00:00:12.599710000 / 00:00:00.328065800] [52428800 bytes] Test Passed (Tests\Feature\Auth\PasswordConfirmationTest::test_confirm_password_screen_can_be_rendered)
+[00:00:12.600865400 / 00:00:00.001155400] [52428800 bytes] After Test Method Called (Tests\Feature\Auth\PasswordConfirmationTest::tearDown)
+[00:00:12.601251100 / 00:00:00.000385700] [52428800 bytes] After Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordConfirmationTest::tearDown
+[00:00:12.601771200 / 00:00:00.000520100] [52428800 bytes] Test Finished (Tests\Feature\Auth\PasswordConfirmationTest::test_confirm_password_screen_can_be_rendered)
+[00:00:12.602194500 / 00:00:00.000423300] [52428800 bytes] Test Preparation Started (Tests\Feature\Auth\PasswordConfirmationTest::test_password_can_be_confirmed)
+[00:00:12.643554400 / 00:00:00.041359900] [52428800 bytes] Before Test Method Called (Tests\Feature\Auth\PasswordConfirmationTest::setUp)
+[00:00:12.643806100 / 00:00:00.000251700] [52428800 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordConfirmationTest::setUp
+[00:00:12.644044200 / 00:00:00.000238100] [52428800 bytes] Test Prepared (Tests\Feature\Auth\PasswordConfirmationTest::test_password_can_be_confirmed)
+[00:00:12.658004400 / 00:00:00.013960200] [52428800 bytes] Test Passed (Tests\Feature\Auth\PasswordConfirmationTest::test_password_can_be_confirmed)
+[00:00:12.658767200 / 00:00:00.000762800] [52428800 bytes] After Test Method Called (Tests\Feature\Auth\PasswordConfirmationTest::tearDown)
+[00:00:12.659039600 / 00:00:00.000272400] [52428800 bytes] After Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordConfirmationTest::tearDown
+[00:00:12.659461400 / 00:00:00.000421800] [52428800 bytes] Test Finished (Tests\Feature\Auth\PasswordConfirmationTest::test_password_can_be_confirmed)
+[00:00:12.659829300 / 00:00:00.000367900] [52428800 bytes] Test Preparation Started (Tests\Feature\Auth\PasswordConfirmationTest::test_password_is_not_confirmed_with_invalid_password)
+[00:00:12.703103000 / 00:00:00.043273700] [52428800 bytes] Before Test Method Called (Tests\Feature\Auth\PasswordConfirmationTest::setUp)
+[00:00:12.703389500 / 00:00:00.000286500] [52428800 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordConfirmationTest::setUp
+[00:00:12.703640800 / 00:00:00.000251300] [52428800 bytes] Test Prepared (Tests\Feature\Auth\PasswordConfirmationTest::test_password_is_not_confirmed_with_invalid_password)
+[00:00:12.956292600 / 00:00:00.252651800] [52428800 bytes] Test Passed (Tests\Feature\Auth\PasswordConfirmationTest::test_password_is_not_confirmed_with_invalid_password)
+[00:00:12.957648100 / 00:00:00.001355500] [52428800 bytes] After Test Method Called (Tests\Feature\Auth\PasswordConfirmationTest::tearDown)
+[00:00:12.958130800 / 00:00:00.000482700] [52428800 bytes] After Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordConfirmationTest::tearDown
+[00:00:12.958945500 / 00:00:00.000814700] [52428800 bytes] Test Finished (Tests\Feature\Auth\PasswordConfirmationTest::test_password_is_not_confirmed_with_invalid_password)
+[00:00:12.959685200 / 00:00:00.000739700] [52428800 bytes] After Last Test Method Called (Tests\Feature\Auth\PasswordConfirmationTest::tearDownAfterClass)
+[00:00:12.960123200 / 00:00:00.000438000] [52428800 bytes] After Last Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordConfirmationTest::tearDownAfterClass
+[00:00:12.960598100 / 00:00:00.000474900] [52428800 bytes] Test Suite Finished (Tests\Feature\Auth\PasswordConfirmationTest, 3 tests)
+[00:00:12.961284800 / 00:00:00.000686700] [52428800 bytes] Test Suite Started (Tests\Feature\Auth\PasswordResetTest, 4 tests)
+[00:00:12.986594800 / 00:00:00.025310000] [52428800 bytes] Test Preparation Started (Tests\Feature\Auth\PasswordResetTest::test_reset_password_link_screen_can_be_rendered)
+[00:00:13.033641400 / 00:00:00.047046600] [52428800 bytes] Before Test Method Called (Tests\Feature\Auth\PasswordResetTest::setUp)
+[00:00:13.033967700 / 00:00:00.000326300] [52428800 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordResetTest::setUp
+[00:00:13.034316100 / 00:00:00.000348400] [52428800 bytes] Test Prepared (Tests\Feature\Auth\PasswordResetTest::test_reset_password_link_screen_can_be_rendered)
+[00:00:13.414136100 / 00:00:00.379820000] [52428800 bytes] Test Passed (Tests\Feature\Auth\PasswordResetTest::test_reset_password_link_screen_can_be_rendered)
+[00:00:13.414946600 / 00:00:00.000810500] [52428800 bytes] After Test Method Called (Tests\Feature\Auth\PasswordResetTest::tearDown)
+[00:00:13.415240000 / 00:00:00.000293400] [52428800 bytes] After Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordResetTest::tearDown
+[00:00:13.415828000 / 00:00:00.000588000] [52428800 bytes] Test Finished (Tests\Feature\Auth\PasswordResetTest::test_reset_password_link_screen_can_be_rendered)
+[00:00:13.416197700 / 00:00:00.000369700] [52428800 bytes] Test Preparation Started (Tests\Feature\Auth\PasswordResetTest::test_reset_password_link_can_be_requested)
+[00:00:13.457413300 / 00:00:00.041215600] [52428800 bytes] Before Test Method Called (Tests\Feature\Auth\PasswordResetTest::setUp)
+[00:00:13.457679900 / 00:00:00.000266600] [52428800 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordResetTest::setUp
+[00:00:13.457992800 / 00:00:00.000312900] [52428800 bytes] Test Prepared (Tests\Feature\Auth\PasswordResetTest::test_reset_password_link_can_be_requested)
+[00:00:14.676322900 / 00:00:01.218330100] [52428800 bytes] Test Passed (Tests\Feature\Auth\PasswordResetTest::test_reset_password_link_can_be_requested)
+[00:00:14.677105500 / 00:00:00.000782600] [52428800 bytes] After Test Method Called (Tests\Feature\Auth\PasswordResetTest::tearDown)
+[00:00:14.677409300 / 00:00:00.000303800] [52428800 bytes] After Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordResetTest::tearDown
+[00:00:14.677843500 / 00:00:00.000434200] [52428800 bytes] Test Finished (Tests\Feature\Auth\PasswordResetTest::test_reset_password_link_can_be_requested)
+[00:00:14.678324600 / 00:00:00.000481100] [52428800 bytes] Test Preparation Started (Tests\Feature\Auth\PasswordResetTest::test_reset_password_screen_can_be_rendered)
+[00:00:14.719480100 / 00:00:00.041155500] [52428800 bytes] Before Test Method Called (Tests\Feature\Auth\PasswordResetTest::setUp)
+[00:00:14.719749400 / 00:00:00.000269300] [52428800 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordResetTest::setUp
+[00:00:14.720067000 / 00:00:00.000317600] [52428800 bytes] Test Prepared (Tests\Feature\Auth\PasswordResetTest::test_reset_password_screen_can_be_rendered)
+[00:00:15.419769300 / 00:00:00.699702300] [52428800 bytes] Test Passed (Tests\Feature\Auth\PasswordResetTest::test_reset_password_screen_can_be_rendered)
+[00:00:15.420720300 / 00:00:00.000951000] [52428800 bytes] After Test Method Called (Tests\Feature\Auth\PasswordResetTest::tearDown)
+[00:00:15.421030000 / 00:00:00.000309700] [52428800 bytes] After Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordResetTest::tearDown
+[00:00:15.421602900 / 00:00:00.000572900] [52428800 bytes] Test Finished (Tests\Feature\Auth\PasswordResetTest::test_reset_password_screen_can_be_rendered)
+[00:00:15.422058500 / 00:00:00.000455600] [52428800 bytes] Test Preparation Started (Tests\Feature\Auth\PasswordResetTest::test_password_can_be_reset_with_valid_token)
+[00:00:15.464083000 / 00:00:00.042024500] [52428800 bytes] Before Test Method Called (Tests\Feature\Auth\PasswordResetTest::setUp)
+[00:00:15.464352400 / 00:00:00.000269400] [52428800 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordResetTest::setUp
+[00:00:15.464657400 / 00:00:00.000305000] [52428800 bytes] Test Prepared (Tests\Feature\Auth\PasswordResetTest::test_password_can_be_reset_with_valid_token)
+[00:00:15.674836500 / 00:00:00.210179100] [52428800 bytes] Test Passed (Tests\Feature\Auth\PasswordResetTest::test_password_can_be_reset_with_valid_token)
+[00:00:15.675646000 / 00:00:00.000809500] [52428800 bytes] After Test Method Called (Tests\Feature\Auth\PasswordResetTest::tearDown)
+[00:00:15.675910500 / 00:00:00.000264500] [52428800 bytes] After Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordResetTest::tearDown
+[00:00:15.676348900 / 00:00:00.000438400] [52428800 bytes] Test Finished (Tests\Feature\Auth\PasswordResetTest::test_password_can_be_reset_with_valid_token)
+[00:00:15.676792000 / 00:00:00.000443100] [52428800 bytes] After Last Test Method Called (Tests\Feature\Auth\PasswordResetTest::tearDownAfterClass)
+[00:00:15.677011800 / 00:00:00.000219800] [52428800 bytes] After Last Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordResetTest::tearDownAfterClass
+[00:00:15.677239900 / 00:00:00.000228100] [52428800 bytes] Test Suite Finished (Tests\Feature\Auth\PasswordResetTest, 4 tests)
+[00:00:15.677553400 / 00:00:00.000313500] [52428800 bytes] Test Suite Started (Tests\Feature\Auth\PasswordUpdateTest, 2 tests)
+[00:00:15.690792000 / 00:00:00.013238600] [52428800 bytes] Test Preparation Started (Tests\Feature\Auth\PasswordUpdateTest::test_password_can_be_updated)
+[00:00:15.740320300 / 00:00:00.049528300] [52428800 bytes] Before Test Method Called (Tests\Feature\Auth\PasswordUpdateTest::setUp)
+[00:00:15.740591400 / 00:00:00.000271100] [52428800 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordUpdateTest::setUp
+[00:00:15.740871300 / 00:00:00.000279900] [52428800 bytes] Test Prepared (Tests\Feature\Auth\PasswordUpdateTest::test_password_can_be_updated)
+[00:00:15.774061400 / 00:00:00.033190100] [52428800 bytes] Test Passed (Tests\Feature\Auth\PasswordUpdateTest::test_password_can_be_updated)
+[00:00:15.774860600 / 00:00:00.000799200] [52428800 bytes] After Test Method Called (Tests\Feature\Auth\PasswordUpdateTest::tearDown)
+[00:00:15.775140700 / 00:00:00.000280100] [52428800 bytes] After Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordUpdateTest::tearDown
+[00:00:15.775675400 / 00:00:00.000534700] [52428800 bytes] Test Finished (Tests\Feature\Auth\PasswordUpdateTest::test_password_can_be_updated)
+[00:00:15.776103700 / 00:00:00.000428300] [52428800 bytes] Test Preparation Started (Tests\Feature\Auth\PasswordUpdateTest::test_correct_password_must_be_provided_to_update_password)
+[00:00:15.816455200 / 00:00:00.040351500] [52428800 bytes] Before Test Method Called (Tests\Feature\Auth\PasswordUpdateTest::setUp)
+[00:00:15.816713600 / 00:00:00.000258400] [52428800 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordUpdateTest::setUp
+[00:00:15.817035400 / 00:00:00.000321800] [52428800 bytes] Test Prepared (Tests\Feature\Auth\PasswordUpdateTest::test_correct_password_must_be_provided_to_update_password)
+[00:00:15.833847800 / 00:00:00.016812400] [52428800 bytes] Test Passed (Tests\Feature\Auth\PasswordUpdateTest::test_correct_password_must_be_provided_to_update_password)
+[00:00:15.834681100 / 00:00:00.000833300] [52428800 bytes] After Test Method Called (Tests\Feature\Auth\PasswordUpdateTest::tearDown)
+[00:00:15.834958700 / 00:00:00.000277600] [52428800 bytes] After Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordUpdateTest::tearDown
+[00:00:15.835477000 / 00:00:00.000518300] [52428800 bytes] Test Finished (Tests\Feature\Auth\PasswordUpdateTest::test_correct_password_must_be_provided_to_update_password)
+[00:00:15.835961200 / 00:00:00.000484200] [52428800 bytes] After Last Test Method Called (Tests\Feature\Auth\PasswordUpdateTest::tearDownAfterClass)
+[00:00:15.836182300 / 00:00:00.000221100] [52428800 bytes] After Last Test Method Finished:
+                                                           - Tests\Feature\Auth\PasswordUpdateTest::tearDownAfterClass
+[00:00:15.836434200 / 00:00:00.000251900] [52428800 bytes] Test Suite Finished (Tests\Feature\Auth\PasswordUpdateTest, 2 tests)
+[00:00:15.836803200 / 00:00:00.000369000] [52428800 bytes] Test Suite Started (Tests\Feature\Auth\RegistrationTest, 2 tests)
+[00:00:15.851058300 / 00:00:00.014255100] [52428800 bytes] Test Preparation Started (Tests\Feature\Auth\RegistrationTest::test_registration_screen_can_be_rendered)
+[00:00:15.896092300 / 00:00:00.045034000] [52428800 bytes] Before Test Method Called (Tests\Feature\Auth\RegistrationTest::setUp)
+[00:00:15.896380800 / 00:00:00.000288500] [52428800 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\Auth\RegistrationTest::setUp
+[00:00:15.896652000 / 00:00:00.000271200] [52428800 bytes] Test Prepared (Tests\Feature\Auth\RegistrationTest::test_registration_screen_can_be_rendered)
+[00:00:16.662918100 / 00:00:00.766266100] [54525952 bytes] Test Passed (Tests\Feature\Auth\RegistrationTest::test_registration_screen_can_be_rendered)
+[00:00:16.663799700 / 00:00:00.000881600] [54525952 bytes] After Test Method Called (Tests\Feature\Auth\RegistrationTest::tearDown)
+[00:00:16.664078700 / 00:00:00.000279000] [54525952 bytes] After Test Method Finished:
+                                                           - Tests\Feature\Auth\RegistrationTest::tearDown
+[00:00:16.664491900 / 00:00:00.000413200] [54525952 bytes] Test Finished (Tests\Feature\Auth\RegistrationTest::test_registration_screen_can_be_rendered)
+[00:00:16.664856200 / 00:00:00.000364300] [54525952 bytes] Test Preparation Started (Tests\Feature\Auth\RegistrationTest::test_new_users_can_register)
+[00:00:16.711638500 / 00:00:00.046782300] [54525952 bytes] Before Test Method Called (Tests\Feature\Auth\RegistrationTest::setUp)
+[00:00:16.711916600 / 00:00:00.000278100] [54525952 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\Auth\RegistrationTest::setUp
+[00:00:16.712174300 / 00:00:00.000257700] [54525952 bytes] Test Prepared (Tests\Feature\Auth\RegistrationTest::test_new_users_can_register)
+[00:00:16.768419900 / 00:00:00.056245600] [54525952 bytes] Test Passed (Tests\Feature\Auth\RegistrationTest::test_new_users_can_register)
+[00:00:16.769243600 / 00:00:00.000823700] [54525952 bytes] After Test Method Called (Tests\Feature\Auth\RegistrationTest::tearDown)
+[00:00:16.769514700 / 00:00:00.000271100] [54525952 bytes] After Test Method Finished:
+                                                           - Tests\Feature\Auth\RegistrationTest::tearDown
+[00:00:16.769932000 / 00:00:00.000417300] [54525952 bytes] Test Finished (Tests\Feature\Auth\RegistrationTest::test_new_users_can_register)
+[00:00:16.770360300 / 00:00:00.000428300] [54525952 bytes] After Last Test Method Called (Tests\Feature\Auth\RegistrationTest::tearDownAfterClass)
+[00:00:16.770582700 / 00:00:00.000222400] [54525952 bytes] After Last Test Method Finished:
+                                                           - Tests\Feature\Auth\RegistrationTest::tearDownAfterClass
+[00:00:16.770808500 / 00:00:00.000225800] [54525952 bytes] Test Suite Finished (Tests\Feature\Auth\RegistrationTest, 2 tests)
+[00:00:16.771142100 / 00:00:00.000333600] [54525952 bytes] Test Suite Started (Tests\Feature\ExampleTest, 1 test)
+[00:00:16.787233900 / 00:00:00.016091800] [54525952 bytes] Test Preparation Started (Tests\Feature\ExampleTest::test_the_application_returns_a_successful_response)
+[00:00:16.830795600 / 00:00:00.043561700] [54525952 bytes] Before Test Method Called (Tests\Feature\ExampleTest::setUp)
+[00:00:16.831040500 / 00:00:00.000244900] [54525952 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\ExampleTest::setUp
+[00:00:16.831303200 / 00:00:00.000262700] [54525952 bytes] Test Prepared (Tests\Feature\ExampleTest::test_the_application_returns_a_successful_response)
+[00:00:17.020140800 / 00:00:00.188837600] [54525952 bytes] Test Passed (Tests\Feature\ExampleTest::test_the_application_returns_a_successful_response)
+[00:00:17.020714000 / 00:00:00.000573200] [54525952 bytes] After Test Method Called (Tests\Feature\ExampleTest::tearDown)
+[00:00:17.020956900 / 00:00:00.000242900] [54525952 bytes] After Test Method Finished:
+                                                           - Tests\Feature\ExampleTest::tearDown
+[00:00:17.021352500 / 00:00:00.000395600] [54525952 bytes] Test Finished (Tests\Feature\ExampleTest::test_the_application_returns_a_successful_response)
+[00:00:17.021736800 / 00:00:00.000384300] [54525952 bytes] After Last Test Method Called (Tests\Feature\ExampleTest::tearDownAfterClass)
+[00:00:17.021952600 / 00:00:00.000215800] [54525952 bytes] After Last Test Method Finished:
+                                                           - Tests\Feature\ExampleTest::tearDownAfterClass
+[00:00:17.022177600 / 00:00:00.000225000] [54525952 bytes] Test Suite Finished (Tests\Feature\ExampleTest, 1 test)
+[00:00:17.022510400 / 00:00:00.000332800] [54525952 bytes] Test Suite Started (Tests\Feature\ProfileTest, 5 tests)
+[00:00:17.036524400 / 00:00:00.014014000] [54525952 bytes] Test Preparation Started (Tests\Feature\ProfileTest::test_profile_page_is_displayed)
+[00:00:17.080034200 / 00:00:00.043509800] [54525952 bytes] Before Test Method Called (Tests\Feature\ProfileTest::setUp)
+[00:00:17.080286700 / 00:00:00.000252500] [54525952 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\ProfileTest::setUp
+[00:00:17.080535300 / 00:00:00.000248600] [54525952 bytes] Test Prepared (Tests\Feature\ProfileTest::test_profile_page_is_displayed)
+[00:00:20.120808300 / 00:00:03.040273000] [54525952 bytes] Test Passed (Tests\Feature\ProfileTest::test_profile_page_is_displayed)
+[00:00:20.121602400 / 00:00:00.000794100] [54525952 bytes] After Test Method Called (Tests\Feature\ProfileTest::tearDown)
+[00:00:20.121885600 / 00:00:00.000283200] [54525952 bytes] After Test Method Finished:
+                                                           - Tests\Feature\ProfileTest::tearDown
+[00:00:20.122302400 / 00:00:00.000416800] [54525952 bytes] Test Finished (Tests\Feature\ProfileTest::test_profile_page_is_displayed)
+[00:00:20.122663600 / 00:00:00.000361200] [54525952 bytes] Test Preparation Started (Tests\Feature\ProfileTest::test_profile_information_can_be_updated)
+[00:00:20.164392100 / 00:00:00.041728500] [54525952 bytes] Before Test Method Called (Tests\Feature\ProfileTest::setUp)
+[00:00:20.164656100 / 00:00:00.000264000] [54525952 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\ProfileTest::setUp
+[00:00:20.165010400 / 00:00:00.000354300] [54525952 bytes] Test Prepared (Tests\Feature\ProfileTest::test_profile_information_can_be_updated)
+[00:00:20.305644200 / 00:00:00.140633800] [54525952 bytes] Test Passed (Tests\Feature\ProfileTest::test_profile_information_can_be_updated)
+[00:00:20.306496100 / 00:00:00.000851900] [54525952 bytes] After Test Method Called (Tests\Feature\ProfileTest::tearDown)
+[00:00:20.306760000 / 00:00:00.000263900] [54525952 bytes] After Test Method Finished:
+                                                           - Tests\Feature\ProfileTest::tearDown
+[00:00:20.307165400 / 00:00:00.000405400] [54525952 bytes] Test Finished (Tests\Feature\ProfileTest::test_profile_information_can_be_updated)
+[00:00:20.307532500 / 00:00:00.000367100] [54525952 bytes] Test Preparation Started (Tests\Feature\ProfileTest::test_email_verification_status_is_unchanged_when_the_email_address_is_unchanged)
+[00:00:20.348077500 / 00:00:00.040545000] [54525952 bytes] Before Test Method Called (Tests\Feature\ProfileTest::setUp)
+[00:00:20.348348000 / 00:00:00.000270500] [54525952 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\ProfileTest::setUp
+[00:00:20.348610900 / 00:00:00.000262900] [54525952 bytes] Test Prepared (Tests\Feature\ProfileTest::test_email_verification_status_is_unchanged_when_the_email_address_is_unchanged)
+[00:00:20.443333700 / 00:00:00.094722800] [54525952 bytes] Test Passed (Tests\Feature\ProfileTest::test_email_verification_status_is_unchanged_when_the_email_address_is_unchanged)
+[00:00:20.444194600 / 00:00:00.000860900] [54525952 bytes] After Test Method Called (Tests\Feature\ProfileTest::tearDown)
+[00:00:20.444463200 / 00:00:00.000268600] [54525952 bytes] After Test Method Finished:
+                                                           - Tests\Feature\ProfileTest::tearDown
+[00:00:20.444874000 / 00:00:00.000410800] [54525952 bytes] Test Finished (Tests\Feature\ProfileTest::test_email_verification_status_is_unchanged_when_the_email_address_is_unchanged)
+[00:00:20.445231900 / 00:00:00.000357900] [54525952 bytes] Test Preparation Started (Tests\Feature\ProfileTest::test_correct_password_must_be_provided_to_delete_account)
+[00:00:20.486195200 / 00:00:00.040963300] [54525952 bytes] Before Test Method Called (Tests\Feature\ProfileTest::setUp)
+[00:00:20.486461800 / 00:00:00.000266600] [54525952 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\ProfileTest::setUp
+[00:00:20.486779200 / 00:00:00.000317400] [54525952 bytes] Test Prepared (Tests\Feature\ProfileTest::test_correct_password_must_be_provided_to_delete_account)
+[00:00:20.503260300 / 00:00:00.016481100] [54525952 bytes] Test Passed (Tests\Feature\ProfileTest::test_correct_password_must_be_provided_to_delete_account)
+[00:00:20.504030200 / 00:00:00.000769900] [54525952 bytes] After Test Method Called (Tests\Feature\ProfileTest::tearDown)
+[00:00:20.504349700 / 00:00:00.000319500] [54525952 bytes] After Test Method Finished:
+                                                           - Tests\Feature\ProfileTest::tearDown
+[00:00:20.504913700 / 00:00:00.000564000] [54525952 bytes] Test Finished (Tests\Feature\ProfileTest::test_correct_password_must_be_provided_to_delete_account)
+[00:00:20.505360200 / 00:00:00.000446500] [54525952 bytes] Test Preparation Started (Tests\Feature\ProfileTest::test_user_can_delete_their_account)
+[00:00:20.546954900 / 00:00:00.041594700] [54525952 bytes] Before Test Method Called (Tests\Feature\ProfileTest::setUp)
+[00:00:20.547215400 / 00:00:00.000260500] [54525952 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\ProfileTest::setUp
+[00:00:20.547533900 / 00:00:00.000318500] [54525952 bytes] Test Prepared (Tests\Feature\ProfileTest::test_user_can_delete_their_account)
+[00:00:20.564344600 / 00:00:00.016810700] [54525952 bytes] Test Passed (Tests\Feature\ProfileTest::test_user_can_delete_their_account)
+[00:00:20.565112500 / 00:00:00.000767900] [54525952 bytes] After Test Method Called (Tests\Feature\ProfileTest::tearDown)
+[00:00:20.565403800 / 00:00:00.000291300] [54525952 bytes] After Test Method Finished:
+                                                           - Tests\Feature\ProfileTest::tearDown
+[00:00:20.565945100 / 00:00:00.000541300] [54525952 bytes] Test Finished (Tests\Feature\ProfileTest::test_user_can_delete_their_account)
+[00:00:20.566460100 / 00:00:00.000515000] [54525952 bytes] After Last Test Method Called (Tests\Feature\ProfileTest::tearDownAfterClass)
+[00:00:20.566702200 / 00:00:00.000242100] [54525952 bytes] After Last Test Method Finished:
+                                                           - Tests\Feature\ProfileTest::tearDownAfterClass
+[00:00:20.567008200 / 00:00:00.000306000] [54525952 bytes] Test Suite Finished (Tests\Feature\ProfileTest, 5 tests)
+[00:00:20.567463800 / 00:00:00.000455600] [54525952 bytes] Test Suite Started (Tests\Feature\UserManagementTest, 5 tests)
+[00:00:20.580721100 / 00:00:00.013257300] [54525952 bytes] Test Preparation Started (Tests\Feature\UserManagementTest::test_user_page_load_successfully)
+[00:00:20.633540900 / 00:00:00.052819800] [56623104 bytes] Before Test Method Called (Tests\Feature\UserManagementTest::setUp)
+[00:00:20.633814500 / 00:00:00.000273600] [56623104 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\UserManagementTest::setUp
+[00:00:20.634077500 / 00:00:00.000263000] [56623104 bytes] Test Prepared (Tests\Feature\UserManagementTest::test_user_page_load_successfully)
+[00:00:23.212170600 / 00:00:02.578093100] [56623104 bytes] Test Passed (Tests\Feature\UserManagementTest::test_user_page_load_successfully)
+[00:00:23.213071400 / 00:00:00.000900800] [56623104 bytes] After Test Method Called (Tests\Feature\UserManagementTest::tearDown)
+[00:00:23.213377600 / 00:00:00.000306200] [56623104 bytes] After Test Method Finished:
+                                                           - Tests\Feature\UserManagementTest::tearDown
+[00:00:23.213909500 / 00:00:00.000531900] [56623104 bytes] Test Finished (Tests\Feature\UserManagementTest::test_user_page_load_successfully)
+[00:00:23.214339000 / 00:00:00.000429500] [56623104 bytes] Test Preparation Started (Tests\Feature\UserManagementTest::test_user_page_load_a_user_data)
+[00:00:23.259583000 / 00:00:00.045244000] [56623104 bytes] Before Test Method Called (Tests\Feature\UserManagementTest::setUp)
+[00:00:23.259856800 / 00:00:00.000273800] [56623104 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\UserManagementTest::setUp
+[00:00:23.260204900 / 00:00:00.000348100] [56623104 bytes] Test Prepared (Tests\Feature\UserManagementTest::test_user_page_load_a_user_data)
+[00:00:23.321876600 / 00:00:00.061671700] [56623104 bytes] Test Passed (Tests\Feature\UserManagementTest::test_user_page_load_a_user_data)
+[00:00:23.322837200 / 00:00:00.000960600] [56623104 bytes] After Test Method Called (Tests\Feature\UserManagementTest::tearDown)
+[00:00:23.323215400 / 00:00:00.000378200] [56623104 bytes] After Test Method Finished:
+                                                           - Tests\Feature\UserManagementTest::tearDown
+[00:00:23.323908000 / 00:00:00.000692600] [56623104 bytes] Test Finished (Tests\Feature\UserManagementTest::test_user_page_load_a_user_data)
+[00:00:23.324538900 / 00:00:00.000630900] [56623104 bytes] Test Preparation Started (Tests\Feature\UserManagementTest::test_there_is_kawasan_field_at_users_database)
+[00:00:23.382605400 / 00:00:00.058066500] [56623104 bytes] Before Test Method Called (Tests\Feature\UserManagementTest::setUp)
+[00:00:23.382870800 / 00:00:00.000265400] [56623104 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\UserManagementTest::setUp
+[00:00:23.383187400 / 00:00:00.000316600] [56623104 bytes] Test Prepared (Tests\Feature\UserManagementTest::test_there_is_kawasan_field_at_users_database)
+[00:00:23.387193400 / 00:00:00.004006000] [56623104 bytes] Test Passed (Tests\Feature\UserManagementTest::test_there_is_kawasan_field_at_users_database)
+[00:00:23.388082200 / 00:00:00.000888800] [56623104 bytes] After Test Method Called (Tests\Feature\UserManagementTest::tearDown)
+[00:00:23.388351100 / 00:00:00.000268900] [56623104 bytes] After Test Method Finished:
+                                                           - Tests\Feature\UserManagementTest::tearDown
+[00:00:23.388727700 / 00:00:00.000376600] [56623104 bytes] Test Finished (Tests\Feature\UserManagementTest::test_there_is_kawasan_field_at_users_database)
+[00:00:23.389114400 / 00:00:00.000386700] [56623104 bytes] Test Preparation Started (Tests\Feature\UserManagementTest::test_there_is_kawasan_data_in_users_view)
+[00:00:23.432188400 / 00:00:00.043074000] [56623104 bytes] Before Test Method Called (Tests\Feature\UserManagementTest::setUp)
+[00:00:23.432469800 / 00:00:00.000281400] [56623104 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\UserManagementTest::setUp
+[00:00:23.432753500 / 00:00:00.000283700] [56623104 bytes] Test Prepared (Tests\Feature\UserManagementTest::test_there_is_kawasan_data_in_users_view)
+[00:00:23.490052900 / 00:00:00.057299400] [56623104 bytes] Test Passed (Tests\Feature\UserManagementTest::test_there_is_kawasan_data_in_users_view)
+[00:00:23.490903400 / 00:00:00.000850500] [56623104 bytes] After Test Method Called (Tests\Feature\UserManagementTest::tearDown)
+[00:00:23.491193600 / 00:00:00.000290200] [56623104 bytes] After Test Method Finished:
+                                                           - Tests\Feature\UserManagementTest::tearDown
+[00:00:23.491624700 / 00:00:00.000431100] [56623104 bytes] Test Finished (Tests\Feature\UserManagementTest::test_there_is_kawasan_data_in_users_view)
+[00:00:23.492001400 / 00:00:00.000376700] [56623104 bytes] Test Preparation Started (Tests\Feature\UserManagementTest::test_there_is_kawasan_dropdown_in_users_view)
+[00:00:23.538636200 / 00:00:00.046634800] [56623104 bytes] Before Test Method Called (Tests\Feature\UserManagementTest::setUp)
+[00:00:23.538936800 / 00:00:00.000300600] [56623104 bytes] Before Test Method Finished:
+                                                           - Tests\Feature\UserManagementTest::setUp
+[00:00:23.539269600 / 00:00:00.000332800] [56623104 bytes] Test Prepared (Tests\Feature\UserManagementTest::test_there_is_kawasan_dropdown_in_users_view)
+[00:00:23.660144400 / 00:00:00.120874800] [56623104 bytes] Test Passed (Tests\Feature\UserManagementTest::test_there_is_kawasan_dropdown_in_users_view)
+[00:00:23.661054900 / 00:00:00.000910500] [56623104 bytes] After Test Method Called (Tests\Feature\UserManagementTest::tearDown)
+[00:00:23.661364900 / 00:00:00.000310000] [56623104 bytes] After Test Method Finished:
+                                                           - Tests\Feature\UserManagementTest::tearDown
+[00:00:23.661784000 / 00:00:00.000419100] [56623104 bytes] Test Finished (Tests\Feature\UserManagementTest::test_there_is_kawasan_dropdown_in_users_view)
+[00:00:23.662220700 / 00:00:00.000436700] [56623104 bytes] After Last Test Method Called (Tests\Feature\UserManagementTest::tearDownAfterClass)
+[00:00:23.662440600 / 00:00:00.000219900] [56623104 bytes] After Last Test Method Finished:
+                                                           - Tests\Feature\UserManagementTest::tearDownAfterClass
+[00:00:23.662641200 / 00:00:00.000200600] [56623104 bytes] Test Suite Finished (Tests\Feature\UserManagementTest, 5 tests)
+[00:00:23.662865600 / 00:00:00.000224400] [56623104 bytes] Test Suite Finished (Feature, 29 tests)
+[00:00:23.663078500 / 00:00:00.000212900] [56623104 bytes] Test Suite Finished (D:\RIQQI\BELAJAR\LARAVEL\perkim\phpunit.xml, 34 tests)
+[00:00:23.663665200 / 00:00:00.000586700] [56623104 bytes] Test Runner Execution Finished
+[00:00:23.680728100 / 00:00:00.017062900] [56623104 bytes] Test Runner Finished
+[00:00:23.681969700 / 00:00:00.001241600] [56623104 bytes] PHPUnit Finished (Shell Exit Code: 1)

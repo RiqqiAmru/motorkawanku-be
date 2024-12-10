@@ -70,17 +70,6 @@
                 </li>
             </ol>
         </nav>
-        {{-- @if ($user->role == 'admin')
-            <template x-if="$wire.idKawasanTerpilih  && $wire.idRTTerpilih == null   ">
-                <template x-if="$wire.locked == false">
-                    <x-primary-button x-data=''
-                        wire:confirm="**Apakah
-                Anda Yakin ingin mengunci data investasi ?** \n \n dengan mengunci data anda tidak dapat mengedit /
-                merubah lagi data investasi, hubungi admin bila ada kesalahan"
-                        wire:click="lock">{{ __('Kunci Investasi') }}</x-primary-button>
-                </template>
-            </template>
-        @endif --}}
         <template x-if="$wire.locked == true">
             <div class="flex items-center gap-2">
                 <span>Locked</span>
@@ -96,9 +85,6 @@
     </div>
 
     {{-- investasi --}}
-    {{-- @php
-        dump($kawasan, $idKawasanTerpilih, $investasi);
-    @endphp --}}
     <template x-if="$wire.preview ==false">
         <div class="pt-4" id="tab-investasi" x-data="{
             investasi: [{
@@ -453,7 +439,7 @@
                                 <template x-if="$wire.idRTTerpilih && item.kegiatan !=undefined && item.locked !=1">
                                     <td>
                                         <x-danger-button x-data="" aria-describedby="hapus data"
-                                            wire:click="delete(item.id)"
+                                            {{-- wire:click="delete(item.id)" --}}
                                             wire:confirm="Apakah Kamu yakin ingin menghapus data investasi">
                                             <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -476,8 +462,6 @@
 
     {{-- preview kumuh akhir --}}
     <template x-if="$wire.preview" class="pt-4">
-
-
         <div id="kumuh-awal-akhir ">
             <div class="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700">
                 <table
