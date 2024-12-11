@@ -118,7 +118,7 @@
                 {{ __('Cancel') }}
             </x-secondary-button>
 
-            <x-primary-button class="ms-3">
+            <x-primary-button class="ms-3" dusk='btn-add-investasi'>
                 {{ __('add investasi') }}
             </x-primary-button>
         </div>

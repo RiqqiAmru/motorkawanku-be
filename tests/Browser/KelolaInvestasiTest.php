@@ -17,7 +17,7 @@ class KelolaInvestasiTest extends DuskTestCase
 
             $browser->loginAs($admin)
                 ->visit('/investasi') // Sesuaikan URL dengan rute Anda
-                ->assertSeeIn('h3', 'Data Investasi ') // Verifikasi konten utama
+                ->assertPresent('@header-investasi')
                 ->assertPresent('@table-investasi'); // Pastikan tabel investasi ada
 
         });
@@ -31,19 +31,20 @@ class KelolaInvestasiTest extends DuskTestCase
 
             $browser->loginAs($admin)
                 ->visit('/investasi')
+                ->select('@select-wilayah', '1') // Pilih ID Kawasan
+                ->pause(3000)
+                ->select('@select-rtrw', '2') // Pilih ID Kawasan
+                ->waitFor('@create-investasi-button')
                 ->click('@create-investasi-button') // Klik tombol tambah
-                ->type('tahun', '2024')
-                ->select('idKawasan', '1') // Pilih ID Kawasan
-                ->select('idRTRW', '2') // Pilih ID RTRW
-                ->type('idkriteria', '1a') // Isi kriteria
                 ->type('volume', '50') // Isi volume
-                ->type('kegiatan', 'Pembangunan Jalan')
-                ->type('sumberAnggaran', 'APBN')
+                ->select('kegiatan', 'Jalan Aspal Hotmix')
+                ->select('sumberAnggaran', 'APBN')
                 ->type('anggaran', '50000000')
-                ->press('@save-button') // Simpan data
+                ->press('@btn-add-investasi') // Simpan data
+                ->waitFor('@alert-toast')
                 ->assertSee('berhasil menambah investasi') // Verifikasi pesan sukses
-                ->assertSee('Pembangunan Jalan') // Verifikasi data muncul di tabel
-                ->assertSee('2024');
+                ->assertSee('Jalan Aspal Hotmix') // Verifikasi data muncul di tabel
+                ->assertSee('APBN');
         });
     }
 
@@ -73,8 +74,13 @@ class KelolaInvestasiTest extends DuskTestCase
 
             $browser->loginAs($admin)
                 ->visit('/investasi')
-                ->click("@delete-button-{$investasi->id}") // Klik tombol hapus
+                ->select('@select-wilayah', '1') // Pilih ID Kawasan
+                ->pause(3000)
+                ->select('@select-rtrw', '2') // Pilih ID Kawasan
+                ->waitFor('@hapus-investasi-button')
+                ->click("@hapus-investasi-button") // Klik tombol hapus
                 ->acceptDialog() // Konfirmasi dialog hapus
+                ->pause(1000)
                 ->assertSee('berhasil menghapus investasi') // Verifikasi pesan sukses
                 ->assertDontSee('Pembangunan Drainase'); // Verifikasi data tidak ada di tabel
         });

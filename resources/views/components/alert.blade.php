@@ -18,7 +18,7 @@ setTimeout(() => show = false, 5000)" x-show="show"
     x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-200"
     x-transition:leave-start="opacity-100 transform translate-y-0"
     x-transition:leave-end="opacity-0 transform translate-y-4">
-    <div role="alert"
+    <div role="alert" dusk="alert-toast"
         class="shadow-lg rounded-xl border border-gray-100 bg-white p-4 dark:border-gray-800 dark:bg-gray-900">
         <div class="flex items-start gap-4">
             @if (session('success'))
