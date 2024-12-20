@@ -46,15 +46,31 @@
                 <tr>
                     <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">Wilayah / RT</th>
                     @for ($i = 2023; $i <= $tahun; $i++)
-                        <th colspan="2"
+                        <th colspan="3"
                             class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white border-l-2">
                             {{ $i == 2023 ? 'Baseline' : $i }}
+
+                        </th>
+                    @endfor
+                </tr>
+                <tr>
+                    <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white"></th>
+                    @for ($i = 2023; $i <= $tahun; $i++)
+                        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white border-l-2">
+                            Nilai Kumuh
+                        </th>
+                        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white border-l-2">
+                            tingkat Kumuh
+                        </th>
+                        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white border-l-2">
+                            luasan
                         </th>
                     @endfor
                 </tr>
             </thead>
 
             <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+
                 @if ($namaKawasan)
                     <tr class="odd:bg-gray-50 dark:odd:bg-gray-800/50">
                         <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">
@@ -67,6 +83,15 @@
                             <td title="tingkat kekumuhan"
                                 class="whitespace-nowrap px-4 py-2 text-center  {{ $item ? $item?->getWarnaAttribute()[1] : '' }}">
                                 {{ $item ? $item->getWarnaAttribute()[0] : '' }}
+                            </td>
+                            <td title="luasan"
+                                class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200 border-r-2">
+                                @if ($item->tahun == 2024)
+                                    {{ Number::format($luasVerifikasiyangSudahBerkurang ?: 0, 2) }}
+                                @else
+                                    {{ Number::format($item->luasVerifikasi ?: 0, 2) }}
+                                @endif
+                                Ha
                             </td>
                         @endforeach
                     </tr>
@@ -88,6 +113,13 @@
                                 <td title="tingkat kekumuhan"
                                     class="whitespace-nowrap px-4 py-2 text-center  {{ $k ? $k?->getWarnaAttribute()[1] : '' }}">
                                     {{ $k ? $k->getWarnaAttribute()[0] : '' }}
+                                </td>
+
+                                <td title="luasan"
+                                    class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200 border-r-2">
+
+                                    {{ Number::format($k->tingkatKekumuhan == 'TK' ? 0 : ($k->luasVerifikasi ?: 0), 2) }}
+                                    Ha
                                 </td>
                             @endforeach
                         </tr>
