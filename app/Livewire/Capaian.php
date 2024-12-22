@@ -50,16 +50,16 @@ class Capaian extends Component
 
         $this->namaKawasan = SK24Kawasan::where('id', $this->idKawasanTerpilih)->get('kawasan')->first()?->toArray();
         $this->daftarRT = SK24Rtrw::where(['kawasan' => $this->idKawasanTerpilih])?->pluck('rtrw', 'id')->all();
-        $this->kumuhKawasan = SK24KumuhKawasan::join('kawasan', 'kawasan.id', '=', 'sk24_kumuh_kawasan.kawasan')
+        $this->kumuhKawasan = SK24KumuhKawasan::join('sk24_kawasan', 'sk24_kawasan.id', '=', 'sk24_kumuh_kawasan.kawasan')
             ->where('sk24_kumuh_kawasan.kawasan', $this->idKawasanTerpilih)
             ->orderBy('sk24_kumuh_kawasan.tahun')
-            ->get(['sk24_kumuh_kawasan.tahun', 'sk24_kumuh_kawasan.totalNilai', 'sk24_kumuh_kawasan.tingkatKekumuhan', 'sk24_kumuh_kawasan.tahun', 'kawasan.luasVerifikasi', 'kawasan.id']);
+            ->get(['sk24_kumuh_kawasan.tahun', 'sk24_kumuh_kawasan.totalNilai', 'sk24_kumuh_kawasan.tingkatKekumuhan', 'sk24_kumuh_kawasan.tahun', 'sk24_kawasan.luasVerifikasi', 'sk24_kawasan.id']);
 
 
 
-        $kumuhRT = SK24KumuhRT::join('rtrw', 'rtrw.id', '=', 'sk24_kumuh_rt.rt')
+        $kumuhRT = SK24KumuhRT::join('sk24_rtrw', 'sk24_rtrw.id', '=', 'sk24_kumuh_rt.rt')
             ->where('sk24_kumuh_rt.kawasan', $this->idKawasanTerpilih)
-            ->get(['sk24_kumuh_rt.rt', 'sk24_kumuh_rt.tahun', 'sk24_kumuh_rt.totalNilai', 'sk24_kumuh_rt.tingkatKekumuhan', 'rtrw.luasVerifikasi']);
+            ->get(['sk24_kumuh_rt.rt', 'sk24_kumuh_rt.tahun', 'sk24_kumuh_rt.totalNilai', 'sk24_kumuh_rt.tingkatKekumuhan', 'sk24_rtrw.luasVerifikasi']);
 
         $this->kumuhRT = $kumuhRT->groupby('rt')->all();
 
@@ -68,10 +68,10 @@ class Capaian extends Component
 
         // Loop through the results to adjust luasVerifikasi based on tingkatKekumuhan
         $this->luasVerifikasiyangSudahBerkurang = SK24Kawasan::where('id', $this->idKawasanTerpilih)->get('luasVerifikasi')->first()?->luasVerifikasi;
-        $kumuhRT = SK24KumuhRT::join('rtrw', 'rtrw.id', '=', 'sk24_kumuh_rt.rt')
+        $kumuhRT = SK24KumuhRT::join('sk24_rtrw', 'sk24_rtrw.id', '=', 'sk24_kumuh_rt.rt')
             ->where('sk24_kumuh_rt.kawasan', $this->idKawasanTerpilih)
             ->where('sk24_kumuh_rt.tahun', Carbon::now()->year)
-            ->get(['sk24_kumuh_rt.rt', 'sk24_kumuh_rt.tahun', 'sk24_kumuh_rt.totalNilai', 'sk24_kumuh_rt.tingkatKekumuhan', 'rtrw.luasVerifikasi']);
+            ->get(['sk24_kumuh_rt.rt', 'sk24_kumuh_rt.tahun', 'sk24_kumuh_rt.totalNilai', 'sk24_kumuh_rt.tingkatKekumuhan', 'sk24_rtrw.luasVerifikasi']);
         foreach ($kumuhRT as $record) {
             // If tingkatKekumuhan is 'Tidak Kumuh', set luasVerifikasi to 0 and add to total for 'Tidak Kumuh'
             if ($record->tingkatKekumuhan == 'TK') {
