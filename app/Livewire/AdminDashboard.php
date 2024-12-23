@@ -27,6 +27,7 @@ class AdminDashboard extends Component
     public $kawasan = null;
     public $idKawasanTerpilih = null;
     public $idRTTerpilih = null;
+    public $idDashboardTerpilih = null;
     public $rt = null;
     public $investasi = null;
     public $locked = false;
@@ -35,6 +36,7 @@ class AdminDashboard extends Component
     public $kumuhAwalArr = null;
     public $kumuhAkhir = null;
     public $header = null;
+    public $kelurahanDashboard = null;
 
 
     public function swapPreview($idKawasan = null, $idRT = null)
@@ -43,7 +45,7 @@ class AdminDashboard extends Component
         if ($idKawasan) {
             $this->idKawasanTerpilih = $idKawasan;
             $this->idRTTerpilih = $idRT;
-            $this->rt = Rtrw::where(['kawasan' => $this->idKawasanTerpilih])->get(['id', 'rtrw'])->toArray();
+            $this->rt = SK24Rtrw::where(['kawasan' => $this->idKawasanTerpilih])->get(['id', 'rtrw'])->toArray();
             $this->updatedidRTTerpilih();
         }
     }
@@ -65,9 +67,6 @@ class AdminDashboard extends Component
 
         $this->rt = SK24Rtrw::where(['kawasan' => $this->idKawasanTerpilih])->get(['id', 'rtrw'])->toArray();
         $this->investasi = Investasi::where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih])->get()->toArray();
-        // $investasi = DB::table('investasi')->selectRaw('idkriteria, sum(volume),anggaran, sumberAnggaran, kegiatan')->where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih])->groupBy('idkriteria')->get()->toArray();
-        // $this->investasi = $investasi;
-        // dd($investasi);
 
         $this->kumuhAwal = SK24KumuhKawasan::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih])->first();
         $this->kumuhAwalArr = $this->kumuhAwal->toArray();
@@ -108,14 +107,39 @@ class AdminDashboard extends Component
     public function mount()
     {
         $this->tahun = Carbon::now()->year;
-        $this->allInvestasi = Investasi::where(['tahun' => $this->tahun])->orderBy('idKawasan')->get()->toArray();
+
         $this->allInvestasi  = DB::table('investasi')
             ->join('kawasan', 'investasi.idKawasan', '=', 'kawasan.id')
             ->join('rtrw', 'investasi.idRTRW', '=', 'rtrw.id')
             ->join('users', 'investasi.id_user', '=', 'users.id')
             ->select('investasi.*', 'kawasan.kawasan', 'rtrw.rtrw', 'users.name')->orderBy('investasi.idKawasan')->get()->toArray();
+
+        $this->kelurahanDashboard = Investasi::where(['tahun' => $this->tahun])
+            ->join('sk24_kawasan', 'investasi.idKawasan', '=', 'sk24_kawasan.id')
+            ->select('investasi.idKawasan', 'sk24_kawasan.kawasan')
+            ->groupBy('investasi.idKawasan', 'sk24_kawasan.kawasan')
+            ->get()?->toArray();
         $this->user = Auth::user();
         $this->kawasan = SK24Kawasan::umum();
+    }
+
+    public function updatedidDashboardTerpilih()
+    {
+        if ($this->idDashboardTerpilih == 0) {
+            $this->allInvestasi  = DB::table('investasi')
+                ->join('kawasan', 'investasi.idKawasan', '=', 'kawasan.id')
+                ->join('rtrw', 'investasi.idRTRW', '=', 'rtrw.id')
+                ->join('users', 'investasi.id_user', '=', 'users.id')
+                ->select('investasi.*', 'kawasan.kawasan', 'rtrw.rtrw', 'users.name')->orderBy('investasi.idKawasan')->get()->toArray();
+        } else {
+            $this->allInvestasi  = DB::table('investasi')
+                ->join('kawasan', 'investasi.idKawasan', '=', 'kawasan.id')
+                ->join('rtrw', 'investasi.idRTRW', '=', 'rtrw.id')
+                ->join('users', 'investasi.id_user', '=', 'users.id')
+                ->select('investasi.*', 'kawasan.kawasan', 'rtrw.rtrw', 'users.name')
+                ->where('investasi.idKawasan', $this->idDashboardTerpilih)
+                ->orderBy('investasi.idKawasan')->get()->toArray();
+        }
     }
 
     public function destroy($id)
