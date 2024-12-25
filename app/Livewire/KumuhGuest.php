@@ -84,12 +84,13 @@ class KumuhGuest extends Component
 
     public function loadKumuhKawasan()
     {
-        $this->daftarRT = Rtrw::where('kawasan', $this->idKawasanTerpilih)->get(['id', 'rtrw']);
+        $this->reset('coordinate2');
+        $this->daftarRT = Rtrw::where('id_kawasan', $this->idKawasanTerpilih)->get(['id_rtrw', 'rtrw']);
         $this->coordinate = Latlang::where('kelurahan', $this->header->kawasan)->first()->toArray();
-        $this->kumuhAwal = KumuhKawasan::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih])->first();
-        $this->kumuhAkhir = KumuhKawasan::where(['tahun' => $this->tahun, 'kawasan' => $this->idKawasanTerpilih])->first();
+        $this->kumuhAwal = KumuhKawasan::where(['tahun' => ($this->tahun - 1), 'id_kawasan' => $this->idKawasanTerpilih])->first();
+        $this->kumuhAkhir = KumuhKawasan::where(['tahun' => $this->tahun, 'id_kawasan' => $this->idKawasanTerpilih])->first();
 
-        $investasi = Investasi::where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih])->get()->toArray();
+        $investasi = Investasi::where(['tahun' => $this->tahun, 'id_kawasan' => $this->idKawasanTerpilih])->get()->toArray();
         $this->investasi = Arr::map($investasi, function ($value) {
             return [
                 ...$value,
@@ -104,9 +105,9 @@ class KumuhGuest extends Component
 
     public function loadKumuhRT()
     {
-        $this->kumuhAwal = KumuhRT::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih, 'rt' => $this->idRTTerpilih])->first();
-        $this->kumuhAkhir = KumuhRT::where(['tahun' => $this->tahun, 'kawasan' => $this->idKawasanTerpilih, 'rt' => $this->idRTTerpilih])->first();
-        $investasi = Investasi::where(['tahun' => $this->tahun, 'idKawasan' => $this->idKawasanTerpilih, 'idRTRW' => $this->idRTTerpilih])->get()->toArray();
+        $this->kumuhAwal = KumuhRT::where(['tahun' => ($this->tahun - 1), 'id_kawasan' => $this->idKawasanTerpilih, 'id_rtrw' => $this->idRTTerpilih])->first();
+        $this->kumuhAkhir = KumuhRT::where(['tahun' => $this->tahun, 'id_kawasan' => $this->idKawasanTerpilih, 'id_rtrw' => $this->idRTTerpilih])->first();
+        $investasi = Investasi::where(['tahun' => $this->tahun, 'id_kawasan' => $this->idKawasanTerpilih, 'id_rtrw' => $this->idRTTerpilih])->get()->toArray();
         $this->investasi = Arr::map($investasi, function ($value) {
             return [
                 ...$value,
@@ -118,6 +119,7 @@ class KumuhGuest extends Component
         $this->coordinate2 = Latlang::where(['kelurahan' => $kelurahan->kawasan, 'kodeRTRW' => $this->header->rtrw])->first()?->toArray();
         $kumuh = $this->kumuhAkhir?->toArray() ? $this->kumuhAkhir?->toArray() : $this->kumuhAwal?->toArray();
         $this->description2 = $this->coordinateDescription($kumuh);
+
 
         $this->dispatch('updated-investasi');
     }
@@ -139,6 +141,7 @@ class KumuhGuest extends Component
     }
     public function render()
     {
+
         return view('livewire.kumuh-guest')->with(['kawasan' => Kawasan::umum()]);
     }
 }

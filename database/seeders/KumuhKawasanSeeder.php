@@ -16,9 +16,11 @@ class KumuhKawasanSeeder extends Seeder
         DB::table('kumuh_kawasan')->truncate();
         $json = file_get_contents(database_path('seeders/kumuhKawasan.json'));
         $data = json_decode($json, true);
+        $no = 1;
         foreach ($data as $row) {
+            var_dump('k_k' . $no++ . '/135');
             DB::table('kumuh_kawasan')->insert([
-                'kawasan' => $row['kawasan'],
+                'id_kawasan' => $row['kawasan'],
                 'tahun' => $row['tahun'],
                 '1av' => $row['1av'],
                 '1ap' => $row['1ap'],

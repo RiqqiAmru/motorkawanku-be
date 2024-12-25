@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('investasi', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_investasi');
             $table->integer('tahun');
-            $table->foreignId('idKawasan')->constrained('kawasan');
-            $table->string('idRTRW');
+            $table->foreignId('id_kawasan')->constrained('kawasan', 'id_kawasan');
+            $table->string('id_rtrw');
             $table->string('idkriteria');
             $table->integer('volume');
             $table->string('kegiatan');

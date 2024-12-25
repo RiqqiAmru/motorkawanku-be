@@ -33,7 +33,7 @@ class UsersController extends Controller
         });
         $kawasan = Kawasan::all();
         // only use id and kawasan field
-        $kawasan = $kawasan->pluck('kawasan', 'id');
+        $kawasan = $kawasan->pluck('kawasan', 'id_kawasan');
         return view('users.index', [
             'users' =>  $userWithSession,
             'kawasan' => $kawasan
@@ -106,21 +106,21 @@ class UsersController extends Controller
         }
 
         // return nothing if the data is same as the previous one
-        $previousData = User::where(['id' => $id])->first();
+        $previousData = User::where(['id_user' => $id])->first();
         if ($previousData?->name) {
             if ($previousData->name == $request->nama && $previousData->email == $request->email && $previousData->role == $request->role && $previousData->kawasan_id == $request->kawasan) {
                 return Redirect::to('/users')->with('info', "Nothing Changed ");
             }
             $validated = $request->validateWithBag('editExistingUser', [
                 'nama' => 'required|string|max:255',
-                'email' => ['required', 'string', 'email', 'max:255', \Illuminate\Validation\Rule::unique('users')->ignore($id)]
+                'email' => ['required', 'string', 'email', 'max:255', \Illuminate\Validation\Rule::unique('users')->ignore($id, 'id_user')]
             ]);
             $kawasan = "";
             if ($request->input('role') == 'user') {
                 $kawasan = $request->input('kawasan');
             }
             // edit user data
-            User::where('id', $id)->update([
+            User::where('id_user', $id)->update([
                 'name' => $validated['nama'],
                 'email' => $validated['email'],
                 'role' => $request->role,

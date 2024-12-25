@@ -24,11 +24,12 @@
 
                 <li>
                     @if ($user->role == 'admin')
-                        <select wire:model.live="idKawasanTerpilih"
+                        <select wire:model.live="idKawasanTerpilih" dusk='select-wilayah'
                             class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                             <option value="">Pilih Wilayah</option>
+
                             @foreach ($kawasan as $item)
-                                <option value="{{ $item->id }}">
+                                <option value="{{ $item->id_kawasan }}">
                                     {{ $item->kawasan }}</option>
                             @endforeach
                         </select>
@@ -48,12 +49,12 @@
                 </li>
 
                 <li>
-                    <select wire:model.live="idRTTerpilih" wire:key="idKawasanTerpilih"
+                    <select wire:model.live="idRTTerpilih" wire:key="idKawasanTerpilih" dusk='select-rtrw'
                         class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                         <option value="0">Pilih RT/RW</option>
                         @if ($rt)
                             @foreach ($rt as $item)
-                                <option value="{{ $item['id'] }}">{{ $item['rtrw'] }}</option>
+                                <option value="{{ $item['id_rtrw'] }}">{{ $item['rtrw'] }}</option>
                             @endforeach
                         @endif
                     </select>
@@ -70,17 +71,6 @@
                 </li>
             </ol>
         </nav>
-        {{-- @if ($user->role == 'admin')
-            <template x-if="$wire.idKawasanTerpilih  && $wire.idRTTerpilih == null   ">
-                <template x-if="$wire.locked == false">
-                    <x-primary-button x-data=''
-                        wire:confirm="**Apakah
-                Anda Yakin ingin mengunci data investasi ?** \n \n dengan mengunci data anda tidak dapat mengedit /
-                merubah lagi data investasi, hubungi admin bila ada kesalahan"
-                        wire:click="lock">{{ __('Kunci Investasi') }}</x-primary-button>
-                </template>
-            </template>
-        @endif --}}
         <template x-if="$wire.locked == true">
             <div class="flex items-center gap-2">
                 <span>Locked</span>
@@ -96,9 +86,6 @@
     </div>
 
     {{-- investasi --}}
-    {{-- @php
-        dump($kawasan, $idKawasanTerpilih, $investasi);
-    @endphp --}}
     <template x-if="$wire.preview ==false">
         <div class="pt-4" id="tab-investasi" x-data="{
             investasi: [{
@@ -378,7 +365,7 @@
             }
         }">
             <div class="overflow-x-auto">
-                <table
+                <table dusk="table-investasi"
                     class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm dark:divide-gray-700 dark:bg-gray-900">
                     <thead class="ltr:text-left rtl:text-right">
                         <tr>
@@ -417,7 +404,7 @@
                                         <template x-if="$wire.locked == false">
                                             <template
                                                 x-if="$wire.tahun == new Date().getFullYear() && $wire.idRTTerpilih ">
-                                                <x-primary-button x-data=''
+                                                <x-primary-button dusk="create-investasi-button" x-data=''
                                                     x-on:click.prevent="$dispatch('open-modal',{name:'add-new-investasi',idKriteria :item.idKriteria})">{{ __('Tambah') }}</x-primary-button>
                                             </template>
                                         </template>
@@ -453,7 +440,7 @@
                                 <template x-if="$wire.idRTTerpilih && item.kegiatan !=undefined && item.locked !=1">
                                     <td class="flex justify-center px-4 py-2 gap-2 ">
                                         <x-danger-button x-data="" aria-describedby="hapus data"
-                                            wire:click="delete(item.id)"
+                                            :dusk="'hapus-investasi-button'" wire:click="delete(item.id_investasi)"
                                             wire:confirm="Apakah Kamu yakin ingin menghapus data investasi">
                                             <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
                                             <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none"

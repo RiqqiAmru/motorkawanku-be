@@ -7,12 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Investasi extends Model
 {
+    protected $primaryKey = 'id_investasi';
     use HasFactory;
     protected $table = 'investasi';
     protected $fillable = [
         'tahun',
-        'idKawasan',
-        'idRTRW',
+        'id_kawasan',
+        'id_rtrw',
         'idkriteria',
         'volume',
         'kegiatan',

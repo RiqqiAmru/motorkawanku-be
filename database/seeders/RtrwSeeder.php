@@ -17,9 +17,11 @@ class RtrwSeeder extends Seeder
         DB::table('rtrw')->truncate();
         $json = file_get_contents(database_path('seeders/rtrw.json'));
         $data = json_decode($json, true);
+        $no = 1;
         foreach ($data as $row) {
+            var_dump('k_k' . $no++ . '/432');
             DB::table('rtrw')->insert([
-                'kawasan' => $row['kawasan'],
+                'id_kawasan' => $row['kawasan'],
                 'rtrw' => $row['rtrw'],
                 'luasFlag' => $row['luasFlag'],
                 'luasVerifikasi' => $row['luasVerifikasi'],

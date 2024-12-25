@@ -15,9 +15,15 @@ class KawasanSeeder extends Seeder
     public function run(): void
     {
         // import from json
+        DB::table('investasi')->truncate();
+        DB::table('kumuh_rt')->truncate();
+        DB::table('kumuh_kawasan')->truncate();
+        DB::table('rtrw')->truncate();
         DB::table('kawasan')->truncate();
         $json = file_get_contents(database_path('seeders/kawasan.json'));
         $data = json_decode($json, true);
+        $no = 1;
+
         foreach ($data as $row) {
             DB::table('kawasan')->insert([
                 'kawasan' => $row['kawasan'],
@@ -31,6 +37,7 @@ class KawasanSeeder extends Seeder
                 'panjangJalanIdeal' => $row['panjangJalanIdeal'],
                 'panjangDrainaseIdeal' => $row['panjangDrainaseIdeal']
             ]);
+            var_dump('kawasan' . $no++ . '/27');
         }
     }
 }

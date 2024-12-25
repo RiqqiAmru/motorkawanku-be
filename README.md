@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center">><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Logo Motorkawanku"></p>
 
 <p align="center">
 <!-- <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -31,12 +31,12 @@ The project is licensed under the MIT License. You can find the full text of the
 -   [x] delete the registration controller
 -   [x] make role admin and user (validation)
 -   [x] make user CRUD on admin role
--   [ ] make CRUD data investasi
+-   [x] make CRUD data investasi
 -   [ ] make CRUD data geolocation
 
 ### guest
 
--   [ ] view data kumuh awal, akhir, investasi and maps
+-   [x] view data kumuh awal, akhir, investasi and maps
 
 ### secondary
 
@@ -52,7 +52,7 @@ The project is licensed under the MIT License. You can find the full text of the
 
 -   data investasi
 
-    -   [ ] view breadcrumbs location, for user, its default location whether on username, for admin the breadcrumb itself can be changed for all locations
+    -   [x] view breadcrumbs location, for user, its default location whether on username, for admin the breadcrumb itself can be changed for all locations
     -   based on location, view the table for investasi in current year,
     -   user or admin can make CRUD operations in investasi table
     -   user can lock the investasi data if it felt proper,
@@ -63,12 +63,9 @@ The project is licensed under the MIT License. You can find the full text of the
     -   if not approved, admin will make a text input for reason the data is invalid
     -   the investasi data that inputted by the admin automatically approved (not validated) and waiting to be locked
 
--   [] add progress bar for alert information with self extinct
--   [ ] user can see the data within their area, and admin can see all data
--   [ ] user can lock the investasi data if the data is already inputted
--   [ ] admin can see the data that is locked and not locked by the user
--   [ ] admin can reject the data that submitted by the user and give the reason / feedback detail
--   [ ] user can see the feedback from the admin via notification (in browser only)
+-   [x] add progress bar for alert information with self extinct
+-   [x] user can see the data within their area, and admin can see all data
+-   [x] admin can lock the user data
 -   [ ] admin can make a report based on the data that is locked by the user in excel based format
 -   [ ] there are log system for every action that is done by the user and admin, and can be seen by the admin
 
@@ -77,8 +74,4 @@ The project is licensed under the MIT License. You can find the full text of the
 -   [] there are a register button in the welcome page (delete?) that [feat:admin]
 -   [] users cannot change their name because its determined the kumuh location
 
-<!-- perubahan SK 2024 -->
-
--   buat kunci data dan save di admin, hanya admin yang dapat kunci data
--   view semua investasi di dashboard admin
--   buat laman capaian di admin yang nanti nya akan menampilkan laporan yg bisa didownload di excel
+## error

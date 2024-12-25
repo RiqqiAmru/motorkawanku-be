@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('kumuh_rt', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_kumuh_rt');
             $table->timestamps();
-            $table->integer('kawasan');
-            $table->integer('rt');
+            $table->integer('id_kawasan');
+            $table->integer('id_rtrw');
             $table->integer('tahun');
 
             $table->integer('1av');
@@ -85,8 +85,8 @@ return new class extends Migration
             $table->float('ratarataKekumuhan');
             $table->float('kontribusiPenanganan');
 
-            $table->foreign('kawasan')->references('id')->on('kawasan');
-            $table->foreign('rt')->references('id')->on('rtrw');
+            $table->foreign('id_kawasan')->references('id_kawasan')->on('kawasan');
+            $table->foreign('id_rtrw')->references('id_rtrw')->on('rtrw');
         });
     }
 

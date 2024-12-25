@@ -53,7 +53,7 @@
                                                 </x-secondary-button>
                                                 @if ($u['role'] == 'user')
                                                     <x-danger-button x-data=''
-                                                        x-on:click.prevent="$dispatch('open-modal', {name:'confirm-user-deletion', id :'{{ $u['id'] }}',email:'{{ $u['email'] }}'})">
+                                                        x-on:click.prevent="$dispatch('open-modal', {name:'confirm-user-deletion', id :'{{ $u['id_user'] }}',email:'{{ $u['email'] }}'})">
                                                         {{ __('hapus') }}
                                                     </x-danger-button>
                                                 @endif

@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rtrw extends Model
 {
+    protected $primaryKey = 'id_rtrw';
     use HasFactory;
     protected $table = 'rtrw';
     protected $fillable = [
-        'kawasan',
+        'id_kawasan',
         'rtrw',
         'luasFlag',
         'luasVerifikasi',

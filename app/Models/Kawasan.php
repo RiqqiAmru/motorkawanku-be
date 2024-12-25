@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 class Kawasan extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'id_kawasan';
     protected $table = 'kawasan';
     protected $fillable = [
         'kawasan',
@@ -27,7 +28,7 @@ class Kawasan extends Model
     public static function umum()
     {
         return DB::table('kawasan')
-            ->select('kawasan', 'id')
+            ->select('kawasan', 'id_kawasan')
             ->get();
     }
 }

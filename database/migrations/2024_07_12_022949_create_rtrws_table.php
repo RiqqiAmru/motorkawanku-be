@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('rtrw', function (Blueprint $table) {
-            $table->id();
-            $table->integer('kawasan');
+            $table->id('id_rtrw');
+            $table->integer('id_kawasan');
             $table->string('rtrw');
             $table->float('luasFlag');
             $table->float('luasVerifikasi');
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->integer('panjangJalanIdeal');
             $table->integer('panjangDrainaseIdeal');
 
-            $table->foreign('kawasan')->references('id')->on('kawasan');
+            $table->foreign('id_kawasan')->references('id_kawasan')->on('kawasan');
         });
     }
 
