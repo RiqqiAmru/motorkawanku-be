@@ -36,17 +36,17 @@ class Capaian extends Component
         $this->reset('kumuhKawasan');
         $this->reset('kumuhRT');
 
-        $this->namaKawasan = Kawasan::where('id', $this->idKawasanTerpilih)->get('kawasan')->first()?->toArray();
-        $this->daftarRT = Rtrw::where(['kawasan' => $this->idKawasanTerpilih])?->pluck('rtrw', 'id')->all();
-        $this->kumuhKawasan = KumuhKawasan::where(['kawasan' => $this->idKawasanTerpilih])->orderBy('tahun')->get(['tahun', 'totalNilai', 'tingkatKekumuhan']);
+        $this->namaKawasan = Kawasan::where('id_kawasan', $this->idKawasanTerpilih)->get('kawasan')->first()?->toArray();
+        $this->daftarRT = Rtrw::where(['id_kawasan' => $this->idKawasanTerpilih])?->pluck('rtrw', 'id_rtrw')->all();
 
-        $kumuhRT = KumuhRT::where(['kawasan' => $this->idKawasanTerpilih])->get(['rt', 'tahun', 'totalNilai', 'tingkatKekumuhan']);
-        $this->kumuhRT = $kumuhRT->groupby('rt')->all();
+        $this->kumuhKawasan = KumuhKawasan::where(['id_kawasan' => $this->idKawasanTerpilih])->orderBy('tahun')->get(['tahun', 'totalNilai', 'tingkatKekumuhan']);
+
+        $kumuhRT = KumuhRT::where(['id_kawasan' => $this->idKawasanTerpilih])->get(['id_rtrw', 'tahun', 'totalNilai', 'tingkatKekumuhan']);
+        $this->kumuhRT = $kumuhRT->groupby('id_rtrw')->all();
     }
 
     public function render()
     {
-
         return view('livewire.capaian');
     }
 }

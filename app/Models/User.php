@@ -10,7 +10,7 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
-
+    protected $primaryKey = 'id_user';
     /**
      * The attributes that are mass assignable.
      *
@@ -66,6 +66,6 @@ class User extends Authenticatable
      */
     public  function session()
     {
-        return $this->hasOne(SessionModel::class);
+        return $this->hasOne(SessionModel::class, 'user_id', 'id_user');
     }
 }

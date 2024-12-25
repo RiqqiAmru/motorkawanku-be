@@ -28,8 +28,8 @@ class InvForm extends Form
         ModelsInvestasi::create(
             [
                 'tahun' => $tahun,
-                'idKawasan' => $idKawasanTerpilih,
-                'idRTRW' => $idRTTerpilih,
+                'id_kawasan' => $idKawasanTerpilih,
+                'id_rtrw' => $idRTTerpilih,
                 'idkriteria' => $this->idKriteria,
                 'volume' => $this->volume,
                 'kegiatan' => $this->kegiatan,
@@ -43,7 +43,8 @@ class InvForm extends Form
 
     public function delete($param)
     {
-        ModelsInvestasi::find($param)->delete();
+
+        ModelsInvestasi::find($param, 'id_investasi')->delete();
         session()->flash('success', 'berhasil menghapus investasi.');
     }
 }

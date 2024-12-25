@@ -27,8 +27,9 @@
                         <select wire:model.live="idKawasanTerpilih" dusk='select-wilayah'
                             class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                             <option value="">Pilih Wilayah</option>
+
                             @foreach ($kawasan as $item)
-                                <option value="{{ $item->id }}">
+                                <option value="{{ $item->id_kawasan }}">
                                     {{ $item->kawasan }}</option>
                             @endforeach
                         </select>
@@ -53,7 +54,7 @@
                         <option value="0">Pilih RT/RW</option>
                         @if ($rt)
                             @foreach ($rt as $item)
-                                <option value="{{ $item['id'] }}">{{ $item['rtrw'] }}</option>
+                                <option value="{{ $item['id_rtrw'] }}">{{ $item['rtrw'] }}</option>
                             @endforeach
                         @endif
                     </select>
@@ -439,7 +440,7 @@
                                 <template x-if="$wire.idRTTerpilih && item.kegiatan !=undefined && item.locked !=1">
                                     <td>
                                         <x-danger-button x-data="" aria-describedby="hapus data"
-                                            :dusk="'hapus-investasi-button'" wire:click="delete(item.id)"
+                                            :dusk="'hapus-investasi-button'" wire:click="delete(item.id_investasi)"
                                             wire:confirm="Apakah Kamu yakin ingin menghapus data investasi">
                                             <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
                                             <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none"

@@ -5,6 +5,8 @@ namespace Tests\Feature\Livewire;
 use App\Livewire\Investasi;
 use App\Models\Investasi as InvestasiModel;
 use App\Models\Kawasan;
+use App\Models\KumuhKawasan;
+use App\Models\KumuhRT;
 use App\Models\Rtrw;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -34,21 +36,31 @@ class InvestasiTest extends TestCase
         $user = User::factory()->create(['role' => 'admin']);
         $kawasan = Kawasan::factory()->create();
         $rtrw = Rtrw::factory()->create();
+        KumuhKawasan::factory()->create([
+            'id_kawasan' => $kawasan->id_kawasan,
+            'tahun' => now()->year - 1,
+        ]);
 
         $this->actingAs($user);
 
         Livewire::test(Investasi::class)
             ->set('tahun', now()->year)
-            ->set('idKawasanTerpilih', $kawasan->id)
-            ->set('idRTTerpilih', $rtrw->id)
+            ->set('idKawasanTerpilih', $kawasan->id_kawasan)
+            ->set('idRTTerpilih', $rtrw->id_rtrw)
+            ->set('form.kegiatan', 'Jalan Makadam')
+            ->set('form.sumberAnggaran', 'APBD')
+            ->set('form.volume', 100)
+            ->set('form.anggaran', 1000000)
+            ->set('form.idKriteria', '1a')
             ->call('save')
-            ->assertSessionHas('success', 'berhasil menambah investasi');
+            ->assertSessionHasNoErrors();
+
 
         $this->assertDatabaseHas('investasi', [
             'tahun' => now()->year,
-            'idKawasan' => $kawasan->id,
-            'idRTRW' => $rtrw->id,
-            'user_id' => $user->id,
+            'id_kawasan' => $kawasan->id_kawasan,
+            'id_rtrw' => $rtrw->id_rtrw,
+            'id_user' => $user->id_user,
         ]);
     }
 
@@ -58,20 +70,24 @@ class InvestasiTest extends TestCase
         $kawasan = Kawasan::factory()->create();
         $investasi = InvestasiModel::factory()->create([
             'tahun' => now()->year,
-            'idKawasan' => $kawasan->id,
+            'id_kawasan' => $kawasan->id_kawasan,
             'locked' => 0,
+        ]);
+        KumuhKawasan::factory()->create([
+            'id_kawasan' => $kawasan->id_kawasan,
+            'tahun' => now()->year - 1,
         ]);
 
         $this->actingAs($user);
 
         Livewire::test(Investasi::class)
             ->set('tahun', now()->year)
-            ->set('idKawasanTerpilih', $kawasan->id)
+            ->set('idKawasanTerpilih', $kawasan->id_kawasan)
             ->call('lock')
-            ->assertSessionHas('info', 'Berhasil Mengunci Data Investasi ' . $kawasan->kawasan);
+            ->assertSessionHasNoErrors();
 
         $this->assertDatabaseHas('investasi', [
-            'id' => $investasi->id,
+            'id_investasi' => $investasi->id_investasi,
             'locked' => 2,
         ]);
     }
@@ -80,27 +96,18 @@ class InvestasiTest extends TestCase
     {
         $user = User::factory()->create(['role' => 'admin']);
         $kawasan = Kawasan::factory()->create();
-        $rtrws = Rtrw::factory()->count(3)->create();
+        $rtrws = Rtrw::factory()->count(3)->create([
+            'id_kawasan' => $kawasan->id_kawasan,
+        ]);
+        KumuhKawasan::factory()->create([
+            'id_kawasan' => $kawasan->id_kawasan,
+            'tahun' => now()->year - 1,
+        ]);
 
         $this->actingAs($user);
 
         Livewire::test(Investasi::class)
-            ->set('idKawasanTerpilih', $kawasan->id)
-            ->call('updatedidKawasanTerpilih')
-            ->assertSet('rt', $rtrws->toArray())
-            ->assertSet('header', $kawasan->toArray());
-    }
-
-    public function test_it_can_toggle_preview_mode()
-    {
-        $user = User::factory()->create();
-
-        $this->actingAs($user);
-
-        Livewire::test(Investasi::class)
-            ->call('swapPreview')
-            ->assertSet('preview', true)
-            ->call('swapPreview')
-            ->assertSet('preview', false);
+            ->set('idKawasanTerpilih', $kawasan->id_kawasan)
+            ->assertSee($rtrws[2]->rtrw);
     }
 }

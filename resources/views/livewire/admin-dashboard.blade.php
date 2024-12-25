@@ -34,7 +34,7 @@
                             <option value="">Pilih Wilayah</option>
                             @if ($kawasan)
                                 @foreach ($kawasan as $item)
-                                    <option value="{{ $item->id }}">
+                                    <option value="{{ $item->id_kawasan }}">
                                         {{ $item->kawasan }}</option>
                                 @endforeach
                             @endif
@@ -55,7 +55,7 @@
                             <option value="0">Pilih RT/RW</option>
                             @if ($rt)
                                 @foreach ($rt as $item)
-                                    <option value="{{ $item['id'] }}">{{ $item['rtrw'] }}</option>
+                                    <option value="{{ $item['id_rtrw'] }}">{{ $item['rtrw'] }}</option>
                                 @endforeach
                             @endif
                         </select>
@@ -891,7 +891,7 @@
                                             {{-- preview --}}
                                             <button
                                                 class="inline-block border-e p-3 text-gray-700 hover:bg-gray-50 focus:relative dark:border-e-gray-800 dark:text-gray-200 dark:hover:bg-gray-800"
-                                                x-on:click="$wire.swapPreview({{ $item->idKawasan }}, {{ $item->idRTRW }})"
+                                                x-on:click="$wire.swapPreview({{ $item->id_kawasan }}, {{ $item->id_rtrw }})"
                                                 title="Preview">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -905,7 +905,7 @@
                                                 {{-- lock --}}
                                                 <button
                                                     class="inline-block border-e p-3 text-gray-700 hover:bg-gray-50 focus:relative dark:border-e-gray-800 dark:text-gray-200 dark:hover:bg-gray-800"
-                                                    x-on:click.prevent="$dispatch('open-modal', {name:'confirm-investasi', id :'{{ $item->idKawasan }}', email:'{{ $item->kawasan }}'}) "
+                                                    x-on:click.prevent="$dispatch('open-modal', {name:'confirm-investasi', id :'{{ $item->id_kawasan }}', email:'{{ $item->kawasan }}'}) "
                                                     title="Kunci Investasi">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
                                                         viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -920,7 +920,7 @@
                                                 {{-- delete --}}
                                                 <button
                                                     class="inline-block p-3 text-gray-700 hover:bg-gray-50 focus:relative dark:text-gray-200 dark:hover:bg-gray-800"
-                                                    x-on:click.prevent="$dispatch('open-modal', {name:'confirm-investasi-deletion', id :'{{ $item->id }}'}) "
+                                                    x-on:click.prevent="$dispatch('open-modal', {name:'confirm-investasi-deletion', id :'{{ $item->id_investasi }}'}) "
                                                     title="Delete Investasi">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -933,7 +933,7 @@
                                                 {{-- unlock --}}
                                                 <button
                                                     class="inline-block p-3 text-gray-700 hover:bg-gray-50 focus:relative dark:text-gray-200 dark:hover:bg-gray-800"
-                                                    x-on:click.prevent="$dispatch('open-modal', {name:'confirm-investasi-unlock', id :'{{ $item->idKawasan }}', email:'{{ $item->kawasan }}'}) "
+                                                    x-on:click.prevent="$dispatch('open-modal', {name:'confirm-investasi-unlock', id :'{{ $item->id_kawasan }}', email:'{{ $item->kawasan }}'}) "
                                                     title="Unlock">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
                                                         viewBox="0 0 24 24" fill="none" stroke="currentColor"

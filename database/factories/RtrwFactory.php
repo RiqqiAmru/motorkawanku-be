@@ -20,7 +20,7 @@ class RtrwFactory extends Factory
     public function definition(): array
     {
         return [
-            'kawasan' => 1, // Nama kawasan (kota)
+            'id_kawasan' => 1, // Nama kawasan (kota)
             'rtrw' => $this->faker->regexify('[0-9]{2}/[0-9]{2}'), // Format RT/RW (contoh: 01/02)
             'luasFlag' => $this->faker->randomFloat(2, 0, 500), // Luas flag dalam hektar
             'luasVerifikasi' => $this->faker->randomFloat(2, 0, 500), // Luas setelah verifikasi dalam hektar

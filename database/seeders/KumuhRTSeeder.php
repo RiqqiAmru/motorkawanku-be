@@ -16,10 +16,12 @@ class KumuhRTSeeder extends Seeder
         DB::table('kumuh_rt')->truncate();
         $json = file_get_contents(database_path('seeders/kumuhRT.json'));
         $data = json_decode($json, true);
+        $no = 1;
         foreach ($data as $row) {
+            var_dump('k_rt' . $no++ . '/2160');
             DB::table('kumuh_rt')->insert([
-                'rt' => $row['rt'],
-                'kawasan' => $row['kawasan'],
+                'id_rtrw' => $row['rt'],
+                'id_kawasan' => $row['kawasan'],
                 'tahun' => $row['tahun'],
                 '1av' => $row['1av'],
                 '1ap' => $row['1ap'],

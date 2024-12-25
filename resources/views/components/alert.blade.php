@@ -2,7 +2,7 @@
 
 <div class="fixed top-5 right-5 x-50" x-data="{ show: false, message: '', title: '' }" x-init="if (@js(session('success'))) {
     message = @js(session('success'));
-    title = 'Chages Saved'
+    title = 'Changes Saved'
     show = true;
 } else if (@js(session('error'))) {
     message = @js(session('error'));

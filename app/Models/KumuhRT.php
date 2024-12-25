@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class KumuhRT extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'id_kumuh_rt';
     public $table = 'kumuh_rt';
     protected $fillable = [
-        'kawasan',
-        'rt',
+        'id_kawasan',
+        'id_rtrw',
         'tahun',
         '1av',
         '1ap',

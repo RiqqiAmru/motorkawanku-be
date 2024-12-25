@@ -16,7 +16,9 @@ class LatlangSeeder extends Seeder
         DB::table('latlong')->truncate();
         $json = file_get_contents(database_path('seeders/latlng.json'));
         $data = json_decode($json, true);
+        $no = 1;
         foreach ($data as $row) {
+            var_dump('ltlg' . $no++ . '/469');
             $coordinate = json_encode($row['coordinates']);
             $kodeRTRW = (isset($row['kodeRTRW'])) ? $row['kodeRTRW'] : '';
             DB::table('latlong')->insert([

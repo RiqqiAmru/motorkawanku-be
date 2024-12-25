@@ -28,7 +28,7 @@
                     <option value="">Pilih Wilayah</option>
                     @if ($kawasan)
                         @foreach ($kawasan as $item)
-                            <option value="{{ $item->id }}">
+                            <option value="{{ $item->id_kawasan }}">
                                 {{ $item->kawasan }}</option>
                         @endforeach
                     @endif
@@ -79,7 +79,7 @@
                     @foreach ($kumuhRT as $item)
                         <tr class="odd:bg-gray-50 dark:odd:bg-gray-800/50">
                             <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">
-                                {{ $daftarRT[$item->first()->rt] }}
+                                {{ $daftarRT[$item->first()->id_rtrw] }}
                             </td>
                             @foreach ($item as $k)
                                 <td title="total Nilai"

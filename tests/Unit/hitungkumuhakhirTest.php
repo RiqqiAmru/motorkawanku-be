@@ -69,9 +69,9 @@ class hitungkumuhakhirTest extends TestCase
 
         $kumuhRTAwal = [
             "id" => 1,
-            "kawasan" => 1,
+            "id_kawasan" => 1,
             "tahun" => 2019,
-            "rt" => 1,
+            "id_rtrw" => 1,
             "1av" => 326,
             "1ap" => 0.7581395348837209,
             "1an" => 3,
@@ -144,7 +144,7 @@ class hitungkumuhakhirTest extends TestCase
         $result = $this->classInstance->hitungKumuhRtAkhir($dataVolume, $kumuhRTAwal, $headerRT);
 
         $this->assertArrayHasKey('tingkatKekumuhan', $result, "Result should include 'tingkatKekumuhan'");
-        $this->assertEquals(1, $result['kawasan'], "Kawasan should match");
+        $this->assertEquals(1, $result['id_kawasan'], "Kawasan should match");
         $this->assertLessThanOrEqual($kumuhRTAwal['1av'], $result['1av'], "Rata-rata kekumuhan should decrease");
         $this->assertLessThanOrEqual($kumuhRTAwal['1bv'], $result['1bv'], "Rata-rata kekumuhan should decrease");
         $this->assertLessThanOrEqual($kumuhRTAwal['1cv'], $result['1cv'], "Rata-rata kekumuhan should decrease");

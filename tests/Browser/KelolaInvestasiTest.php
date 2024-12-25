@@ -57,7 +57,7 @@ class KelolaInvestasiTest extends DuskTestCase
 
             $browser->loginAs($admin)
                 ->visit('/investasi')
-                ->click("@edit-button-{$investasi->id}") // Gunakan atribut unik untuk tombol edit
+                ->click("@edit-button-{$investasi->id_investasi}") // Gunakan atribut unik untuk tombol edit
                 ->type('kegiatan', 'Pembangunan Jalan Baru') // Edit field
                 ->press('@save-button') // Simpan perubahan
                 ->assertSee('berhasil mengupdate investasi') // Verifikasi pesan sukses

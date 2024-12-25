@@ -24,8 +24,8 @@ class InvestasiFactory extends Factory
     {
         return [
             'tahun' => $this->faker->year(), // Tahun investasi
-            'idKawasan' => Kawasan::factory(), // Relasi ke model Kawasan
-            'idRTRW' => Rtrw::factory(), // Relasi ke model RTRW
+            'id_kawasan' => Kawasan::factory(), // Relasi ke model Kawasan
+            'id_rtrw' => Rtrw::factory(), // Relasi ke model RTRW
             'idkriteria' => $this->faker->regexify('[1-7][a-c]'), // ID kriteria (contoh: 1a, 2b)
             'volume' => $this->faker->randomFloat(2, 1, 1000), // Volume kegiatan
             'kegiatan' => $this->faker->sentence(), // Deskripsi kegiatan

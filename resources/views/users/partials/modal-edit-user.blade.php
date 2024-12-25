@@ -1,5 +1,5 @@
 <x-modal name="edit-user" :show="$errors->editExistingUser->isNotEmpty()" maxWidth='lg' focusable>
-    <form method="post" :action="'/users/' + id.id" class="p-6" x-data="{}">
+    <form method="post" :action="'/users/' + id.id_user" class="p-6" x-data="{}">
         @csrf
         @method('patch')
         <input type="hidden" name="id" id="id" x-model='id.id'>
