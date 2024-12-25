@@ -451,7 +451,7 @@
                                     </td>
                                 </template>
                                 <template x-if="$wire.idRTTerpilih && item.kegiatan !=undefined && item.locked !=1">
-                                    <td>
+                                    <td class="flex justify-center px-4 py-2 gap-2 ">
                                         <x-danger-button x-data="" aria-describedby="hapus data"
                                             wire:click="delete(item.id)"
                                             wire:confirm="Apakah Kamu yakin ingin menghapus data investasi">
@@ -464,6 +464,8 @@
                                                     stroke-linejoin="round" />
                                             </svg>
                                         </x-danger-button>
+                                        <x-secondary-button x-data=''
+                                            x-on:click.prevent="$dispatch('open-modal',{name:'edit-investasi',idKriteria :item.idKriteria, id:item})">{{ __('Edit') }}</x-secondary-button>
                                     </td>
                                 </template>
                             </tr>
@@ -982,6 +984,7 @@
 
 
     @include('livewire.partials.modal-add-investasi')
+    @include('livewire.partials.modal-edit-investasi')
     @include('components.alert')
 
 </div>

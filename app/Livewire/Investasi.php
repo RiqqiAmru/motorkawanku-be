@@ -81,7 +81,8 @@ class Investasi extends Component
         $this->investasi = Arr::map($investasi, function ($value) {
             return [
                 ...$value,
-                'anggaran' => Number::currency(intval($value['anggaran']), 'IDR', 'id')
+                'anggaran' => Number::currency(intval($value['anggaran']), 'IDR', 'id'),
+                'anggaran_old' => $value['anggaran']
             ];
         });
         $this->kumuhAwal = KumuhKawasan::where(['tahun' => ($this->tahun - 1), 'kawasan' => $this->idKawasanTerpilih])->first();
@@ -114,7 +115,8 @@ class Investasi extends Component
             $this->investasi = Arr::map($investasi, function ($value) {
                 return [
                     ...$value,
-                    'anggaran' => Number::currency(intval($value['anggaran']), 'IDR', 'id')
+                    'anggaran' => Number::currency(intval($value['anggaran']), 'IDR', 'id'),
+                    'anggaran_old' => $value['anggaran']
                 ];
             });
             $this->header = Rtrw::find($this->idRTTerpilih);

@@ -771,13 +771,13 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "2.0.4",
+            
             "version": "2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
                 "reference": "f9c436286ab2892c7db7be8c8da4ef61ccf7b455"
-                "reference": "f9c436286ab2892c7db7be8c8da4ef61ccf7b455"
+                
             },
             "dist": {
                 "type": "zip",
