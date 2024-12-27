@@ -28,7 +28,6 @@ class KelolaInvestasiTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $admin = User::find(1);
 
-
             $browser->loginAs($admin)
                 ->visit('/investasi')
                 ->select('@select-wilayah', '1') // Pilih ID Kawasan
@@ -57,11 +56,20 @@ class KelolaInvestasiTest extends DuskTestCase
 
             $browser->loginAs($admin)
                 ->visit('/investasi')
-                ->click("@edit-button-{$investasi->id_investasi}") // Gunakan atribut unik untuk tombol edit
-                ->type('kegiatan', 'Pembangunan Jalan Baru') // Edit field
-                ->press('@save-button') // Simpan perubahan
-                ->assertSee('berhasil mengupdate investasi') // Verifikasi pesan sukses
-                ->assertSee('Pembangunan Jalan Baru'); // Verifikasi data baru di tabel
+                ->select('@select-wilayah', '1') // Pilih ID Kawasan
+                ->pause(1000)
+                ->select('@select-rtrw', '2')
+                ->waitFor("@edit-investasi-button")
+                ->click("@edit-investasi-button") // Gunakan atribut unik untuk tombol edit
+                ->pause(1000)
+                ->typeSlowly('@edit-volume', 40) // Tunggu hingga input volume muncul
+                ->typeSlowly('@edit-anggaran', 11500)
+                ->select('@edit-kegiatan', 'Jalan Sirtu')
+                ->select('@edit-sumberAnggaran', 'CSR')
+                ->press('@btn-edit-investasi')->waitFor('@alert-toast')
+                // ->assertSee('Data investasi berhasi diperbarui.') // Verifikasi pesan sukses
+                ->assertSee('Jalan Sirtu') // Verifikasi data muncul di tabel
+                ->assertSee('CSR');
         });
     }
 

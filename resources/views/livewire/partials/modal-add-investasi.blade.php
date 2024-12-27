@@ -50,14 +50,19 @@
         ],
         keg: '',
     }"
-        x-on:open-modal.window="keg = kegiatanInvestasi.find((a) =>
+        x-on:open-modal.window="
+        if ($event.detail.name === 'add-new-investasi') {
+        keg = kegiatanInvestasi.find((a) =>
           a.kriteria.find((k) => k === idKriteria)
         );
-        $wire.set('form.idKriteria',idKriteria)">
+        $wire.set('form.idKriteria',idKriteria)
+        console.log(idKriteria);
+    }
+        ">
         @csrf
         @method('post')
 
-        <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+        <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100" x-item='idKriteria'>
             {{ __('Tambah Investasi') }}
         </h2>
 

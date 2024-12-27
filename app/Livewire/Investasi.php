@@ -35,6 +35,9 @@ class Investasi extends Component
 
     public InvForm $form;
 
+
+
+
     public function swapPreview()
     {
         $this->preview = !$this->preview;
@@ -54,6 +57,18 @@ class Investasi extends Component
         $this->form->store($this->tahun, $this->idKawasanTerpilih, $this->idRTTerpilih, $this->user->id_user);
 
         session()->flash('success', 'berhasil menambah investasi.');
+        $this->updatedidRTTerpilih();
+    }
+
+    public function edit($idInvestasi)
+    {
+        $this->form->edit($idInvestasi);
+    }
+    public function update($idInvestasi)
+    {
+
+        $this->form->update($this->idKawasanTerpilih, $this->idRTTerpilih, $this->user->id_user, $idInvestasi);
+
         $this->updatedidRTTerpilih();
     }
 

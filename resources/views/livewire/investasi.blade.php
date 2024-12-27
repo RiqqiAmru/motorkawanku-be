@@ -451,7 +451,8 @@
                                                     stroke-linejoin="round" />
                                             </svg>
                                         </x-danger-button>
-                                        <x-secondary-button x-data=''
+                                        <x-secondary-button x-data='' dusk="edit-investasi-button"
+                                            wire:click="edit(item.id_investasi)"
                                             x-on:click.prevent="$dispatch('open-modal',{name:'edit-investasi',idKriteria :item.idKriteria, id:item})">{{ __('Edit') }}</x-secondary-button>
                                     </td>
                                 </template>
