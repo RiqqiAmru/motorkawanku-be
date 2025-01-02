@@ -11,6 +11,9 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Arr;
 use Livewire\Attributes\Computed;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class Capaian extends Component
 {
@@ -48,5 +51,37 @@ class Capaian extends Component
     public function render()
     {
         return view('livewire.capaian');
+    }
+
+    public function export()
+    {
+        // Fetch the data you want to export
+
+
+        // Create a new Spreadsheet object
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+
+
+        $sheet->fromArray([
+            ['Kawasan', 'Tahun', 'Total Nilai',]
+        ]);
+
+
+        // Create a writer instance to output the Excel file
+        $writer = new Xlsx($spreadsheet);
+
+        // Output the file to the browser for download
+        $filename = 'laporan.xlsx';
+        return response()->stream(
+            function () use ($writer) {
+                $writer->save('php://output');
+            },
+            200,
+            [
+                'Content-Type' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                'Content-Disposition' => "attachment; filename=\"$filename\"",
+            ]
+        );
     }
 }

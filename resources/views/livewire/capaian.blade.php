@@ -1,4 +1,6 @@
 <div>
+    <!-- use version 0.20.3 -->
+    <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
     {{-- breadcumb --}}
     <nav aria-label="Breadcrumb">
         <ol class="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-300">
@@ -36,15 +38,34 @@
             </li>
         </ol>
     </nav>
-
+    @if ($namaKawasan)
+        {{-- button export --}}
+        <div class="flex justify-end gap-2 mt-4">
+            <button x-on:click="exportExcel()"
+                class="px-4 py-2 text-sm font-medium text-white bg-green-500 rounded-md hover:bg-green-600">Export
+                Excel</button>
+        </div>
+    @endif
     {{-- tabel --}}
 
 
     <div class="overflow-x-auto rounded-lg border border-gray-200 mt-4">
-        <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm dark:divide-gray-700 dark:bg-gray-900">
+        <table id="capaianTable"
+            class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm dark:divide-gray-700 dark:bg-gray-900">
+            @if ($namaKawasan)
+                <thead class="ltr:text-left rtl:text-right">
+                    <tr>
+                        <th colspan="7">Data Capaian Kawasan Kumuh Wilayah {{ $namaKawasan['kawasan'] }} Tahun
+                            {{ $tahun }}
+                        </th>
+                    </tr>
+                    <tr></tr>
+                </thead>
+            @endif
             <thead class="ltr:text-left rtl:text-right">
                 <tr>
-                    <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">Wilayah / RT</th>
+                    <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">Wilayah / RT
+                    </th>
                     @for ($i = 2019; $i <= $tahun; $i++)
                         <th colspan="2"
                             class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white border-l-2">
@@ -98,7 +119,19 @@
         </table>
     </div>
 
-    {{-- @php
-        dump($daftarRT, $namaKawasan);
-    @endphp --}}
+    <script>
+        function exportExcel() {
+            console.log(@this.namaKawasan);
+            // beri header judul 
+            var wb = XLSX.utils.table_to_book(document.getElementById('capaianTable'), {
+                sheet: "Laporan",
+                display: true,
+            });
+            // format sheet
+            let judul = 'Capaian_' + @this.namaKawasan['kawasan'] + '_' + @this.tahun;
+
+            XLSX.writeFile(wb, judul + '.xlsx');
+
+        }
+    </script>
 </div>

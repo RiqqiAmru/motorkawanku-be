@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function () {
 
     Route::view('/investasi', 'investasi')->name('investasi');
     Route::view('/capaian', 'capaian')->name('capaian');
+    
 });
 
 Route::get('/guest', KumuhGuest::class)->name('kumuh');
