@@ -47,8 +47,6 @@ The project is licensed under the MIT License. You can find the full text of the
     -   [x] admin can update the user data -> change the role, name, email,
     -   [x] admin can delete the user ->deleted user not really deleted, but only change the status to inactive, and can be seen by the admin or activated again
     -   [x] admin cannot delete another admin (can only delete itself)
-    -   [ ] data tables and pagination
-    -   [ ] user with default password will get a alert to change their password, the alert cannot be hide itself
 
 -   data investasi
 
@@ -66,12 +64,16 @@ The project is licensed under the MIT License. You can find the full text of the
 -   [x] add progress bar for alert information with self extinct
 -   [x] user can see the data within their area, and admin can see all data
 -   [x] admin can lock the user data
--   [ ] admin can make a report based on the data that is locked by the user in excel based format
--   [ ] there are log system for every action that is done by the user and admin, and can be seen by the admin
 
 ## DEV NOTE
 
+-   []feat:laporan to excel
+-   [ ] admin can make a report based on the data that is locked by the user in excel based format
+-   [ ] there are log system for every action that is done by the user and admin, and can be seen by the admin
 -   [] there are a register button in the welcome page (delete?) that [feat:admin]
--   [] users cannot change their name because its determined the kumuh location
+-   [ ] data tables and pagination
+-   [ ] user with default password will get a alert to change their password, the alert cannot be hide itself
+-   [] 1 Account Admin Default harusnya cannot be deleted
+-   [ ] feature to see wilayah yang belum diinputkan data investasi and lock it to input kumuh akhir
 
 ## error

@@ -135,17 +135,24 @@ class AdminDashboard extends Component
         }
     }
 
-    public function lock($id, $kawasan)
+    public function lock($id, $kawasan, $tahun = null)
     {
-        Investasi::where(['tahun' => Carbon::now()->year, 'id_kawasan' => $id])->update(['locked' => 1]);
+        if ($tahun == null) {
+            $tahun = Carbon::now()->year;
+        }
+        Investasi::where(['tahun' => $tahun, 'id_kawasan' => $id])->update(['locked' => 1]);
 
         // input tabel kumuh kawasan
-        $investasi = Investasi::where(['tahun' => Carbon::now()->year, 'id_kawasan' => $id])->get()->toArray();
+        $investasi = Investasi::where(['tahun' => $tahun, 'id_kawasan' => $id])->get()->toArray();
         $header = Rtrw::where('id_kawasan', $id)->get(['id_rtrw', 'jumlahBangunan'])->pluck('jumlahBangunan', 'id_rtrw');
         $dataVolume = $this->totalVolumeInvestasi($investasi, $header, true);
-        $kumuhAwal = KumuhKawasan::where(['tahun' => (Carbon::now()->year - 1), 'id_kawasan' => $id])->first();
+        $kumuhAwal = KumuhKawasan::where(['tahun' => ($tahun - 1), 'id_kawasan' => $id])->first();
         $headerKawasan = Kawasan::find($id)->toArray();
-        $kumuhAkhir = $this->hitungKumuhRtAkhir($dataVolume, $kumuhAwal, $headerKawasan);
+        $kumuhAkhir = $this->hitungKumuhRtAkhir($dataVolume, $kumuhAwal, $headerKawasan, $tahun);
+        unset($kumuhAkhir['id_rtrw']);
+        unset($kumuhAkhir['ket']);
+
+
         KumuhKawasan::create(
             $kumuhAkhir
         );
@@ -154,20 +161,22 @@ class AdminDashboard extends Component
         $header = Rtrw::where('id_kawasan', $id)->get(['id_kawasan', 'id_rtrw'])->toArray();
         foreach ($header as $item) {
 
-            $investasi = Investasi::where(['tahun' => Carbon::now()->year, 'id_kawasan' => $id, 'id_rtrw' => $item['id_rtrw']])->get()->toArray();
+            $investasi = Investasi::where(['tahun' => $tahun, 'id_kawasan' => $id, 'id_rtrw' => $item['id_rtrw']])->get()->toArray();
             $headerRT = Rtrw::find($item['id_rtrw']);
-            $kumuhAwal = KumuhRT::where(['tahun' => (Carbon::now()->year - 1), 'id_kawasan' => $id, 'id_rtrw' => $item['id_rtrw']])->first();
+            $kumuhAwal = KumuhRT::where(['tahun' => ($tahun - 1), 'id_kawasan' => $id, 'id_rtrw' => $item['id_rtrw']])->first();
 
-            $dataVolume = $this->totalVolumeInvestasi($investasi, $headerRT);
-            $kumuhAkhir = $this->hitungKumuhRtAkhir($dataVolume, $kumuhAwal, $headerRT);
+            $dataVolume = $this->totalVolumeInvestasi($investasi, $headerRT, $tahun);
+            $kumuhAkhir = $this->hitungKumuhRtAkhir($dataVolume, $kumuhAwal, $headerRT, $tahun);
+            unset($kumuhAkhir['ket']);
             KumuhRT::create($kumuhAkhir);
         }
-
-
 
         session()->flash('success', 'berhasil mengunci investasi ' . $kawasan);
         $this->mount();
     }
+
+
+
     public function unlock($id, $kawasan)
     {
         Investasi::where(['tahun' => Carbon::now()->year, 'id_kawasan' => $id])->update(['locked' => 0]);
@@ -235,13 +244,16 @@ class AdminDashboard extends Component
         return $dataVolume;
     }
 
-    function hitungKumuhRtAkhir($dataVolume, $kumuhRTAwal, $headerRT)
+    function hitungKumuhRtAkhir($dataVolume, $kumuhRTAwal, $headerRT, $tahun = null)
     {
+        if ($tahun == null) {
+            $tahun = date("Y");
+        }
         // kumuh akhir = kumuh awal - investasi
         $kumuhRTAkhir = [];
         $kumuhRTAkhir['id_kawasan'] = $kumuhRTAwal['id_kawasan'];
         $kumuhRTAkhir['id_rtrw'] = $kumuhRTAwal['id_rtrw'];
-        $kumuhRTAkhir['tahun'] =  date("Y");
+        $kumuhRTAkhir['tahun'] =  $tahun;
 
         // map investasi menjadi total volume per kriteria
 

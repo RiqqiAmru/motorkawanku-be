@@ -41,7 +41,7 @@
     @if ($namaKawasan)
         {{-- button export --}}
         <div class="flex justify-end gap-2 mt-4">
-            <button x-on:click="exportExcel()"
+            <button wire:click="export"
                 class="px-4 py-2 text-sm font-medium text-white bg-green-500 rounded-md hover:bg-green-600">Export
                 Excel</button>
         </div>
@@ -96,11 +96,11 @@
                     <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">
                     </td>
                 </tr>
-                @if ($kumuhRT)
-                    @foreach ($kumuhRT as $item)
+                @if ($kumuhRT && !empty($kumuhRT))
+                    @foreach ($kumuhRT as $key => $item)
                         <tr class="odd:bg-gray-50 dark:odd:bg-gray-800/50">
                             <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">
-                                {{ $daftarRT[$item->first()->id_rtrw] }}
+                                {{ $daftarRT[$key] }}
                             </td>
                             @foreach ($item as $k)
                                 <td title="total Nilai"
