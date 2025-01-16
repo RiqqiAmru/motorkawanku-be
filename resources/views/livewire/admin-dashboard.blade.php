@@ -92,7 +92,7 @@
             {{-- tabel kumuh awal akhir --}}
             <div class="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700">
                 <table
-                    class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm dark:divide-gray-700 dark:bg-gray-900">
+                    class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm dark:divide-gray-700 dark:bg-gray-900 table">
                     <thead class="ltr:text-left rtl:text-right">
                         <tr>
                             <th rowspan="2"
@@ -822,7 +822,8 @@
             {{-- tabel investasi --}}
             <div class="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700">
                 <table
-                    class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm dark:divide-gray-700 dark:bg-gray-900">
+                    class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm dark:divide-gray-700 dark:bg-gray-900 table"
+                    id="tableDashboard">
                     <thead class="ltr:text-left rtl:text-right">
                         <tr>
                             <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">Kawasan
@@ -844,18 +845,13 @@
                             <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">
                                 Penginput
                             </th>
+                            <th></th>
                         </tr>
                     </thead>
 
                     <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                         {{-- jika investasi kosong --}}
                         @if ($allInvestasi == null)
-                            <tr class="text-center">
-                                <td colspan="8"
-                                    class="whitespace-nowrap italic  px-4 py-2 font-medium text-red-500 dark:text-red-500">
-                                    Tidak Ada Investasi
-                                </td>
-                            </tr>
                         @else
                             {{-- ada investasi --}}
                             @foreach ($allInvestasi as $item)
@@ -1067,8 +1063,48 @@
 
     @include('components.alert')
 
+    <!-- DataTables CSS -->
+    <link href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" rel="stylesheet">
 
-    {{-- @php
-        dump($investasi);
-    @endphp --}}
+    <!-- DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+
+    <style>
+        /* Apply custom styles when dark mode is enabled */
+        .dataTables_length select {
+            background-color: red;
+            /* Dark background for the dropdown */
+            color: #fff;
+            /* White text color */
+            border: 1px solid #444;
+            /* Dark border */
+            background-image: none;
+        }
+
+        .dataTables_length select:focus {
+            outline: none;
+            /* Remove outline on focus */
+            border-color: #666;
+            /* Lighter border color on focus */
+        }
+
+        /* Optional: Add custom hover effect for dark mode */
+        .dataTables_length select:hover {
+            background-color: #444;
+            /* Darker background on hover */
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            $('#tableDashboard').DataTable({
+                paging: true, // Enable pagination
+                searching: true, // Enable search
+                ordering: true, // Enable sorting
+                info: true, // Show table info
+            });
+        });
+    </script>
+
 </div>

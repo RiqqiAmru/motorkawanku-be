@@ -67,8 +67,7 @@ The project is licensed under the MIT License. You can find the full text of the
 
 ## DEV NOTE
 
--   []feat:laporan to excel
--   [ ] admin can make a report based on the data that is locked by the user in excel based format
+-   [x]feat:laporan to excel
 -   [ ] there are log system for every action that is done by the user and admin, and can be seen by the admin
 -   [] there are a register button in the welcome page (delete?) that [feat:admin]
 -   [ ] data tables and pagination

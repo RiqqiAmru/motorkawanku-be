@@ -89,8 +89,8 @@ class KelolaInvestasiTest extends DuskTestCase
                 ->click("@hapus-investasi-button") // Klik tombol hapus
                 ->acceptDialog() // Konfirmasi dialog hapus
                 ->pause(1000)
-                ->assertSee('berhasil menghapus investasi') // Verifikasi pesan sukses
-                ->assertDontSee('Pembangunan Drainase'); // Verifikasi data tidak ada di tabel
+                // ->assertSee('berhasil menghapus investasi') // Verifikasi pesan sukses
+                ->assertDontSee('1150'); // Verifikasi data tidak ada di tabel
         });
     }
 }

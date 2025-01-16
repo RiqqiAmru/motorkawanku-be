@@ -20,7 +20,7 @@
                             </div>
                         </div>
                         <div class="mt-12 relative h-max overflow-auto">
-                            <table class="w-full table-auto text-sm text-left">
+                            <table class="w-full table-auto text-sm text-left table" id="tableUsers">
                                 <thead class="text-gray-600 dark:text-gray-200 font-medium border-b">
                                     <tr>
                                         <th class="py-3 pr-6">nama</th>
@@ -68,6 +68,53 @@
             </div>
         </div>
     </div>
+
+    <!-- DataTables CSS -->
+    <link href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" rel="stylesheet">
+
+    <!-- DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+
+    <style>
+        /* Apply custom styles when dark mode is enabled */
+        .dataTables_length select {
+            background-color: red;
+            /* Dark background for the dropdown */
+            color: #fff;
+            /* White text color */
+            border: 1px solid #444;
+            /* Dark border */
+            background-image: none;
+        }
+
+        .dataTables_length select:focus {
+            outline: none;
+            /* Remove outline on focus */
+            border-color: #666;
+            /* Lighter border color on focus */
+        }
+
+        /* Optional: Add custom hover effect for dark mode */
+        .dataTables_length select:hover {
+            background-color: #444;
+            /* Darker background on hover */
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            $('#tableUsers').DataTable({
+                paging: true, // Enable pagination
+                searching: true, // Enable search
+                ordering: true, // Enable sorting
+                info: true, // Show table info
+            });
+        });
+    </script>
+
+
+
     @include('users.partials.modal-delete-user')
     @include('users.partials.modal-add-user')
     @include('users.partials.modal-edit-user')

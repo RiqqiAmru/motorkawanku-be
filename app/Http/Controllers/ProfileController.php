@@ -44,6 +44,9 @@ class ProfileController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
+        if (Auth::user()->id_user == 1) {
+            return Redirect::to('/profile');
+        }
         $request->validateWithBag('userDeletion', [
             'password' => ['required', 'current_password'],
         ]);
