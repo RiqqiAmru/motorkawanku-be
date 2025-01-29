@@ -168,10 +168,12 @@
                                         class=" whitespace-nowrap px-4 py-2 font-bold text-gray-900 dark:text-white">
                                         Aspek/Kriteria</th>
                                     <th colspan="3"
-                                        class="whitespace-nowrap px-4 py-2 font-bold text-gray-900 dark:text-white">
+                                        class="whitespace-nowrap px-4 py-2 font-bold text-gray-900 dark:text-white"
+                                        title="merupakan kumuh akhir tahun {{ $tahun - 1 }}">
                                         Kumuh Awal
                                     </th>
                                     <th colspan="3"
+                                        title="merupakan hasil dari  kumuh awal dikurangi volume investasi tahun {{ $tahun }}"
                                         class="whitespace-nowrap px-4 py-2 font-bold text-gray-900 dark:text-white">
                                         Kumuh Akhir
                                     </th>

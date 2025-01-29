@@ -68,11 +68,10 @@ The project is licensed under the MIT License. You can find the full text of the
 ## DEV NOTE
 
 -   [x]feat:laporan to excel
+-   [x] data tables and pagination
+-   [x] 1 Account Admin Default harusnya cannot be deleted
 -   [ ] there are log system for every action that is done by the user and admin, and can be seen by the admin
--   [] there are a register button in the welcome page (delete?) that [feat:admin]
--   [ ] data tables and pagination
 -   [ ] user with default password will get a alert to change their password, the alert cannot be hide itself
--   [] 1 Account Admin Default harusnya cannot be deleted
 -   [ ] feature to see wilayah yang belum diinputkan data investasi and lock it to input kumuh akhir
 
 ## error

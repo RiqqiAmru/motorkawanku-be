@@ -57,6 +57,7 @@
                     <tr>
                         <th colspan="7">Data Capaian Kawasan Kumuh Wilayah {{ $namaKawasan['kawasan'] }} Tahun
                             {{ $tahun }}
+                            <span></span>
                         </th>
                     </tr>
                     <tr></tr>
@@ -65,11 +66,13 @@
             <thead class="ltr:text-left rtl:text-right">
                 <tr>
                     <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">Wilayah / RT
+                        <span></span>
                     </th>
                     @for ($i = 2019; $i <= $tahun; $i++)
                         <th colspan="2"
                             class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white border-l-2">
                             {{ $i == 2019 ? 'Baseline' : $i }}
+                            <span></span>
                         </th>
                     @endfor
                 </tr>
@@ -120,18 +123,75 @@
     </div>
 
     <script>
-        function exportExcel() {
-            console.log(@this.namaKawasan);
-            // beri header judul 
-            var wb = XLSX.utils.table_to_book(document.getElementById('capaianTable'), {
-                sheet: "Laporan",
-                display: true,
+        document.addEventListener('DOMContentLoaded', function() {
+            const table = document.getElementById('capaianTable');
+            const headers = table.querySelectorAll('th');
+            let sortDirection = {}; // Menyimpan status urutan ASC/DESC per tahun
+            let arrows = {}; // Untuk menyimpan arah panah pada header
+            headers.forEach((header, index) => {
+                const arrow = document.createElement('span');
+                arrow.style.marginLeft = '10px';
+                header.appendChild(arrow);
+
+                header.addEventListener('click', function() {
+                    const year = header.innerText.trim().replace(
+                        /\s*[\u2190\u2191\u2192\u2193]\s*$/, ''
+                    ); // Mendapatkan tahun dari header
+                    const columnIndex = index; // Menyimpan indeks kolom yang diklik
+                    if (!sortDirection[year]) {
+                        sortDirection[year] = 'asc'; // Set default asc
+                    } else {
+                        sortDirection[year] = sortDirection[year] === 'asc' ? 'desc' : 'asc';
+                    }
+
+                    // Perbarui arah panah
+                    updateArrow(header, sortDirection[year]);
+
+                    // Menyortir baris berdasarkan tahun dan arah
+                    sortTable(columnIndex, sortDirection[year]);
+                });
             });
-            // format sheet
-            let judul = 'Capaian_' + @this.namaKawasan['kawasan'] + '_' + @this.tahun;
 
-            XLSX.writeFile(wb, judul + '.xlsx');
+            function updateArrow(header, direction) {
+                // hapus arrow untuk semua header
+                headers.forEach(header => {
+                    const arrow = header.querySelector('span');
+                    if (arrow) {
+                        arrow.textContent = '';
+                    }
+                });
+                const arrow = header.querySelector('span');
+                if (direction === 'asc') {
+                    arrow.textContent = '↑'; // Panah naik
+                } else {
+                    arrow.textContent = '↓'; // Panah turun
+                }
+            }
 
-        }
+            function sortTable(colIndex, direction) {
+                const rows = Array.from(table.querySelectorAll('tbody tr')).slice(
+                    2); // Mulai dari baris ke-3 (index 2)
+                const isAscending = direction === 'asc';
+                if (colIndex != 0) {
+                    colIndex = colIndex * 2 - 1; // Karena setiap tahun memiliki 2 kolom
+                }
+                rows.sort((rowA, rowB) => {
+                    const cellA = rowA.cells[colIndex].innerText.trim();
+                    const cellB = rowB.cells[colIndex].innerText.trim();
+
+                    // Bandingkan berdasarkan angka atau teks
+                    if (isNaN(cellA) || isNaN(cellB)) {
+                        return isAscending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+                    } else {
+                        return isAscending ? parseFloat(cellA) - parseFloat(cellB) : parseFloat(cellB) -
+                            parseFloat(cellA);
+                    }
+                });
+
+                // Menyusun ulang baris pada tabel
+                rows.forEach(row => table.querySelector('tbody').appendChild(row));
+            }
+
+        });
     </script>
 </div>
