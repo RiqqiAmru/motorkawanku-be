@@ -1,5 +1,5 @@
-<x-modal name="add-new-investasi" :show="$errors->addNewUser->isNotEmpty()" maxWidth='lg' focusable>
-    <form wire:submit="save; $dispatch('close');" method="post" class="p-6" x-data="{
+<x-modal name="edit-investasi" maxWidth='lg' focusable>
+    <form wire:submit="update(id.id); $dispatch('close');" method="post" class="p-6" x-data="{
         'kegiatanInvestasi': [{
                 'kriteria': ['1a'],
                 'kegiatan': ['Jalan Aspal Hotmix', 'Jalan Beton', 'Jalan Buras (Leburan Aspal)', 'Jalan Kayu/Titian/Jerambah Kayu', 'Jalan Lapen (Lapisan Penetrasi)', 'Jalan Makadam', 'Jalan Paving Block', 'Jalan Sirtu', 'Jalan Tanah', 'Jalan Telford', 'Pedestrian/Jalur Pejalan Kaki', 'Penataan Rumah Deret/Rumah Susun'],
@@ -51,40 +51,40 @@
         keg: '',
     }"
         x-on:open-modal.window="
-        if ($event.detail.name === 'add-new-investasi') {
+        if ($event.detail.name === 'edit-investasi') {
         keg = kegiatanInvestasi.find((a) =>
           a.kriteria.find((k) => k === idKriteria)
         );
-        $wire.set('form.idKriteria',idKriteria)
-}">
+        console.log(id);
+        $wire.set('form.idKriteria',idKriteria)}">
         @csrf
         @method('post')
 
         <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-            {{ __('Tambah Investasi') }}
+            {{ __('Edit Investasi') }}
         </h2>
 
         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-            {{ __('tambah investasi pembangunan wilayah') }}
+            {{ __('Edit investasi pembangunan wilayah') }}
         </p>
 
         <div class="mt-6  flex  items-center align-middle gap-2">
             <x-input-label for="kegiatan" value="{{ __('Kegiatan') }}" />
-            <select wire:model="form.kegiatan" name="kegiatan" id="kegiatan" required
+            <select wire:model="form.kegiatan" name="kegiatan" id="kegiatan" required dusk='edit-kegiatan'
                 class="border-gray-300  dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-full overflow-hidden">
                 <option value="">{{ __(' pilih kegiatan') }}</option>
                 <template x-if="keg.kegiatan" class="text-wrap">
                     <template x-for="(item,index) in keg.kegiatan">
-                        <option :value="item" x-text="item"></option>
+                        <option :value="item" x-text="item" x-bind:selected="item === id.kegiatan"></option>
                     </template>
                 </template>
             </select>
-
         </div>
 
         <div class="mt-6  flex items-center align-middle gap-2">
             <x-input-label for="sumberAnggaran" value="{{ __('Sumber Anggaran') }}" />
             <select name="sumberAnggaran" id="sumberAnggaran" required wire:model="form.sumberAnggaran"
+                dusk='edit-sumberAnggaran'
                 class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                 <option value="">{{ __('pilih Sumber Anggaran') }}</option>
                 <option value="APBD">APBD</option>
@@ -101,7 +101,7 @@
             <div class="flex items-center align-middle gap-2">
                 <x-input-label for="volume" value="{{ __('Volume ') }}" class="sr-only" />
                 <x-text-input id="volume" name="volume" type="number" class="mt-1 block w-full" min="0"
-                    required :value="old('volume')" placeholder="{{ __('volume') }}" wire:model="form.volume" />
+                    dusk='edit-volume' required placeholder="{{ __('volume') }}" wire:model="form.volume" />
                 <x-input-error :messages="$errors->addNewUser->get('volume')" class="mt-2" />
                 <span x-text="keg.satuan">Unit</span>
             </div>
@@ -109,7 +109,7 @@
                 <span>Rp</span>
                 <x-input-label for="anggaran" value="{{ __('anggaran') }}" class="sr-only basis-0" />
                 <x-text-input id="anggaran" name="anggaran" type="number" class="mt-1 block w-full " min="0"
-                    required placeholder="{{ __('anggaran') }}" :value="old('anggaran')" wire:model="form.anggaran" />
+                    dusk="edit-anggaran" required placeholder="{{ __('anggaran') }}" wire:model="form.anggaran" />
                 <x-input-error :messages="$errors->addNewUser->get('anggaran')" class="mt-2" />
             </div>
         </div>
@@ -121,8 +121,8 @@
                 {{ __('Cancel') }}
             </x-secondary-button>
 
-            <x-primary-button class="ms-3">
-                {{ __('add investasi') }}
+            <x-primary-button class="ms-3" dusk='btn-edit-investasi'>
+                {{ __('edit investasi') }}
             </x-primary-button>
         </div>
     </form>

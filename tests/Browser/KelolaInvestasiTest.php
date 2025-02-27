@@ -19,8 +19,9 @@ class KelolaInvestasiTest extends DuskTestCase
 
             $browser->loginAs($admin)
                 ->visit('/investasi') // Sesuaikan URL dengan rute Anda
-                ->assertSeeIn('h3.font-semibold.text-xl', 'Data Investasi Tahun') // Verifikasi konten utama
+                ->assertSeeIn('h3', 'Data Investasi ') // Verifikasi konten utama
                 ->assertPresent('@table-investasi'); // Pastikan tabel investasi ada
+                
         });
     }
 

@@ -46,4 +46,40 @@ class InvForm extends Form
         ModelsInvestasi::find($param)->delete();
         session()->flash('success', 'berhasil menghapus investasi.');
     }
+
+    public function edit($idInvestasi)
+    {
+        $investasi = ModelsInvestasi::find($idInvestasi);
+        $this->idKriteria = $investasi->idkriteria;
+        $this->volume = $investasi->volume;
+        $this->kegiatan = $investasi->kegiatan;
+        $this->sumberAnggaran = $investasi->sumberAnggaran;
+        $this->anggaran = $investasi->anggaran;
+    }
+    public function update($idKawasanTerpilih, $idRTTerpilih, $idUser, $idInvestasi)
+    {
+        $this->validate();
+        $investasi = ModelsInvestasi::find($idInvestasi);
+        // Pastikan data ditemukan
+        if ($investasi) {
+            // Lakukan update
+            $investasi->update([
+                'idKawasan' => $idKawasanTerpilih,
+                'idRTRW' => $idRTTerpilih,
+                'idkriteria' => $this->idKriteria,
+                'volume' => $this->volume,
+                'kegiatan' => $this->kegiatan,
+                'sumberAnggaran' => $this->sumberAnggaran,
+                'anggaran' => $this->anggaran,
+                'id_user' => $idUser
+            ]);
+
+            // Reset form setelah update
+            $this->reset();
+            session()->flash('success', 'Data investasi berhasil diperbarui.');
+        } else {
+            // Jika data tidak ditemukan
+            session()->flash('error', 'Data tidak ditemukan untuk diupdate.');
+        }
+    }
 }
