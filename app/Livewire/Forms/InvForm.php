@@ -49,6 +49,7 @@ class InvForm extends Form
 
     public function edit($idInvestasi)
     {
+
         $investasi = ModelsInvestasi::find($idInvestasi);
         $this->idKriteria = $investasi->idkriteria;
         $this->volume = $investasi->volume;
@@ -56,7 +57,7 @@ class InvForm extends Form
         $this->sumberAnggaran = $investasi->sumberAnggaran;
         $this->anggaran = $investasi->anggaran;
     }
-    public function update($idKawasanTerpilih, $idRTTerpilih, $idUser, $idInvestasi)
+    public function update($idKawasanTerpilih = '', $idRTTerpilih = '', $idUser, $idInvestasi)
     {
         $this->validate();
         $investasi = ModelsInvestasi::find($idInvestasi);
@@ -64,8 +65,6 @@ class InvForm extends Form
         if ($investasi) {
             // Lakukan update
             $investasi->update([
-                'idKawasan' => $idKawasanTerpilih,
-                'idRTRW' => $idRTTerpilih,
                 'idkriteria' => $this->idKriteria,
                 'volume' => $this->volume,
                 'kegiatan' => $this->kegiatan,

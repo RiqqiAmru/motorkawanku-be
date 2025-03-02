@@ -31,12 +31,11 @@ The project is licensed under the MIT License. You can find the full text of the
 -   [x] delete the registration controller
 -   [x] make role admin and user (validation)
 -   [x] make user CRUD on admin role
--   [ ] make CRUD data investasi
--   [ ] make CRUD data geolocation
+-   [x] make CRUD data investasi
 
 ### guest
 
--   [ ] view data kumuh awal, akhir, investasi and maps
+-   [x] view data kumuh awal, akhir, investasi and maps
 
 ### secondary
 
@@ -47,12 +46,10 @@ The project is licensed under the MIT License. You can find the full text of the
     -   [x] admin can update the user data -> change the role, name, email,
     -   [x] admin can delete the user ->deleted user not really deleted, but only change the status to inactive, and can be seen by the admin or activated again
     -   [x] admin cannot delete another admin (can only delete itself)
-    -   [ ] data tables and pagination
-    -   [ ] user with default password will get a alert to change their password, the alert cannot be hide itself
 
 -   data investasi
 
-    -   [ ] view breadcrumbs location, for user, its default location whether on username, for admin the breadcrumb itself can be changed for all locations
+    -   [x] view breadcrumbs location, for user, its default location whether on username, for admin the breadcrumb itself can be changed for all locations
     -   based on location, view the table for investasi in current year,
     -   user or admin can make CRUD operations in investasi table
     -   user can lock the investasi data if it felt proper,
@@ -64,21 +61,23 @@ The project is licensed under the MIT License. You can find the full text of the
     -   the investasi data that inputted by the admin automatically approved (not validated) and waiting to be locked
 
 -   [] add progress bar for alert information with self extinct
--   [ ] user can see the data within their area, and admin can see all data
--   [ ] user can lock the investasi data if the data is already inputted
--   [ ] admin can see the data that is locked and not locked by the user
--   [ ] admin can reject the data that submitted by the user and give the reason / feedback detail
--   [ ] user can see the feedback from the admin via notification (in browser only)
--   [ ] admin can make a report based on the data that is locked by the user in excel based format
--   [ ] there are log system for every action that is done by the user and admin, and can be seen by the admin
+-   [x] user can see the data within their area, and admin can see all data
+
+## FUTURE PLAN
+
+-   [ ] make CRUD data geolocation
+-   [ ] data tables and pagination
+-   [ ] user with default password will get a alert to change their password, the alert cannot be hide itself
+-   [ ] there are log system for every action that is done by the user and admin, and can be seen by the
+-   [tampilan] pilih wilayah , ketika ganti tahun harusnya tidak berubah wilayahnya
+-   [tampilan] ketika hendak preview data, select option rt tidak sesuai dengan wilayah yang dipilih
 
 ## DEV NOTE
 
--   [] there are a register button in the welcome page (delete?) that [feat:admin]
--   [] users cannot change their name because its determined the kumuh location
+-   kunci data yang data sebelumnya belum dikunci dan tidak ada investasi hasilnya beda antara penghitungan preview dan db kumuh akhir
+-   fitur kunci data wilayah tanpa investasi.
 
-<!-- perubahan SK 2024 -->
+## to do
 
--   buat kunci data dan save di admin, hanya admin yang dapat kunci data
--   view semua investasi di dashboard admin
--   buat laman capaian di admin yang nanti nya akan menampilkan laporan yg bisa didownload di excel
+-   kunci data jika hendak kunci data tahun lalu, tahun ini harusnya tidak dikunci [needed continous testing]
+-   unlock from not this year resulting mount from current year

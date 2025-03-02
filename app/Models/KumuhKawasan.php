@@ -74,17 +74,5 @@ class KumuhKawasan extends Model
         'updated_at'
     ];
 
-    public function getWarnaAttribute()
-    {
-        switch ($this->tingkatKekumuhan) {
-            case "TK":
-                return ["TIDAK KUMUH", 'text-green-600 bg-green-50'];
-            case "KR":
-                return ["KUMUH RINGAN", 'text-yellow-600 bg-yellow-50'];
-            case "KS":
-                return ["KUMUH SEDANG", 'text-orange-600 bg-orange-50'];
-            case "KB":
-                return ["KUMUH BERAT", 'text-red-600 bg-red-50'];
-        }
-    }
+    
 }

@@ -130,8 +130,7 @@ class Investasi extends Component
     }
     public function update($idInvestasi)
     {
-
-        $this->form->update($this->idKawasanTerpilih, $this->idRTTerpilih, $this->user->id_user, $idInvestasi);
+        $this->form->update($this->idKawasanTerpilih, $this->idRTTerpilih, $this->user->id, $idInvestasi);
 
         $this->updatedidRTTerpilih();
     }

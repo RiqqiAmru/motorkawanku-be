@@ -68,7 +68,14 @@
                         </svg>
                     </li>
                     <li>
-                        <span>{{ $tahun }}</span>
+                        <select wire:model.live="tahun"
+                            class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                            @if ($tahun)
+                                @for ($i = 2024; $i <= \Carbon\Carbon::now()->year; $i++)
+                                    <option value="{{ $i }}">{{ $i }}</option>
+                                @endfor
+                            @endif
+                        </select>
                     </li>
                     <li>
                         <span
@@ -816,7 +823,7 @@
     <template x-if="$wire.preview==false">
         <div>
             <h3 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight mb-4">
-                Data Investasi Tahun <span>{{ $tahun }}</span>
+                Data Investasi
             </h3>
 
             {{-- breadcrumb kelurahan --}}
@@ -856,6 +863,16 @@
                         </select>
                     </li>
 
+                    <li>
+                        <select wire:model.live="tahun"
+                            class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                            @if ($tahun)
+                                @for ($i = 2024; $i <= \Carbon\Carbon::now()->year; $i++)
+                                    <option value="{{ $i }}">{{ $i }}</option>
+                                @endfor
+                            @endif
+                        </select>
+                    </li>
 
                 </ol>
             </nav>
@@ -959,6 +976,29 @@
                                                     </svg>
                                                 </button>
 
+                                                {{-- edit --}}
+                                                <button
+                                                    class="inline-block p-3 text-gray-700 hover:bg-gray-50 focus:relative dark:text-gray-200 dark:hover:bg-gray-800"
+                                                    wire:click="edit({{ $item->id }})"
+                                                    x-on:click.prevent="$dispatch('open-modal', {idKriteria:'{{ $item->idkriteria }}',name:'edit-investasi', id :'{{ $item->id }}'}) "
+                                                    title="edit Investasi">
+                                                    <svg fill="#fff" version="1.1" class="size-4" id="Capa_1"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                        viewBox="0 0 490.305 490.305" xml:space="preserve">
+                                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                            stroke-linejoin="round"></g>
+                                                        <g id="SVGRepo_iconCarrier">
+                                                            <g>
+                                                                <path
+                                                                    d="M472.469,81.443l-63.6-63.6c-13.1-16.4-53.2-30.2-83.4,0l-290.9,289.9l0,0c-4.4,4.4-6.5,10.1-6.2,15.6l-27.1,141.8 c-4.2,16.2,11.9,26.6,22.9,25l147-29.2c4.2,0,7.3-2.1,10.4-5.2l290.9-289.8C495.469,142.943,495.469,104.443,472.469,81.443z M354.669,46.043c6.3-7.3,18.8-7.3,26.1,0l17.3,17l-289.7,289.7l-30.1-30.4L354.669,46.043z M61.769,364.043l64.4,64.4l-80.1,15.8 L61.769,364.043z M444.369,135.643l-276.8,276.8l-30.1-30.4l290-290l16.8,16.5C453.469,118.343,449.169,130.743,444.369,135.643z">
+                                                                </path>
+                                                            </g>
+                                                        </g>
+                                                    </svg>
+                                                </button>
+
                                                 {{-- delete --}}
                                                 <button
                                                     class="inline-block p-3 text-gray-700 hover:bg-gray-50 focus:relative dark:text-gray-200 dark:hover:bg-gray-800"
@@ -973,9 +1013,10 @@
                                                 </button>
                                             @elseif ($item->locked == 1)
                                                 {{-- unlock --}}
+
                                                 <button
                                                     class="inline-block p-3 text-gray-700 hover:bg-gray-50 focus:relative dark:text-gray-200 dark:hover:bg-gray-800"
-                                                    x-on:click.prevent="$dispatch('open-modal', {name:'confirm-investasi-unlock', id :'{{ $item->idKawasan }}', email:'{{ $item->kawasan }}'}) "
+                                                    x-on:click.prevent="$dispatch('open-modal', {name:'confirm-investasi-unlock', id :'{{ $item->idKawasan }}', email:'{{ $item->kawasan }}',tahun:'{{ $item->tahun }}'}) "
                                                     title="Unlock">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
                                                         viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1089,7 +1130,8 @@
             @csrf
 
             <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-                {{ __('apakah kamu yakin Membuka Kunci Investasi ') }}<span x-text='id'></span>
+                <span x-text='tahun'></span>{{ __('apakah kamu yakin Membuka Kunci Investasi ') }}<span
+                    x-text='id'></span>-
             </h2>
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
                 {{ __('tindakan ini akan membuka semua kunci dari wilayah ') }} <span x-text="email"></span>
@@ -1108,6 +1150,7 @@
     </x-modal>
 
     @include('components.alert')
+    @include('livewire.partials.modal-edit-investasi')
 
 
     {{-- @php

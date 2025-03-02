@@ -1,4 +1,4 @@
-@props(['name', 'show' => false, 'maxWidth' => '2xl', 'id' => 0, 'email' => null])
+@props(['name', 'show' => false, 'maxWidth' => '2xl', 'id' => 0, 'email' => null, 'tahun' => null])
 
 @php
     $maxWidth = [
@@ -12,6 +12,7 @@
 
 <div x-data="{
     email: null,
+    tahun: null,
     idKriteria: null,
     id: 0,
     show: @js($show),

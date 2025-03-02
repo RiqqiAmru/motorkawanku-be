@@ -25,7 +25,7 @@
             <li>
                 <select wire:model.live="idKawasanTerpilih"
                     class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
-                    <option value="">Pilih Wilayah</option>
+                    <option value="0">Kota Pekalongan</option>
                     @if ($kawasan)
                         @foreach ($kawasan as $item)
                             <option value="{{ $item->id }}">
@@ -86,11 +86,31 @@
                             </td>
                             <td title="luasan"
                                 class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200 border-r-2">
-                                @if ($item->tahun == 2024)
+                                @if ($item->tahun == \Carbon\Carbon::now()->year)
                                     {{ Number::format($luasVerifikasiyangSudahBerkurang ?: 0, 2) }}
                                 @else
                                     {{ Number::format($item->luasVerifikasi ?: 0, 2) }}
                                 @endif
+                                Ha
+                            </td>
+                        @endforeach
+                    </tr>
+                @else
+                    <tr class="odd:bg-gray-50 dark:odd:bg-gray-800/50">
+                        <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">
+                            {{ 'Kota Pekalongan' }}
+                        </td>
+                        @foreach ($kumuhKawasan as $item)
+                            <td title="total Nilai"
+                                class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200 border-l-2">
+                                {{ $item['totalNilai'] }}</td>
+                            <td title="tingkat kekumuhan"
+                                class="whitespace-nowrap px-4 py-2 text-center  {{ $item['tingkatKekumuhan'][1] }}">
+                                {{ $item['tingkatKekumuhan'][0] }}
+                            </td>
+                            <td title="luasan"
+                                class="whitespace-nowrap px-4 py-2 text-gray-700 dark:text-gray-200 border-r-2">
+                                {{ Number::format($item['totalLuasVerifikasi'] ?: 0, 2) }}
                                 Ha
                             </td>
                         @endforeach
@@ -104,7 +124,7 @@
                     @foreach ($kumuhRT as $item)
                         <tr class="odd:bg-gray-50 dark:odd:bg-gray-800/50">
                             <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dark:text-white">
-                                {{ $daftarRT[$item->first()->rt] }}
+                                {{ $daftarRT[$item->first()->rt ? $item->first()->rt : $item->first()->kawasan] }}
                             </td>
                             @foreach ($item as $k)
                                 <td title="total Nilai"
@@ -131,17 +151,4 @@
     </div>
 
 
-    <table>
-
-        {{-- @foreach ($test as $item)
-            <tr>
-                <td>{{ $item->kawasan }}</td>
-                <td>{{ $item->rtrw }}</td>
-                <td>{{ $item->totalNilai }}</td>
-            </tr>
-        @endforeach --}}
-    </table>
-    @php
-
-    @endphp
 </div>

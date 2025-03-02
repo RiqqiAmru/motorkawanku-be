@@ -1,4 +1,5 @@
 <x-modal name="edit-investasi" maxWidth='lg' focusable>
+    <span x-text="id.id"></span>
     <form wire:submit="update(id.id); $dispatch('close');" method="post" class="p-6" x-data="{
         'kegiatanInvestasi': [{
                 'kriteria': ['1a'],
@@ -55,7 +56,6 @@
         keg = kegiatanInvestasi.find((a) =>
           a.kriteria.find((k) => k === idKriteria)
         );
-        console.log(id);
         $wire.set('form.idKriteria',idKriteria)}">
         @csrf
         @method('post')
